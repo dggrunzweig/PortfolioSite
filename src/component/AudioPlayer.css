@@ -1,0 +1,145 @@
+/* Font source https://www.onlinewebfonts.com/download/53dc764fd0dbbb3140b7909afd437722 */
+@font-face {
+  font-family: "Chicago";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/type/chicago/Chicago.woff2") format("woff2");
+}
+
+:root {
+  font-size: 16px;
+  user-select: none;
+  --ap-title-color: #fefefe;
+  --ap-text-color: #ffffff;
+  --ap-background-color: #2f4ae6e3;
+  --ap-border-color: #afb9e6;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+.audio-player {
+  color: var(--ap-text-color);
+  background-color: var(--ap-background-color);
+  max-width: 800px;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: var(--ap-border-color) solid 2px;
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-family: "Chicago";
+  box-shadow: 5px 10px 30px rgba(175, 185, 230, 0.383);
+}
+
+.button-holder {
+  display: flex;
+  gap: 0.5em;
+
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.button-holder .button {
+  color: var(--ap-text-color);
+  box-sizing: border-box;
+  text-align: ;
+  align-items: center;
+  height: 2em;
+  /* padding: 0.25em; */
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, 0);
+  border: var(--ap-border-color) solid 1px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.button-holder .button:hover {
+  background-color: rgba(255, 255, 255, 0.074);
+}
+
+.audio-player .time-viewer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+  padding-top: 0em;
+  /* flex-direction: row;
+  width: 15%;
+  padding-top: 0.5em; */
+  gap: 0.5em;
+}
+
+.title {
+  color: var(--ap-title-color);
+  display: block;
+  width: 100%;
+  height: fit-content;
+  line-break: normal;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.time-viewer span {
+  font-size: 1em;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 2em;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.audio-player .loading-div {
+  width: 100%;
+  height: 2em;
+  box-sizing: content-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.timeline-line {
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.583),
+    #ffffffff 50%,
+    rgba(255, 255, 255, 0.583)
+  );
+}
+
+.timeline-marker {
+  height: 1em;
+  aspect-ratio: 0.25;
+  position: absolute;
+  z-index: 100;
+  background-color: #ffffff;
+}
+
+.audio-visualizer {
+  width: 100%;
+  height: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}

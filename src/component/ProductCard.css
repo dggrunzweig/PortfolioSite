@@ -1,0 +1,204 @@
+:root {
+  --pc-button-color: #ece3de;
+  --pc-button-color-hover: #dad2ce;
+  --pc-background-color: #c3b5ad;
+  --pc-accent-color: rgb(90, 247, 28);
+  --pc-desc-color: rgba(90, 247, 28, 0.939);
+  --pc-border-color: #45413e;
+  --pc-type-color: #171615;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "IBM Plex Mono";
+  border: var(--pc-border-color) solid 1px;
+  padding: 1em;
+  gap: 0.5em;
+  color: var(--pc-type-color);
+  background-color: var(--pc-background-color);
+}
+
+.name {
+  border-bottom: var(--pc-border-color) solid 1px;
+  border-left: var(--pc-border-color) solid 1px;
+  height: 3em;
+  width: 20em;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.name .scroll {
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  text-align: right;
+  text-transform: uppercase;
+  transform-box: content-box;
+  letter-spacing: -0.05em;
+  padding-left: 1em;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.side {
+  width: 100%;
+  height: 100%;
+  min-height: 24em;
+  max-height: 24em;
+  min-width: 20em;
+  max-width: 20em;
+  gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.side .image {
+  height: 80%;
+  min-height: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.side .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.side .short-desc {
+  height: min-content;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  text-align: start;
+  background-color: var(--pc-desc-color);
+  box-sizing: border-box;
+  padding: 0.25em;
+}
+
+.side .full-desc-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0.5em 1em 0.5em;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 2;
+  line-break: normal;
+  background-color: rgba(255, 255, 255, 0.652);
+  border: var(--pc-border-color) solid 1px;
+}
+
+.full-desc-div .full-desc {
+  height: min-content;
+}
+
+.price {
+  width: 100%;
+  font-size: 1em;
+  height: fit-content;
+  text-align: right;
+}
+
+.card .button-holder {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25em;
+}
+
+.card button {
+  width: 50%;
+  margin: 0px;
+  padding: 0.25em;
+  height: min-content;
+  background-color: var(--pc-button-color);
+  border: var(--pc-border-color) solid 1px;
+}
+
+.card button:hover {
+  background-color: var(--pc-button-color-hover);
+}
+
+.card button .button-text {
+  font-family: "IBM Plex Mono";
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-right: -0.3em; /* removes the effect of the letter spacing on the button*/
+}
+
+/* Image Counter / Position indicator */
+.index-holder {
+  display: flex;
+  flex-direction: row;
+  width: min-content;
+  height: 0.5em;
+  gap: 0.25em;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
+}
+
+.index-holder .index-indicator-on {
+  border-radius: 100%;
+  border: var(--pc-border-color) solid 1px;
+  aspect-ratio: 1;
+  height: 100%;
+  background-color: var(--pc-accent-color);
+}
+
+.index-holder .index-indicator-off {
+  border-radius: 100%;
+  border: var(--pc-border-color) solid 1px;
+  aspect-ratio: 1;
+  height: 100%;
+  background-color: transparent;
+}
+
+/* Enlarged image overlay*/
+.image-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b3aeaea5;
+  cursor: pointer;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.image-overlay img {
+  height: 80dvh;
+  border: var(--pc-border-color) solid 2px;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+  .image-overlay img {
+    width: 80dvw;
+    height: fit-content;
+  }
+}
