@@ -9,10 +9,20 @@
 :root {
   font-size: 16px;
   user-select: none;
-  --ap-title-color: #fefefe;
+  /* --ap-title-color: #fefefe;
   --ap-text-color: #ffffff;
   --ap-background-color: #2f4ae6e3;
-  --ap-border-color: #afb9e6;
+  --ap-border-color: #afb9e6; 
+  --ap-timeline-color: rgba(255, 255, 255, 0.583)
+  --ap-timeline-color-center:rgba(255, 255, 255, 1)
+  --ap-timeline-marker-color: #FFFFFF */
+  --ap-title-color: #373030;
+  --ap-text-color: #373030;
+  --ap-background-color: #ecedf4e3;
+  --ap-border-color: #606371;
+  --ap-timeline-color: rgba(96, 99, 113, 0.533);
+  --ap-timeline-color-center: rgba(96, 99, 113, 1);
+  --ap-timeline-marker-color: #f5861d;
 }
 
 @media only screen and (max-width: 768px) {
@@ -51,10 +61,8 @@
 .button-holder .button {
   color: var(--ap-text-color);
   box-sizing: border-box;
-  text-align: ;
   align-items: center;
   height: 2em;
-  /* padding: 0.25em; */
   aspect-ratio: 1;
   background-color: rgba(255, 255, 255, 0);
   border: var(--ap-border-color) solid 1px;
@@ -119,18 +127,18 @@
   height: 2px;
   background-image: linear-gradient(
     to left,
-    rgba(255, 255, 255, 0.583),
-    #ffffffff 50%,
-    rgba(255, 255, 255, 0.583)
+    var(--ap-timeline-color),
+    var(--ap-timeline-color-center) 50%,
+    var(--ap-timeline-color)
   );
 }
 
 .timeline-marker {
   height: 1em;
-  aspect-ratio: 0.25;
+  aspect-ratio: 0.4;
   position: absolute;
   z-index: 100;
-  background-color: #ffffff;
+  background-color: var(--ap-timeline-marker-color);
 }
 
 .audio-visualizer {

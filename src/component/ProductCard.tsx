@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./ProductCard.css";
 
 interface props {
@@ -23,6 +23,53 @@ const ProductCard = ({
   const [showing_front, setShowingFront] = useState(true);
   const [current_image, setCurrentImage] = useState(0);
   const [enlarged_image, setEnlargeImage] = useState(false);
+
+  // handling swipes
+  const touch_start_pos = useRef(-1);
+  const touch_end_pos = useRef(-1);
+
+  const touchStart = (e: React.TouchEvent) => {
+    touch_start_pos.current = e.touches[0].clientX;
+    touch_end_pos.current = -1;
+    e.preventDefault();
+  };
+  const touchMove = (e: React.TouchEvent) => {
+    touch_end_pos.current = e.touches[0].clientX;
+    e.preventDefault();
+  };
+  const touchEnd = (e: React.TouchEvent) => {
+    if (touch_start_pos.current < 0 || touch_end_pos.current) {
+      const distance = touch_start_pos.current - touch_end_pos.current;
+      const swipe_threshold = 50;
+      if (distance < -swipe_threshold) {
+        //right swipe
+        let new_index = current_image - 1;
+        if (new_index < 0) new_index += image_url.length;
+        setCurrentImage(new_index);
+      }
+      if (distance > swipe_threshold) {
+        // left swipe
+        setCurrentImage((current_image + 1) % image_url.length);
+      }
+    }
+    e.preventDefault();
+  };
+
+  const card_ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (card_ref.current) {
+      card_ref.current.addEventListener("touchstart", touchStart, {
+        passive: false,
+      });
+      card_ref.current.addEventListener("touchend", touchEnd, {
+        passive: false,
+      });
+      card_ref.current.addEventListener("touchmove", touchMove, {
+        passive: false,
+      });
+    }
+  });
+
   return (
     <>
       {enlarged_image && (
@@ -32,7 +79,10 @@ const ProductCard = ({
             setEnlargeImage(false);
           }}
         >
-          <img src={image_url[current_image]} />
+          <div className="image-section">
+            <img src={image_url[current_image]} />
+            <button>X</button>
+          </div>
         </div>
       )}
       <div className="card">
@@ -41,6 +91,7 @@ const ProductCard = ({
         </div>
         <div
           className="side"
+          ref={card_ref}
           onClick={() => {
             setEnlargeImage(true);
           }}

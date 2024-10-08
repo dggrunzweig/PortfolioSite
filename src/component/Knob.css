@@ -1,0 +1,104 @@
+:root {
+  --knob-bg-color: #e3e9ee;
+  --knob-bg-color-2: #cfd6dc;
+  --knob-text-color: #18191a;
+  --knob-border-color: #b1b7bc46;
+  --knob-marker-color: #f93239;
+  --knob-size: 96px;
+}
+
+.knob * {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.knob {
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
+  background-color: var(--knob-bg-color);
+  width: 10em;
+  max-width: 10em;
+  height: 10em;
+  min-height: 10em;
+  color: var(--knob-text-color);
+  box-sizing: content-box;
+  padding: 1em 1em 1em 1em;
+  gap: 1em;
+  font-family: Inter;
+  border: var(--knob-border-color) solid 1px;
+}
+.knob .knob-title {
+  width: 100%;
+  height: min-content;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.knob .knob-dial-border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  aspect-ratio: 1;
+  height: var(--knob-size);
+  border-radius: 100%;
+  cursor: grab;
+  box-shadow: 4px 4px 8px 3px #00000031;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
+  z-index: 3;
+}
+
+.knob .knob-dial-border .knob-tick {
+  position: absolute;
+  z-index: 1;
+  width: 120%;
+  height: 1px;
+  background-color: var(--knob-text-color);
+  top: 50%;
+}
+
+.knob .knob-dial-border .knob-dial {
+  display: flex;
+  z-index: 3;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  cursor: grab;
+  padding-top: calc(var(--knob-size) / 16);
+  border: var(--knob-border-color) solid 4px;
+  background-color: var(--knob-bg-color);
+}
+
+.knob .knob-dial-border .knob-dial .knob-marker {
+  height: calc(var(--knob-size) / 6);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: var(--knob-marker-color);
+  box-shadow: inset 2px 2px 3px 0px #00000064;
+
+  /* "aspect-square rounded-full h-1/6 mt-1 " +
+    ColorPalette(palette).knob_dot */
+}
+
+.knob .knob-value {
+  text-align: right;
+  width: 100%;
+}

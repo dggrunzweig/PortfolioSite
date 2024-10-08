@@ -108,7 +108,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
             const render = () => {
               if (ctx) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = "#FFFFFF";
+                ctx.fillStyle = "#373030";
                 const data = new Float32Array(num_samples);
                 analyzer.current.getFloatFrequencyData(data);
                 let bin_sum = new Array<number>(3).fill(0);
@@ -247,6 +247,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
+            style={{ paddingTop: "0.25em" }}
             onClick={() => {
               StartBufferAtTime(0, false, speeds[playback_speed]);
             }}
@@ -256,6 +257,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
+            style={{ paddingBottom: "0.25em" }}
             onMouseDown={() => {
               StartBufferAtTime(current_time, true, 1);
             }}
@@ -274,6 +276,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
+            style={{ paddingBottom: is_playing ? "0.25em" : "1px" }}
             onClick={() => {
               Play();
             }}
@@ -283,6 +286,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
+            style={{ paddingBottom: "0.25em" }}
             onMouseDown={() => {
               StartBufferAtTime(current_time, false, 2);
             }}

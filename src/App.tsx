@@ -1,38 +1,21 @@
+import { useRef } from "react";
 import "./App.css";
 import AudioPlayer from "./component/AudioPlayer";
+import ChillitsLineup from "./component/SummerSale";
+import Knob from "./component/Knob";
 import ProductCard from "./component/ProductCard";
+import SummerSale from "./component/SummerSale";
+
 function App() {
+  const knobOnChange = (value: number) => {
+    console.log("Knob Value: " + value);
+  };
   return (
     <>
       <div className="app">
         <div className="header1">David Grunzweig</div>
         <div className="header2">Front-end Design Portfolio</div>
-        <div className="portfolio-item">
-          <div className="description">
-            <div className="header1">Audio Player</div>
-            <div className="header3">
-              An animated audio player widget built with React, canvas
-              animations, and Web Audio, requires no external libraries.
-              Inspired by the flat interface design of the early iPod, the type
-              is a modernized version of Susan Kare's Chicago.
-              <br />
-              <br />
-              The react component accepts a URL to a file and a title string as
-              the input. The controls allow a user to restart, rewind,
-              play/pause, fast forward and adjust the playback speed. The user
-              can drag the position of the playhead to change to a different
-              point in the track. The animation uses the frequency content of
-              the current audio data to animate a custom waveform design. The
-              ability for the user to modify the sound of the recording with the
-              rewind, fast-forward, and playback rate controls reminds a user of
-              more traditional formats like records or cassettes.
-            </div>
-          </div>
-          <AudioPlayer
-            audio_file_url="audio_files/Ron_Trent.mp3"
-            title="Ron Trent - Morning Factory"
-          />
-        </div>
+
         <div className="portfolio-item">
           <div className="description">
             <div className="header1">Product Card</div>
@@ -124,53 +107,132 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
             />
           </div>
         </div>
+
+        <div className="portfolio-item">
+          <div className="description">
+            <div className="header1">Pure CSS and React Knob</div>
+            <div className="header3">
+              A controllable knob built with React and CSS. Inspired by the
+              style of the legendary Vestex rotary mixers used by early House
+              and Techno DJs. The subtle skeumorphic design pays tribute to it's
+              physical ancestor while keeping a clean and minimal design style
+              rooted in the digital present.
+              <br />
+              <br />A developer can set the name, initial value, min value, max
+              value, update function, and an enabled flag. The knob can be set
+              to provide either float or integer values depending on the
+              settings provided by developer. If the knob is rotated while the
+              "shift" key is held, the knob snaps to max or min values.
+              <br />
+              <br />
+              Three examples are provided, the first uses integer values, the
+              second uses float, and the third is how the knob looks when
+              disabled.
+            </div>
+          </div>
+          <div className="knob-div">
+            <Knob
+              name="Angle"
+              units="˚"
+              onChange={knobOnChange}
+              init_value={90}
+              min_value={0}
+              max_value={270}
+              enabled={true}
+              use_float={false}
+            ></Knob>
+            <Knob
+              name="Level"
+              units="dB"
+              onChange={knobOnChange}
+              init_value={-12}
+              min_value={-40}
+              max_value={6}
+              enabled={true}
+              use_float={true}
+            ></Knob>
+            <Knob
+              name="Level"
+              units="dB"
+              onChange={knobOnChange}
+              init_value={0}
+              min_value={-60}
+              max_value={12}
+              enabled={false}
+              use_float={false}
+            ></Knob>
+          </div>
+          <div className="knob-images">
+            <img src="images/vestax-1.webp"></img>
+            <img src="images/vestax-2.webp"></img>
+          </div>
+          <div className="portfolio-item">
+            <div className="description">
+              <div className="header1">Audio Player</div>
+              <div className="header3">
+                An animated audio player widget built with React, canvas
+                animations, and Web Audio, requires no external libraries.
+                Inspired by the flat interface design of the early iPod, the
+                type is a modernized version of Susan Kare's Chicago.
+                <br />
+                <br />
+                The react component accepts a URL to a file and a title string
+                as the input. The controls allow a user to restart, rewind,
+                play/pause, fast forward and adjust the playback speed. The user
+                can drag the position of the playhead to change to a different
+                point in the track. The animation uses the frequency content of
+                the current audio data to animate a custom waveform design. The
+                ability for the user to modify the sound of the recording with
+                the rewind, fast-forward, and playback rate controls reminds a
+                user of more traditional formats like records or cassettes.
+              </div>
+            </div>
+            <AudioPlayer
+              audio_file_url="audio_files/Ron_Trent.mp3"
+              title="Ron Trent - Morning Factory"
+            />
+            <img
+              src="images/ipod-classic.png"
+              style={{
+                width: "50%",
+                border: "#FFFFFF solid 1px",
+                borderRadius: "25px",
+              }}
+            ></img>
+          </div>
+        </div>
+        <div className="portfolio-item">
+          <div className="description">
+            <div className="header1">Endless Summer (or Winter) Animation</div>
+            <div className="header3">
+              An animated banner section with a nostalgic and hazy vibe. Two
+              possible color palettes, one for spring / summer and one for fall
+              / winter.
+              <br />
+              <br />
+              The animation is accomplished generatively with a canvas element,
+              the text defocusing is accomplished using CSS settings. The
+              animation is inspired by light leak and noise + dust in old films.
+            </div>
+          </div>
+          <SummerSale
+            title="End of Summer Sale is Here!"
+            onClick={() => {
+              console.log("End of Summer Sale Button Clicked");
+            }}
+            dusk_mode={false}
+          ></SummerSale>
+          <SummerSale
+            title="Winter Sale is Here!"
+            onClick={() => {
+              console.log("Winter Sale Button Clicked");
+            }}
+            dusk_mode={true}
+          ></SummerSale>
+        </div>
         <div className="portfolio-item">
           <div className="description">
             <div className="header1">Image Gallery</div>
-            <div className="header3">
-              An animated audio player widget built with React, canvas
-              animations, and Web Audio, requires no external libraries.
-              Inspired by the flat interface design of the early iPod, the type
-              is a modernized version of Susan Kare's Chicago.
-              <br />
-              <br />
-              The react component accepts a URL to a file and a title string as
-              the input. The controls allow a user to restart, rewind,
-              play/pause, fast forward and adjust the playback speed. The user
-              can drag the position of the playhead to change to a different
-              point in the track. The animation uses the frequency content of
-              the current audio data to animate a custom waveform design. The
-              ability for the user to modify the sound of the recording with the
-              rewind, fast-forward, and playback rate controls reminds a user of
-              more traditional formats like records or cassettes.
-            </div>
-          </div>
-        </div>
-        <div className="portfolio-item">
-          <div className="description">
-            <div className="header1">Buttons</div>
-            <div className="header3">
-              An animated audio player widget built with React, canvas
-              animations, and Web Audio, requires no external libraries.
-              Inspired by the flat interface design of the early iPod, the type
-              is a modernized version of Susan Kare's Chicago.
-              <br />
-              <br />
-              The react component accepts a URL to a file and a title string as
-              the input. The controls allow a user to restart, rewind,
-              play/pause, fast forward and adjust the playback speed. The user
-              can drag the position of the playhead to change to a different
-              point in the track. The animation uses the frequency content of
-              the current audio data to animate a custom waveform design. The
-              ability for the user to modify the sound of the recording with the
-              rewind, fast-forward, and playback rate controls reminds a user of
-              more traditional formats like records or cassettes.
-            </div>
-          </div>
-        </div>
-        <div className="portfolio-item">
-          <div className="description">
-            <div className="header1">Audio Player</div>
             <div className="header3">
               An animated audio player widget built with React, canvas
               animations, and Web Audio, requires no external libraries.
