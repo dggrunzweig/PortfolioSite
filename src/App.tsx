@@ -1,4 +1,3 @@
-import { Children, useRef } from "react";
 import "./App.css";
 import AudioPlayer from "./component/AudioPlayer";
 import Knob from "./component/Knob";

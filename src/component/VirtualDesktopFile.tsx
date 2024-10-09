@@ -1,4 +1,4 @@
-import { ReactElement, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { PseudoFile } from "./VirtualDesktop";
 
 interface props {
@@ -62,10 +62,10 @@ const VirtualDesktopFile = ({
           mouse_offset.current = [e.clientX - bounds.x, e.clientY - bounds.y];
           mouse_start_pos.current = [e.clientX, e.clientY];
         }}
-        onMouseUp={(e) => {
+        onMouseUp={() => {
           mouse_down.current = false;
         }}
-        onMouseLeave={(e) => {
+        onMouseLeave={() => {
           mouse_down.current = false;
         }}
         style={{

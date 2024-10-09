@@ -83,7 +83,10 @@ const SummerSale = ({ title, onClick, dusk_mode }: props) => {
           const w = canvas.width;
           const h = canvas.height;
 
-          if ((time - last_frame_time.current) / 1000 > 1 / fps) {
+          if (
+            (time.getTime() - last_frame_time.current.getTime()) / 1000 >
+            1 / fps
+          ) {
             const seconds = time.getSeconds() + time.getMilliseconds() / 1000;
 
             // clear background

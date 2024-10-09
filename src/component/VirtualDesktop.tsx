@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./VirtualDesktop.css";
 import VirtualDesktopFile from "./VirtualDesktopFile";
 

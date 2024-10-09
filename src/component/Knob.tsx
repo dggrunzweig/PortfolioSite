@@ -26,15 +26,15 @@ const Knob = ({
     return Math.max(min_x, Math.min(x, max_x));
   };
 
-  const touchStart = (e: React.TouchEvent) => {
+  const touchStart = (e: any) => {
     setMouseClicked(true);
     e.preventDefault();
   };
-  const touchEnd = (e: React.TouchEvent) => {
+  const touchEnd = (e: any) => {
     setMouseClicked(false);
     e.preventDefault();
   };
-  const touchMove = (e: React.TouchEvent) => {
+  const touchMove = (e: any) => {
     if (mouse_clicked) {
       const bounds = e.currentTarget.getBoundingClientRect();
       const x = (e.touches[0].clientX - bounds.left) / bounds.width;

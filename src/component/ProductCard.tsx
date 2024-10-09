@@ -28,16 +28,16 @@ const ProductCard = ({
   const touch_start_pos = useRef(-1);
   const touch_end_pos = useRef(-1);
 
-  const touchStart = (e: React.TouchEvent) => {
+  const touchStart = (e: any) => {
     touch_start_pos.current = e.touches[0].clientX;
     touch_end_pos.current = -1;
     e.preventDefault();
   };
-  const touchMove = (e: React.TouchEvent) => {
+  const touchMove = (e: any) => {
     touch_end_pos.current = e.touches[0].clientX;
     e.preventDefault();
   };
-  const touchEnd = (e: React.TouchEvent) => {
+  const touchEnd = (e: any) => {
     if (touch_start_pos.current < 0 || touch_end_pos.current) {
       const distance = touch_start_pos.current - touch_end_pos.current;
       const swipe_threshold = 50;
@@ -93,7 +93,7 @@ const ProductCard = ({
           className="side"
           ref={card_ref}
           onClick={() => {
-            setEnlargeImage(true);
+            if (showing_front) setEnlargeImage(true);
           }}
           onMouseMove={(event) => {
             if (showing_front) {

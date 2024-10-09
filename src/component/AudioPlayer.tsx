@@ -7,7 +7,7 @@ import {
   createGain,
   db2mag,
   ReverseAudioBuffer,
-} from "../audio_utils";
+} from "./audio_utils";
 import "./AudioPlayer.css";
 
 const SecondsToDisplayTime = (seconds: number): string => {
