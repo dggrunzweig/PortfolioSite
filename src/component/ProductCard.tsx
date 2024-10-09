@@ -41,7 +41,7 @@ const ProductCard = ({
       e.preventDefault();
     };
     const touchEnd = (e: any) => {
-      if (touch_start_pos.current > 0 || touch_end_pos.current > 0) {
+      if (touch_start_pos.current > 0 && touch_end_pos.current > 0) {
         const distance = touch_start_pos.current - touch_end_pos.current;
         const swipe_threshold = 50;
         if (distance < -swipe_threshold) {
