@@ -21,6 +21,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-image: -webkit-linear-gradient(
+    to bottom right,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
+  background-image: -moz-linear-gradient(
+    to bottom right,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
   background-image: linear-gradient(
     to bottom right,
     var(--knob-bg-color),
@@ -57,6 +67,16 @@
   cursor: grab;
   box-shadow: 4px 4px 8px 3px #00000031;
   position: relative;
+  background-image: -webkit-linear-gradient(
+    to bottom left,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
+  background-image: -moz-linear-gradient(
+    to bottom left,
+    var(--knob-bg-color),
+    var(--knob-bg-color-2)
+  );
   background-image: linear-gradient(
     to bottom left,
     var(--knob-bg-color),

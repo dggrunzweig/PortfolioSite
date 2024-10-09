@@ -68,11 +68,16 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  /* background-image: linear-gradient(
+  background-image: -webkit-linear-gradient(
     to bottom right,
-    rgb(79, 170, 99),
-    rgb(54, 54, 177)
-  ); */
+    var(--grad-1-color),
+    var(--grad-2-color)
+  );
+  background-image: -moz-linear-gradient(
+    to bottom right,
+    var(--grad-1-color),
+    var(--grad-2-color)
+  );
 
   background-image: linear-gradient(
     to bottom right,
