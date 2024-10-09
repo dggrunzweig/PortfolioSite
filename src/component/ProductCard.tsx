@@ -37,10 +37,11 @@ const ProductCard = ({
     };
     const touchMove = (e: any) => {
       touch_end_pos.current = e.touches[0].clientX;
+      touch_start_pos.current = -1;
       e.preventDefault();
     };
     const touchEnd = (e: any) => {
-      if (touch_start_pos.current < 0 || touch_end_pos.current) {
+      if (touch_start_pos.current > 0 || touch_end_pos.current > 0) {
         const distance = touch_start_pos.current - touch_end_pos.current;
         const swipe_threshold = 50;
         if (distance < -swipe_threshold) {
