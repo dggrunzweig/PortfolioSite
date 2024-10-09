@@ -64,7 +64,8 @@
   color: var(--ap-text-color);
   box-sizing: border-box;
   align-items: center;
-  height: 2em;
+  height: 3em;
+  padding: 0em;
   aspect-ratio: 1;
   background-color: rgba(255, 255, 255, 0);
   border: var(--ap-border-color) solid 1px;
@@ -127,6 +128,18 @@
 .timeline-line {
   width: 100%;
   height: 2px;
+  background-image: -moz-linear-gradient(
+    to left,
+    var(--ap-timeline-color),
+    var(--ap-timeline-color-center) 50%,
+    var(--ap-timeline-color)
+  );
+  background-image: -webkit-linear-gradient(
+    to left,
+    var(--ap-timeline-color),
+    var(--ap-timeline-color-center) 50%,
+    var(--ap-timeline-color)
+  );
   background-image: linear-gradient(
     to left,
     var(--ap-timeline-color),

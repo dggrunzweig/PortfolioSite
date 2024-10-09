@@ -43,9 +43,10 @@ interface props {
 }
 
 const AudioPlayer = ({ audio_file_url, title }: props) => {
-  const ref = useRef(null);
+  const canvas_ref = useRef(null);
   const audio_ctx = useRef<AudioContext>(createAudioContext());
   const [file_loaded, setFileLoaded] = useState(false);
+  const canvas_setup = useRef(false);
   const file_player = useRef<AudioBufferSourceNode>(null!);
   const audio_buffer = useRef<AudioBuffer>(null!);
   const rev_audio_buffer = useRef<AudioBuffer>(null!);
@@ -81,21 +82,22 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
   };
 
   useEffect(() => {
-    if (ref.current) {
+    if (canvas_ref.current && !canvas_setup.current) {
+      // prevents double assignment of this code while react is in strict mode
+      canvas_setup.current = true;
       // get the canvas context for drawing
-      const canvas = ref.current as HTMLCanvasElement;
+      const canvas = canvas_ref.current as HTMLCanvasElement;
       const ctx = canvas.getContext("2d");
       const dpr = window.devicePixelRatio;
       if (ctx) ctx.scale(dpr, dpr);
-      canvas.width = canvas.offsetWidth * dpr;
-      canvas.height = canvas.offsetHeight * dpr;
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
       // load audio file into buffer
       CreateBufferFromFile(audio_ctx.current, audio_file_url)
         .then((buffer) => {
           if (buffer) {
             setDuration(buffer.duration);
             setCurrentTime(0);
-            setFileLoaded(true);
             audio_buffer.current = buffer;
             rev_audio_buffer.current = ReverseAudioBuffer(buffer);
             ConnectNodes();
@@ -146,6 +148,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
               requestID = requestAnimationFrame(render);
             };
             render();
+            setFileLoaded(true);
 
             return () => {
               cancelAnimationFrame(requestID);
@@ -181,8 +184,8 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
 
   let playhead_position = 0;
   // translate div element based on position in the audio track
-  if (ref.current) {
-    const canvas = ref.current as HTMLCanvasElement;
+  if (canvas_ref.current) {
+    const canvas = canvas_ref.current as HTMLCanvasElement;
     playhead_position = Math.floor(
       (canvas.offsetWidth * current_time) / duration
     );
@@ -218,7 +221,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
   return (
     <div className="audio-player">
       {title != "" && <span className="title">{title}</span>}
-      <canvas className="audio-visualizer" ref={ref} />
+      <canvas className="audio-visualizer" ref={canvas_ref} />
       {!file_loaded ? (
         <div className="loading-div">loading...</div>
       ) : (
@@ -257,7 +260,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
-            style={{ paddingBottom: "0.25em" }}
+            style={{ paddingBottom: "1px" }}
             onMouseDown={() => {
               StartBufferAtTime(current_time, true, 1);
             }}
@@ -276,7 +279,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
-            style={{ paddingBottom: is_playing ? "0.25em" : "1px" }}
+            style={{ paddingBottom: is_playing ? "2px" : "0px" }}
             onClick={() => {
               Play();
             }}
@@ -286,7 +289,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           <button
             className="button"
             disabled={!file_loaded}
-            style={{ paddingBottom: "0.25em" }}
+            style={{ paddingBottom: "1px" }}
             onMouseDown={() => {
               StartBufferAtTime(current_time, false, 2);
             }}
