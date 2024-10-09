@@ -109,6 +109,7 @@ const ProductCard = ({
               <img
                 src={image_url[current_image]}
                 style={showing_front ? {} : { filter: "blur(40px)" }}
+                draggable={false}
               />
             </div>
           }

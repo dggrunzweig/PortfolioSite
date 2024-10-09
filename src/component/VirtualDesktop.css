@@ -11,6 +11,8 @@
 
 .vd-main {
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   width: 100%;
   height: 80dvh;
   max-height: 800px;
@@ -147,6 +149,8 @@
   box-sizing: border-box;
   padding: 0em 0.5em 0em 0.5em;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .vd-main .vd-title {

@@ -9,6 +9,8 @@
 :root {
   font-size: 16px;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   /* --ap-title-color: #fefefe;
   --ap-text-color: #ffffff;
   --ap-background-color: #2f4ae6e3;

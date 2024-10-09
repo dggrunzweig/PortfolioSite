@@ -150,7 +150,7 @@ const SummerSale = ({ title, onClick, dusk_mode }: props) => {
 
           const font_color = text_color + " 0px 0px ";
           blurring_ref.current.style.textShadow =
-            font_color + blur_level_1 + "px";
+            font_color + blur_level_1.toFixed(2) + "px";
           render_id = window.requestAnimationFrame(animation);
         };
         animation();
@@ -169,14 +169,16 @@ const SummerSale = ({ title, onClick, dusk_mode }: props) => {
         <div className="sale-title-span" ref={blurring_ref}>
           {title}
         </div>
-        <div
-          className="button-span"
-          onClick={() => {
-            onClick();
-          }}
-          style={{ borderColor: text_color }}
-        >
-          View Now
+        <div className="grid-lower">
+          <div
+            className="button-span"
+            onClick={() => {
+              onClick();
+            }}
+            style={{ borderColor: text_color }}
+          >
+            View Now
+          </div>
         </div>
       </div>
     </div>

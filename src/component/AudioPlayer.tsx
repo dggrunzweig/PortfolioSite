@@ -85,7 +85,10 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
       // get the canvas context for drawing
       const canvas = ref.current as HTMLCanvasElement;
       const ctx = canvas.getContext("2d");
-
+      const dpr = window.devicePixelRatio;
+      if (ctx) ctx.scale(dpr, dpr);
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
       // load audio file into buffer
       CreateBufferFromFile(audio_ctx.current, audio_file_url)
         .then((buffer) => {
@@ -140,11 +143,8 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
                 }
                 frame_count++;
               }
-              requestAnimationFrame(render);
+              requestID = requestAnimationFrame(render);
             };
-
-            requestID = requestAnimationFrame(render);
-
             render();
 
             return () => {
@@ -160,7 +160,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
   }, []);
 
   const Play = () => {
-    if (audio_ctx.current) {
+    if (audio_ctx.current && file_player.current && file_loaded) {
       if (audio_ctx.current.state == "suspended") {
         audio_ctx.current.resume();
       }
@@ -194,7 +194,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
     playback_rate = 1
   ) => {
     setCurrentTime(time);
-    if (is_playing) {
+    if (is_playing && file_player.current) {
       file_player.current.stop();
       clearInterval(timer_id.current);
       ConnectNodes(reverse);

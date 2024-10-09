@@ -21,6 +21,9 @@
   gap: 0.5em;
   color: var(--pc-type-color);
   background-color: var(--pc-background-color);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .name {
@@ -192,12 +195,13 @@
 
 .image-overlay .image-section {
   height: 80dvh;
+  width: fit-content;
   border: var(--pc-border-color) solid 2px;
   position: relative;
 }
 
 .image-section img {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: contain;
 }
@@ -221,5 +225,11 @@
   .image-overlay .image-section {
     width: 80dvw;
     height: fit-content;
+  }
+
+  .image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
