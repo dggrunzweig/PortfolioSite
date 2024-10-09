@@ -1,0 +1,106 @@
+:root {
+  --portfolio-type-color: #222240;
+  --portfolio-header-color: #222240;
+  --portfolio-description-bg-color: rgba(204, 207, 222, 0.366);
+  --portfolio-title-bg-grad: #ffffff58;
+  --portfolio-divider-color: #acacb9;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4em;
+  padding-bottom: 4em;
+  padding-top: 1.5em;
+  border-top: var(--portfolio-divider-color) solid 1px;
+  color: var(--portfolio-type-color);
+  width: 100%;
+}
+
+.portfolio-item .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: var(--portfolio-description-bg-color);
+  padding: 2em;
+  text-align: left;
+  width: 100%;
+}
+
+.portfolio-item .description .header1 {
+  padding: 0em;
+  margin: 0em;
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 3em;
+  letter-spacing: 0.15em;
+  color: var(--portfolio-type-color);
+  width: 100%;
+  min-width: min-content;
+  text-align: left;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  box-sizing: border-box;
+  background-color: var(--portfolio-title-bg-grad);
+  color: var(--portfolio-header-color);
+  font-family: "Inter";
+  text-transform: uppercase;
+  letter-spacing: 0em;
+  /* box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.109); */
+}
+
+.portfolio-item .description .header2 {
+  padding: 0em;
+  margin: 0em;
+  font-family: "Inter";
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--portfolio-type-color);
+  text-align: left;
+  width: 100%;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.portfolio-item .child-space {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.portfolio-item .portfolio-gallery {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.portfolio-item .portfolio-gallery .portfolio-gallery-photo {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+  .portfolio-item .description .header1 {
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .portfolio-item .description .header2 {
+    font-size: 1em;
+  }
+
+  .portfolio-item .description .header3 {
+    text-align: left;
+    width: 100%;
+    padding: 0em;
+    font-size: 1em;
+  }
+}

@@ -34,87 +34,29 @@
 :root {
   --grad-1-color: rgb(234, 237, 243);
   --grad-2-color: rgb(218, 222, 231);
-  --type-color: #222240;
-  --header-color: #222240;
-  --description-bg-color: rgba(204, 207, 222, 0.366);
-  --title-bg-grad: #ffffff58;
-  --divider-color: #acacb9;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.header1 {
+.title1 {
   padding: 0em;
   margin: 0em;
   font-family: "Inter";
   font-weight: 300;
   font-size: 3em;
   letter-spacing: 0.15em;
-  color: var(--type-color);
+  color: var(--portfolio-type-color);
 }
 
-.header2 {
+.title2 {
   padding: 0em;
   margin: 0em;
   font-family: "Inter";
   font-size: 2em;
   font-weight: 300;
-  color: var(--type-color);
-}
-
-.header3 {
-  padding: 0em;
-  margin: 0em;
-  font-family: "Inter";
-  font-size: 1.5em;
-  font-weight: 300;
-  color: var(--type-color);
-}
-
-.portfolio-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4em;
-  padding-bottom: 4em;
-  padding-top: 1.5em;
-  border-top: var(--divider-color) solid 1px;
-  color: var(--type-color);
-}
-
-.portfolio-item .description {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  background-color: var(--description-bg-color);
-  padding: 2em;
-}
-
-.portfolio-item .description .header1 {
-  width: 100%;
-  min-width: min-content;
-  text-align: left;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  box-sizing: border-box;
-  background-color: var(--title-bg-grad);
-  color: var(--header-color);
-  font-family: "Inter";
-  text-transform: uppercase;
-  letter-spacing: 0em;
-  /* box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.109); */
-}
-
-.portfolio-item .description .header2 {
-  text-align: left;
-  width: 100%;
-}
-
-.portfolio-item .description .header3 {
-  text-align: left;
-  width: 100%;
-  padding: 0.5em 0.5em 0.25em 1.5em;
+  color: var(--portfolio-type-color);
 }
 
 .app {
@@ -157,7 +99,8 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: #332e2e;
+  /* background-color: #332e2e; */
+  background-image: url("images/wesley-tingey--concrete.avif");
   padding: 6em 2em 6em 2em;
   box-sizing: border-box;
 }
@@ -171,24 +114,9 @@ body {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: #332e2e solid 2px;
+  border: #332e2e solid 1px;
   padding: 2em 2em 2em 2em;
   box-sizing: border-box;
-}
-
-.portfolio-item .knob-images {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.portfolio-item .knob-images img {
-  width: 45%;
-  object-fit: contain;
 }
 
 @media only screen and (max-width: 768px) {
@@ -203,32 +131,5 @@ body {
   }
   .header2 {
     font-size: 1em;
-  }
-  .portfolio-item .description .header1 {
-    text-align: center;
-    font-size: 2em;
-  }
-
-  .portfolio-item .description .header2 {
-    font-size: 1em;
-  }
-
-  .portfolio-item .description .header3 {
-    text-align: left;
-    width: 100%;
-    padding: 0em;
-    font-size: 1em;
-  }
-
-  .portfolio-item .product-card-viewer {
-    flex-direction: column;
-  }
-
-  .portfolio-item .knob-images {
-    flex-direction: column;
-  }
-
-  .portfolio-item .knob-images img {
-    width: 100%;
   }
 }
