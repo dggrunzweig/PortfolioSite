@@ -27,6 +27,8 @@ const ProductCard = ({
   // handling swipes
   const touch_start_pos = useRef(-1);
   const touch_end_pos = useRef(-1);
+  const touch_move = useRef(false);
+  const handlers_added = useRef(false);
 
   const card_ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -37,28 +39,37 @@ const ProductCard = ({
     };
     const touchMove = (e: any) => {
       touch_end_pos.current = e.touches[0].clientX;
-      touch_start_pos.current = -1;
+      touch_move.current = true;
       e.preventDefault();
     };
     const touchEnd = (e: any) => {
-      if (touch_start_pos.current > 0 && touch_end_pos.current > 0) {
+      e.preventDefault();
+      if (touch_move.current) {
         const distance = touch_end_pos.current - touch_start_pos.current;
-        const swipe_threshold = 200;
+        const swipe_threshold = 50;
         if (distance > swipe_threshold) {
           //right swipe
           let new_index = current_image - 1;
           if (new_index < 0) new_index += image_url.length;
-          setCurrentImage(new_index);
+          setCurrentImage((ci) => {
+            let new_index = ci - 1;
+            if (new_index < 0) new_index += image_url.length;
+            return new_index;
+          });
         } else if (distance < -swipe_threshold) {
           // left swipe
-          setCurrentImage((current_image + 1) % image_url.length);
-        } else {
-          if (showing_front) setEnlargeImage(true);
+          setCurrentImage((ci) => {
+            return (ci + 1) % image_url.length;
+          });
         }
+        touch_move.current = false;
+      } else {
+        if (showing_front) setEnlargeImage(true);
       }
-      e.preventDefault();
     };
-    if (card_ref.current) {
+    if (card_ref.current && !handlers_added.current) {
+      // prevents duplicate adding
+      handlers_added.current = true;
       if (window.innerWidth < 768) {
         is_mobile.current = true;
         card_ref.current.addEventListener("touchstart", touchStart, {
@@ -72,7 +83,7 @@ const ProductCard = ({
         });
       }
     }
-  });
+  }, []);
 
   return (
     <>
@@ -83,8 +94,10 @@ const ProductCard = ({
             setEnlargeImage(false);
           }}
         >
-          <div className="image-section">
-            <img src={image_url[current_image]} />
+          <div
+            className="image-section"
+            style={{ backgroundImage: `url(${image_url[current_image]})` }}
+          >
             <button>X</button>
           </div>
         </div>
