@@ -1,12 +1,38 @@
+/* dm-mono-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/type/dm_mono/dm-mono-v14-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* dm-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/type/dm_mono/dm-mono-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* dm-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/type/dm_mono/dm-mono-v14-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
   --vd-border-color: #5b5b5b;
-  --vd-background-color: #ecebea;
+  --vd-background-color: #eef0f1;
   --vd-window-bg-color: #bec5bf;
   --vd-box-shadow-color: #00000088;
   --vd-border-radius: 16px;
   --vd-file-border-radius: 4px;
-  --vd-text-title-color: #6a4040;
+  --vd-text-title-color: #3f3d3d;
   --vd-text-instruction-color: #281313;
+  --vd-text-size: 16px;
 }
 
 .vd-main {
@@ -14,15 +40,16 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   width: 100%;
-  height: 80dvh;
+  height: 90dvh;
   max-height: 800px;
-  font-size: 16px;
+  font-size: var(--vd-text-size);
   border: var(--vd-border-color) solid 3px;
   background-color: var(--vd-background-color);
   border-radius: var(--vd-border-radius);
   box-sizing: border-box;
   padding: 1em;
-  font-family: "IBM Plex Mono";
+  font-family: "DM Mono";
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -43,7 +70,6 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  width: fit-content;
   height: 100%;
   width: 100%;
   flex-wrap: wrap;
@@ -93,24 +119,26 @@
 
 .vd-main .vd-open-image {
   position: absolute;
-  width: fit-content;
-  max-width: 500px;
-  height: fit-content;
+  width: clamp(200px, 60%, 400px);
+  height: clamp(200px, 60%, 500px);
   align-items: center;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: scroll;
   gap: 0.5em;
   background-color: var(--vd-window-bg-color);
   border-radius: var(--vd-file-border-radius);
   box-shadow: var(--vd-box-shadow-color) 4px 5px 20px 2px;
+  transition-duration: "100ms";
+  transition-timing-function: "linear";
 }
 
 .vd-main .vd-open-image .vd-file-description {
-  width: 100%;
-  max-width: 400px;
+  width: auto;
+  height: fit-content;
   text-align: right;
-  padding: 0.5em 0.5em 0.5em 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.77);
   border-bottom-left-radius: var(--vd-file-border-radius);
@@ -118,7 +146,7 @@
   color: var(--vd-text-instruction-color);
 }
 
-.vd-main .vd-open-image .vd-button-row {
+.vd-main .vd-open-image .vd-top-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -132,26 +160,36 @@
   border-top-right-radius: var(--vd-file-border-radius);
   color: var(--vd-text-instruction-color);
 }
+.vd-main .vd-open-image .vd-top-bar .vd-button-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 2px;
+  box-sizing: border-box;
+  padding: 0px;
+  background-color: transparent;
+}
 
 .vd-main .vd-open-image .vd-button-row button {
   border-radius: 20%;
   aspect-ratio: 1;
-  height: 100%;
-  background-color: #ed3f3f;
+  height: max-content;
   color: rgb(249, 238, 238);
+  background-color: #2fd034;
   border: #fffefea9 solid 1px;
   position: relative;
   text-align: center;
-  padding: 4px 4px 4px 4px;
+  padding: 4px;
+  /* padding: 4px 4px 4px 4px; */
   box-sizing: border-box;
 }
 
 .vd-main .vd-open-image img {
-  height: fit-content;
-  max-height: 400px;
-  width: 100%;
-  max-width: 400px;
-  object-fit: contain;
+  flex: 2;
+  margin: 0px;
+  height: clamp(200px, 80%, 100%);
   box-sizing: border-box;
   padding: 0em 0.5em 0em 0.5em;
   user-select: none;
@@ -164,6 +202,11 @@
   color: var(--vd-text-title-color);
   text-align: right;
   text-transform: uppercase;
+  letter-spacing: -6px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .vd-main .vd-instructions {
@@ -173,4 +216,38 @@
   align-items: end;
   color: var(--vd-text-instruction-color);
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --vd-text-size: 12px;
+  }
+  .vd-main .vd-title {
+    font-size: 3em;
+    letter-spacing: -3px;
+  }
+  .vd-base-grid .vd-file-icons {
+    gap: 0.5em;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+  .vd-file .vd-file-name {
+    text-align: left;
+    width: max-content;
+    max-width: 100px;
+    height: fit-content;
+  }
+  .vd-main .vd-open-image {
+    position: absolute;
+    width: clamp(200px, 60%, 400px);
+    height: fit-content;
+    min-height: 100px;
+  }
+  .vd-main .vd-open-image img {
+    margin: 0px;
+    width: clamp(200px, 100%, 100%);
+    height: clamp(200px, 80%, 100%);
+    object-fit: contain;
+  }
 }

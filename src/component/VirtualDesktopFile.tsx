@@ -16,12 +16,13 @@ const VirtualDesktopFile = ({
   z_index,
   onClick,
 }: props) => {
-  const [x, setX] = useState(5 + 10 * Math.random());
+  const [x, setX] = useState(5 + 40 * Math.random());
   const [y, setY] = useState(10 + 15 * Math.random());
   const mouse_down = useRef(false);
   const mouse_offset = useRef([0, 0]);
   const mouse_start_pos = useRef([0, 0]);
   const self_ref = useRef(null!);
+  const [maximized, setMaximized] = useState(false);
 
   return (
     visible && (
@@ -68,24 +69,46 @@ const VirtualDesktopFile = ({
         onMouseLeave={() => {
           mouse_down.current = false;
         }}
-        style={{
-          top: `${y}%`,
-          left: `${x}%`,
-          zIndex: z_index,
-          transitionDuration: "100ms",
-          transitionTimingFunction: "linear",
-        }}
+        style={
+          maximized
+            ? {
+                top: "1%",
+                left: "1%",
+                width: "98%",
+                height: "98%",
+                zIndex: z_index,
+              }
+            : {
+                top: `${y}%`,
+                left: `${x}%`,
+                zIndex: z_index,
+                transitionDuration: "100ms",
+                transitionTimingFunction: "linear",
+              }
+        }
       >
-        <div className="vd-button-row">
+        <div className="vd-top-bar">
           {file.name}
-          <button
-            onClick={() => {
-              onClose();
-            }}
-          >
-            X
-          </button>
+          <div className="vd-button-row">
+            <button
+              onClick={() => {
+                setMaximized(!maximized);
+              }}
+            >
+              +
+            </button>
+            <button
+              style={{ backgroundColor: "#ed3f3f" }}
+              onClick={() => {
+                onClose();
+                setMaximized(false);
+              }}
+            >
+              X
+            </button>
+          </div>
         </div>
+
         <img src={file.image_url} draggable={false} />
         <div className="vd-file-description">{file.description}</div>
       </div>
