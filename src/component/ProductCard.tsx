@@ -42,8 +42,8 @@ const ProductCard = ({
     };
     const touchEnd = (e: any) => {
       if (touch_start_pos.current > 0 && touch_end_pos.current > 0) {
-        const distance = touch_start_pos.current - touch_end_pos.current;
-        const swipe_threshold = 50;
+        const distance = touch_end_pos.current - touch_start_pos.current;
+        const swipe_threshold = 100;
         if (distance < -swipe_threshold) {
           //right swipe
           let new_index = current_image - 1;
