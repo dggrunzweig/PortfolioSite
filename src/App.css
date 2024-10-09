@@ -94,8 +94,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-  /* background-color: #332e2e; */
-  background-image: url("images/wesley-tingey--concrete.avif");
+  background-color: #323131;
   padding: 6em 2em 6em 2em;
   box-sizing: border-box;
 }
