@@ -131,6 +131,7 @@
   height: min-content;
   background-color: var(--pc-button-color);
   border: var(--pc-border-color) solid 1px;
+  color: var(--pc-type-color);
 }
 
 .card button:hover {
