@@ -62,14 +62,28 @@ function App() {
   return (
     <>
       <div className="app">
-        <div className="title1">David Grunzweig</div>
-        <div className="title2">Front-end Design Portfolio</div>
+        <div className="intro">
+          <div className="name-section">
+            <div className="title1">David</div>
+            <div className="title1">Grunzweig</div>
+            <div className="title2">Front-end Design Portfolio</div>
+          </div>
+          <div className="about-section">
+            The following is a selection of digital design artifacts intended to
+            represent my skillset and design taste. <br />
+            <br />
+            All projects were built using ReactJS with vanilla Typescript and
+            CSS, no external libraries or React packages were used. <br />
+            <br />
+            Desktop and Mobile friendly.
+          </div>
+        </div>
+
         <PortfolioItem
           name="Audio Player"
           description={[
-            `An animated audio player widget built with React, canvas
-animations, and Web Audio, requires no external libraries.
-Inspired by the flat interface design of the early iPod and the text based UX in early WinAmp, the player uses Susan Kare's Chicago typeface and text character based icons.`,
+            `An animated audio player widget built with canvas animations and Web Audio.`,
+            `Inspired by the flat interface design of the early iPod and the text based UX in early WinAmp, the player uses Susan Kare's Chicago typeface and text character based icons.`,
             `The react component accepts a URL to a file and a title string as
 the input. The controls allow a user to restart, rewind,
 play/pause, fast forward and adjust the playback speed. The user
@@ -92,10 +106,13 @@ more traditional formats like records or cassettes.`,
           name="Virtual Desktop File Browser"
           description={[
             "A virtual desktop for browsing through photos or products.",
-            "Inspired by Helmet Lang's 1998 runway show 'Seance De Travail' which was the first digital only runway show. Released as a CD-ROM containing an application and images of the various clothing pieces. Images and text taken from Endyma Archive's site featuring pieces from this era of the designer.",
-            "Users can open an image by clicking on it, drag the pane around with the mouse, the panes are reordered when clicked. The list base React component takes a list of image URLs and item descriptions as an input and generates the layout automatically.",
+            "Inspired by Helmet Lang's 1998 runway show 'Seance De Travail' which was the first digital only runway show. It was released as a website and a CD-ROM containing photos and videos of the show.",
+            "Users can open an image by clicking on it, drag the pane around with the mouse, the panes are reordered when clicked. The list base React component takes a list of image URLs and item descriptions as an input and generates the layout automatically.  Images and text taken from Endyma Archive's site featuring pieces from this era of the designer.",
           ]}
-          image_urls={["images/helmut-lang-online-show-1998.webp"]}
+          image_urls={[
+            "helmut_lang/hl-cd-rom.webp",
+            "helmut_lang/hl-online-show.webp",
+          ]}
           children={<VirtualDesktop files={files} />}
         />
 
@@ -103,8 +120,8 @@ more traditional formats like records or cassettes.`,
           name="Product Card"
           description={[
             `An interactive product card ideal for technical leaning product design.`,
-            `The card is built with React and CSS. The developer provides product name, id, image urls, descriptions, price, and buy function as inputs. As a user moves their mouse across the image, the image will automatically change based on it's position within the image. Clicking "Info" will reveal a longer description of the product. Clicking the image will reveal an enlarged version of the image as an overlay. The use of high-viz and concrete color scheme along with technical typeface reinforces the stripped back and utilitarian aesthetic of the products.`,
             `Images from SSENSE, ACW, 1017 ALYX 9SM, and ACRONYM.`,
+            `The card is built with React and CSS. The developer provides product name, id, image urls, descriptions, price, and buy function as inputs. As a user moves their mouse across the image, the image will automatically change based on it's position within the image. Clicking "Info" will reveal a longer description of the product. Clicking the image will reveal an enlarged version of the image as an overlay. The use of high-viz and concrete color scheme along with technical typeface reinforces the stripped back and utilitarian aesthetic of the products.`,
           ]}
           image_urls={[]}
           children={
@@ -116,10 +133,10 @@ more traditional formats like records or cassettes.`,
                 full_desc="A lightweight textured nylon jacket, in a relaxed fit. CORDURA® pads the chest and neck, adding contrast to the zip area and a technical affect. Sleeves carry a deep hem and internal cuff. On the body, curved panels build a long, asymmetric seam running from front to back hem."
                 id="1"
                 image_url={[
-                  "/acw_jacket/acw_1.webp",
-                  "/acw_jacket/acw_2.webp",
-                  "/acw_jacket/acw_3.webp",
-                  "/acw_jacket/acw_4.webp",
+                  "acw_jacket/acw_1.webp",
+                  "acw_jacket/acw_2.webp",
+                  "acw_jacket/acw_3.webp",
+                  "acw_jacket/acw_4.webp",
                 ]}
                 onClickBuy={(id: string): void => {
                   console.log("Attempting to buy: " + id);
@@ -132,10 +149,10 @@ more traditional formats like records or cassettes.`,
                 full_desc="A Merino wool crewneck. The layering effect is achieved through a double-bed jacquard technique. This is augmented by the fashioning of threads throughout."
                 id="2"
                 image_url={[
-                  "/acw_sweater/sweater-1.webp",
-                  "/acw_sweater/sweater-2.webp",
-                  "/acw_sweater/sweater-3.webp",
-                  "/acw_sweater/sweater-4.webp",
+                  "acw_sweater/sweater-1.webp",
+                  "acw_sweater/sweater-2.webp",
+                  "acw_sweater/sweater-3.webp",
+                  "acw_sweater/sweater-4.webp",
                 ]}
                 onClickBuy={(id: string): void => {
                   console.log("Attempting to buy: " + id);
@@ -149,10 +166,10 @@ more traditional formats like records or cassettes.`,
               Ankle-high buffed calfskin boots in black. Wraparound cord with signature press-release buckle at collar. Webbing pull-loop at heel collar. Buffed calfskin lining. Stacked calfskin heel. Calfskin sole with rubber injection. Heel: H1"
                 id="3"
                 image_url={[
-                  "/alyx_boot/boot-1.avif",
-                  "/alyx_boot/boot-2.avif",
-                  "/alyx_boot/boot-3.avif",
-                  "/alyx_boot/boot-4.avif",
+                  "alyx_boot/boot-1.avif",
+                  "alyx_boot/boot-2.avif",
+                  "alyx_boot/boot-3.avif",
+                  "alyx_boot/boot-4.avif",
                 ]}
                 onClickBuy={(id: string): void => {
                   console.log("Attempting to buy: " + id);
@@ -166,10 +183,10 @@ more traditional formats like records or cassettes.`,
 Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch laminate stand collar, hem, and cuffs. Zip closure. Zip pockets. Velcro tabs at front and sleeves. Concealed bungee-style drawstring at hem. Zip expansion panel at sides seams. Flap pocket at sleeve. Locker loop at back collar. Detachable elasticized shoulder strap at interior. Taped seams. Unlined. Includes studded and logo-printed velcro tape"
                 id="4"
                 image_url={[
-                  "/ACRONYM-Jacket/jacket-1.avif",
-                  "/ACRONYM-Jacket/jacket-2.avif",
-                  "/ACRONYM-Jacket/jacket-3.avif",
-                  "/ACRONYM-Jacket/jacket-4.avif",
+                  "ACRONYM-Jacket/jacket-1.avif",
+                  "ACRONYM-Jacket/jacket-2.avif",
+                  "ACRONYM-Jacket/jacket-3.avif",
+                  "ACRONYM-Jacket/jacket-4.avif",
                 ]}
                 onClickBuy={(id: string): void => {
                   console.log("Attempting to buy: " + id);
@@ -179,19 +196,19 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
           }
         />
         <PortfolioItem
-          name="Pure CSS and React Knob"
+          name="Analog Knob"
           description={[
-            `A controllable knob built with React and CSS. Inspired by the
+            `Inspired by the
               style of the legendary Vestex rotary mixers used by early House
-              and Techno DJs. The subtle skeumorphic design pays tribute to it's
+              and Techno DJs. `,
+            `The subtle skeumorphic design pays tribute to it's
               physical ancestor while keeping a clean and minimal design style
-              rooted in the digital present.`,
+              rooted in the digital present. `,
             `A developer can set the name, initial value, min value, max
               value, update function, and an enabled flag. The knob can be set
               to provide either float or integer values depending on the
               settings provided by developer. If the knob is rotated while the
-              "shift" key is held, the knob snaps to max or min values.`,
-            `Three examples are provided, the first uses integer values, the
+              "shift" key is held, the knob snaps to max or min values. Three examples are provided, the first uses integer values, the
               second uses float, and the third is how the knob looks when
               disabled.`,
           ]}
@@ -235,8 +252,8 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
         <PortfolioItem
           name="Endless Summer (or Winter) Animation"
           description={[
-            `An animated banner section with a nostalgic and hazy vibe. Two
-          possible color palettes, one for spring / summer and one for fall /
+            `An animated banner section with a nostalgic and hazy vibe.`,
+            `Two possible color palettes, one for spring / summer and one for fall /
           winter.`,
             `The animation is accomplished generatively with a canvas element,
           the text defocusing is accomplished using CSS settings. The

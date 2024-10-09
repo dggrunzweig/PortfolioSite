@@ -30,23 +30,52 @@
   box-sizing: border-box;
 }
 
+.intro {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  color: var(--portfolio-type-color);
+  font-family: "Inter";
+  font-weight: 300;
+  padding: 0px;
+}
+
+.name-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+  padding: 0em 2em 2em 0em;
+  border-right: var(--portfolio-divider-color) solid 1px;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+.about-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter";
+  font-size: 2em;
+  text-align: left;
+  text-wrap: pre-wrap;
+  justify-content: end;
+  letter-spacing: -0.05em;
+  line-height: 1em;
+  padding: 0em 0em 0em 2em;
+}
+
 .title1 {
   padding: 0em;
   margin: 0em;
-  font-family: "Inter";
-  font-weight: 300;
   font-size: 3em;
-  letter-spacing: 0.15em;
-  color: var(--portfolio-type-color);
+  letter-spacing: 0.1em;
 }
 
 .title2 {
   padding: 0em;
-  margin: 0em;
-  font-family: "Inter";
+  margin: 0.5em 0em 0em 0em;
   font-size: 2em;
-  font-weight: 300;
-  color: var(--portfolio-type-color);
 }
 
 .app {
@@ -62,9 +91,6 @@
 }
 
 body {
-  width: 100dvw;
-  max-width: 1280px;
-  height: 100%;
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -84,6 +110,10 @@ body {
     var(--grad-1-color),
     var(--grad-2-color)
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
 .portfolio-item .product-card-viewer {
@@ -119,6 +149,18 @@ body {
     padding: 10px;
     width: 100%;
     align-items: center;
+  }
+  .intro {
+    flex-direction: column;
+  }
+  .name-section {
+    border-right: var(--portfolio-divider-color) solid 0px;
+    border-bottom: var(--portfolio-divider-color) solid 1px;
+  }
+  .about-section {
+    justify-content: start;
+    padding: 1em 0em 1em 0em;
+    font-size: 1.5em;
   }
   .header1 {
     font-size: 2em;
