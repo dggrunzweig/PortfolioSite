@@ -105,6 +105,7 @@
   display: grid;
   width: 100%;
   max-width: 100%;
+  height: fit-content;
   gap: 1em;
   align-items: center;
   justify-content: center;
