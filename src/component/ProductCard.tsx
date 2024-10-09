@@ -43,13 +43,13 @@ const ProductCard = ({
     const touchEnd = (e: any) => {
       if (touch_start_pos.current > 0 && touch_end_pos.current > 0) {
         const distance = touch_end_pos.current - touch_start_pos.current;
-        const swipe_threshold = 100;
-        if (distance < -swipe_threshold) {
+        const swipe_threshold = 200;
+        if (distance > swipe_threshold) {
           //right swipe
           let new_index = current_image - 1;
           if (new_index < 0) new_index += image_url.length;
           setCurrentImage(new_index);
-        } else if (distance > swipe_threshold) {
+        } else if (distance < -swipe_threshold) {
           // left swipe
           setCurrentImage((current_image + 1) % image_url.length);
         } else {
