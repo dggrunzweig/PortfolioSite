@@ -1,5 +1,5 @@
 :root {
-  --nav-menu-hero: #f0ba4f00;
+  --nav-menu-hero: var(--grad-1-color);
   --nav-menu-text: #0a0a0c;
 }
 
