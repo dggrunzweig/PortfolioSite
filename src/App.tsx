@@ -102,6 +102,7 @@ function App() {
               "images/profile/Frame 27.png",
               "images/profile/Frame 28.png",
             ]}
+            source_link=""
           />
         </div>
         <div ref={ap_ref}>
@@ -127,6 +128,7 @@ more traditional formats like records or cassettes.`,
                 title="Ron Trent - Morning Factory"
               />
             }
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/AudioPlayer.tsx"
           />
         </div>
         <div ref={vd_ref}>
@@ -142,6 +144,7 @@ more traditional formats like records or cassettes.`,
               "helmut_lang/hl-online-show.webp",
             ]}
             children={<VirtualDesktop files={files} />}
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/VirtualDesktop.tsx"
           />
         </div>
         <div ref={pc_ref}>
@@ -153,6 +156,7 @@ more traditional formats like records or cassettes.`,
               `The developer provides product name, id, image urls, descriptions, price, and buy function as inputs. Images from SSENSE, ACW, 1017 ALYX 9SM, and ACRONYM.`,
             ]}
             image_urls={[]}
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/ProductCard.tsx"
             children={
               <div className="product-card-viewer">
                 <ProductCard
@@ -226,6 +230,7 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
               second uses float, and the third is how the knob looks when
               disabled.`,
             ]}
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/Knob.tsx"
             image_urls={["images/vestax-1.webp", "images/vestax-2.webp"]}
             children={
               <div className="knob-div">
@@ -274,6 +279,7 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
           the text defocusing is accomplished using CSS settings. `,
             ]}
             image_urls={[]}
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/SummerSale.tsx"
             children={
               <>
                 <SummerSale

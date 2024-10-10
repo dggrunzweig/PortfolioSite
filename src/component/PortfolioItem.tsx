@@ -5,9 +5,16 @@ interface props {
   description: string[];
   image_urls: string[];
   children: ReactElement | null;
+  source_link: string;
 }
 
-const PortfolioItem = ({ name, description, image_urls, children }: props) => {
+const PortfolioItem = ({
+  name,
+  description,
+  image_urls,
+  children,
+  source_link,
+}: props) => {
   const gallery_ref = useRef<HTMLDivElement>(null!);
   useEffect(() => {
     const RearrangeGallery = () => {
@@ -47,6 +54,17 @@ const PortfolioItem = ({ name, description, image_urls, children }: props) => {
           </div>
         )}
       </div>
+      {source_link != "" && (
+        <button
+          className="portfolio-source-button"
+          onClick={() => {
+            let win = window.open(source_link, "_blank");
+            win?.focus();
+          }}
+        >
+          View Source Code
+        </button>
+      )}
     </div>
   );
 };

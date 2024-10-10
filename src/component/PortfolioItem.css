@@ -14,6 +14,7 @@
   font-size: var(--portfolio-text-size);
   scroll-snap-align: start;
   box-sizing: border-box;
+  position: relative;
 }
 
 .portfolio-item .header1 {
@@ -126,9 +127,37 @@
   object-fit: contain;
 }
 
+.portfolio-item .portfolio-source-button {
+  position: absolute;
+  top: 8em;
+  right: 1em;
+  margin: 0px;
+  background-color: transparent;
+  color: var(--portfolio-type-color);
+  font-size: 1em;
+  font-family: "DM Mono";
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  padding: 0.5em 1em 0.5em 1em;
+  border-color: var(--portfolio-divider-color);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.portfolio-item .portfolio-source-button:hover {
+  background-color: #06040415;
+}
+
 @media only screen and (max-width: 768px) {
   :root {
     --portfolio-text-size: 14px;
+  }
+
+  .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .portfolio-item .description-items {
@@ -154,5 +183,11 @@
   .portfolio-item .description-items .sub-grid-sub-header {
     border-right: transparent solid 1px;
     font-size: 1.5em;
+  }
+
+  .portfolio-item .portfolio-source-button {
+    position: relative;
+    top: 0%;
+    right: 0%;
   }
 }

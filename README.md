@@ -1,6 +1,6 @@
 # Welcome to the Source Repo for my Portfolio Site
 
-Currently hosted live at [gts-portfolio.netlify.app](https://gts-portfolio.netlify.app), building off main.
+Currently hosted live via [GitHub Pages](https://dggrunzweig.github.io/PortfolioSite/).
 
 A collection of front end design artifacts intended to represent my skillset and design taste. All components were built using ReactJS and vanilla Typescript and CSS. No external libraries or React packages were used (feel free to check [package.json](package.json)).
 
