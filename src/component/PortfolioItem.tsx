@@ -5,16 +5,9 @@ interface props {
   description: string[];
   image_urls: string[];
   children: ReactElement | null;
-  is_first: boolean;
 }
 
-const PortfolioItem = ({
-  name,
-  description,
-  image_urls,
-  children,
-  is_first = false,
-}: props) => {
+const PortfolioItem = ({ name, description, image_urls, children }: props) => {
   const gallery_ref = useRef<HTMLDivElement>(null!);
   useEffect(() => {
     const RearrangeGallery = () => {
@@ -37,10 +30,7 @@ const PortfolioItem = ({
     };
   }, [gallery_ref]);
   return (
-    <div
-      className="portfolio-item"
-      style={is_first ? { paddingTop: "0px", borderTop: "none" } : {}}
-    >
+    <div className="portfolio-item">
       <div className="description-items">
         <div className="header1 sub-grid-header">{name}</div>
         <div className="header2 sub-grid-sub-header">{description[0]}</div>

@@ -102,7 +102,6 @@ function App() {
               "images/profile/Frame 27.png",
               "images/profile/Frame 28.png",
             ]}
-            is_first={false}
           />
         </div>
         <div ref={ap_ref}>
@@ -128,7 +127,6 @@ more traditional formats like records or cassettes.`,
                 title="Ron Trent - Morning Factory"
               />
             }
-            is_first={false}
           />
         </div>
         <div ref={vd_ref}>
@@ -136,7 +134,7 @@ more traditional formats like records or cassettes.`,
             name="Virtual Desktop"
             description={[
               "A virtual desktop for browsing through photos or products.",
-              "Inspired by Helmet Lang's 1998 runway show 'Seance De Travail' which was the first digital only runway show. It was released as a website and a CD-ROM containing photos and videos of the show. Users can open an image by clicking on it. A pane can be closed or maximized with the buttons in the top right corner. The pane can be drag around with the mouse. If multiple panes are open, clicking one brings it to front. ",
+              "Inspired by Helmet Lang's 1998 runway show 'Seance De Travail' which was the first digital only runway show. It was released as a website and a CD-ROM containing photos and videos of the show. Users can open an image by clicking on it. A pane can be closed or maximized with the buttons in the top right corner. The pane can be dragged around with the mouse. If multiple panes are open, clicking one brings it to front. ",
               "The base React component takes a list of image URLs and item descriptions as an input and generates the layout automatically.  Images and text taken from Endyma Archive's site featuring pieces from this era of the designer.",
             ]}
             image_urls={[
@@ -144,7 +142,6 @@ more traditional formats like records or cassettes.`,
               "helmut_lang/hl-online-show.webp",
             ]}
             children={<VirtualDesktop files={files} />}
-            is_first={false}
           />
         </div>
         <div ref={pc_ref}>
@@ -209,7 +206,6 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
                 />
               </div>
             }
-            is_first={false}
           />
         </div>
         <div ref={ak_ref}>
@@ -265,7 +261,6 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
                 ></Knob>
               </div>
             }
-            is_first={false}
           />
         </div>
         <div ref={nb_ref}>
@@ -273,11 +268,10 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
             name="Nostalgia Animation"
             description={[
               `An animated banner section with a nostalgic and hazy vibe.`,
-              `Two possible color palettes, one for spring / summer and one for fall /
+              `Inspired by light leak and noise in old films, the animation comes with two possible color palettes, one for spring / summer and one for fall /
           winter.`,
               `The animation is accomplished generatively with a canvas element,
-          the text defocusing is accomplished using CSS settings. The
-          animation is inspired by light leak and noise + dust in old films.`,
+          the text defocusing is accomplished using CSS settings. `,
             ]}
             image_urls={[]}
             children={
@@ -298,7 +292,6 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
                 ></SummerSale>
               </>
             }
-            is_first={false}
           />
         </div>
       </div>
