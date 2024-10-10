@@ -255,7 +255,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
               StartBufferAtTime(0, false, speeds[playback_speed]);
             }}
           >
-            ↩
+            {"↩" + String.fromCharCode(0xfe0e)}
           </button>
           <button
             className="button"
