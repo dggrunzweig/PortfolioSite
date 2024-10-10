@@ -1,6 +1,5 @@
 :root {
-  --nav-menu-hero: #f0ba4f;
-  --nav-menu-hero-2: #e8b144;
+  --nav-menu-hero: #f0ba4f00;
   --nav-menu-text: #0a0a0c;
 }
 
@@ -22,12 +21,6 @@
   column-gap: 2em;
   align-items: end;
   background-color: var(--nav-menu-hero);
-  background-image: linear-gradient(
-    90deg,
-    var(--nav-menu-hero),
-    var(--nav-menu-hero-2) 25%,
-    var(--nav-menu-hero)
-  );
   z-index: 100;
 }
 
