@@ -112,8 +112,8 @@ html {
     --app-text-size: 12px;
   }
   .app {
-    padding: 10px;
-    width: 100%;
+    padding: 0px;
+    width: 100dvw;
     align-items: center;
     scroll-snap-type: none;
     flex-direction: column;
