@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Welcome to the Source Repo for my Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Currently hosted live at [gts-portfolio.netlify.app](https://gts-portfolio.netlify.app), building off main.
 
-Currently, two official plugins are available:
+## React Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+src
+⮑ component
 
-## Expanding the ESLint configuration
+## Assets (images, fonts, etc)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+public
+⮑
 
-- Configure the top-level `parserOptions` property like this:
+## Code Organization
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Each component has a .tsx file (typescript React element) and a corresponding css file for styling that component.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Audio Player
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. [AudioPlayer.css](src/component/AudioPlayer.css)
+2. [AudioPlayer.tsx](src/component/AudioPlayer.tsx)
+3. [audio_utils.ts](src/component/audio_utils.ts)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Virtual Desktop
+
+1. VirtualDesktop.css
+2. VirtualDesktop.tsx
+3. VirtualDesktopFile.tsx
+
+## Product Card
+
+1. ProductCard.css
+2. ProductCard.tsx
+
+## Analog Knob
+
+1. Knob.css
+2. Knob.tsx
+
+## Nostalgia
+
+1. SummerSale.css
+2. SummerSale.tsx
+
+## Portfolio Item
+
+Each entry in the portfolio is organized and styled by the Portfolio Item component
+
+1. PortfolioItem.css
+2. PortfolioItem.tsx
+
+## Navigation Menu
+
+1. NavMenu.css
+2. NavMenu.tsx
