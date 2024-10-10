@@ -75,6 +75,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 .vd-main .vd-file {
@@ -196,7 +197,12 @@
   -webkit-user-select: none;
   -moz-user-select: none;
 }
-
+.vd-main .vd-title-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
 .vd-main .vd-title {
   font-size: 4em;
   color: var(--vd-text-title-color);
@@ -204,9 +210,8 @@
   text-transform: uppercase;
   letter-spacing: -6px;
   font-weight: 400;
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  height: fit-content;
 }
 
 .vd-main .vd-instructions {

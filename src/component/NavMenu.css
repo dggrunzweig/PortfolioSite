@@ -1,0 +1,60 @@
+:root {
+  --nav-menu-hero: #fdb421;
+  --nav-menu-text: #2d2d35;
+}
+
+.nav-menu {
+  font-size: var(--app-text-size);
+  font-family: "DM Mono";
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: max((100% - 1400px) / 2, 0px);
+  margin-top: 1em;
+  padding: 0em 1em 1em 1em;
+  height: 6em;
+  column-gap: 2em;
+  align-items: end;
+  background-color: var(--nav-menu-hero);
+  z-index: 100;
+}
+
+.nav-menu-item {
+  width: 100%;
+  height: 0.5em;
+  padding: 0em 0.5em 0em 0.5em;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--nav-menu-text);
+  border-top-color: transparent;
+  color: var(--nav-menu-text);
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+}
+
+@keyframes flashing {
+  from {
+    border-color: var(--nav-menu-text);
+    border-top-color: transparent;
+  }
+  to {
+    border-color: var(--nav-menu-hero);
+    border-top-color: transparent;
+  }
+}
+
+.nav-menu-item:hover {
+  animation: flashing 0.2s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
+    alternate;
+}

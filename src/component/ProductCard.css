@@ -99,7 +99,6 @@
   width: 100%;
   min-height: 100%;
   position: absolute;
-  z-index: 2;
   line-break: normal;
   background-color: rgba(255, 255, 255, 0.652);
   border: var(--pc-border-color) solid 1px;
@@ -191,7 +190,7 @@
   bottom: 0;
   background-color: #b3aeaea5;
   cursor: pointer;
-  z-index: 100;
+  z-index: 101;
   box-sizing: border-box;
 }
 
@@ -212,7 +211,6 @@
   position: absolute;
   top: 1em;
   right: 1em;
-  z-index: 101;
   text-align: center;
   width: max-content;
   border-radius: 0px;

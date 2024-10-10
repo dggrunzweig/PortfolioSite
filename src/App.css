@@ -24,71 +24,26 @@
 :root {
   --grad-1-color: rgb(234, 237, 243);
   --grad-2-color: rgb(218, 222, 231);
+  --app-text-size: 14px;
 }
 
 * {
   box-sizing: border-box;
 }
-
-.intro {
+.app {
+  font-size: var(--app-text-size);
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: fit-content;
-  color: var(--portfolio-type-color);
-  font-family: "Inter";
-  font-weight: 300;
-  padding: 0px;
-}
-
-.name-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0em;
-  padding: 0em 2em 2em 0em;
-  border-right: var(--portfolio-divider-color) solid 1px;
-  box-sizing: border-box;
-  font-weight: 300;
-}
-
-.about-section {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  font-family: "Inter";
-  font-size: 2em;
-  text-align: left;
-  text-wrap: pre-wrap;
-  justify-content: end;
-  letter-spacing: -0.05em;
-  line-height: 1em;
-  padding: 0em 0em 0em 2em;
-}
-
-.title1 {
-  padding: 0em;
-  margin: 0em;
-  font-size: 3em;
-  letter-spacing: 0.1em;
-}
-
-.title2 {
-  padding: 0em;
-  margin: 0.5em 0em 0em 0em;
-  font-size: 2em;
-}
-
-.app {
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  width: 100%;
+  align-items: start;
+  width: 100dvw;
   max-width: 1400px;
+  overflow-x: scroll;
   height: 100%;
-  gap: 1rem;
+  gap: 2rem;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 0px;
+  scroll-snap-type: x mandatory;
+  position: relative;
 }
 
 body {
@@ -115,6 +70,14 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  height: 100%;
+  overflow: auto;
+}
+
+/* prevents over scrolling where white at top of page is revealed when scrolling up */
+html {
+  height: 100%;
+  overflow: hidden;
 }
 
 .portfolio-item .product-card-viewer {
@@ -145,11 +108,15 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  :root {
+    --app-text-size: 12px;
+  }
   .app {
-    font-size: 12px;
     padding: 10px;
     width: 100%;
     align-items: center;
+    scroll-snap-type: none;
+    flex-direction: column;
   }
   .intro {
     flex-direction: column;

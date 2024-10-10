@@ -4,10 +4,17 @@ interface props {
   name: string;
   description: string[];
   image_urls: string[];
-  children: ReactElement;
+  children: ReactElement | null;
+  is_first: boolean;
 }
 
-const PortfolioItem = ({ name, description, image_urls, children }: props) => {
+const PortfolioItem = ({
+  name,
+  description,
+  image_urls,
+  children,
+  is_first = false,
+}: props) => {
   const gallery_ref = useRef<HTMLDivElement>(null!);
   useEffect(() => {
     const RearrangeGallery = () => {
@@ -30,28 +37,25 @@ const PortfolioItem = ({ name, description, image_urls, children }: props) => {
     };
   }, [gallery_ref]);
   return (
-    <div className="portfolio-item">
-      <div className="description">
-        <div className="header1">{name}</div>
-        <div className="description-items">
-          <div className="header2 sub-grid-1">{description[0]}</div>
-          <div className="header2 sub-grid-2">{description[1]}</div>
-          <div className="child-space sub-grid-wide">{children}</div>
-          <div className="header2 sub-grid-wide">{description[2]}</div>
-          {image_urls.length > 0 && (
-            <div className="portfolio-gallery sub-grid-wide" ref={gallery_ref}>
-              {image_urls.map((url: string) => {
-                return (
-                  <img
-                    key={url}
-                    className="portfolio-gallery-photo"
-                    src={url}
-                  />
-                );
-              })}
-            </div>
-          )}
-        </div>
+    <div
+      className="portfolio-item"
+      style={is_first ? { paddingTop: "0px", borderTop: "none" } : {}}
+    >
+      <div className="description-items">
+        <div className="header1 sub-grid-header">{name}</div>
+        <div className="header2 sub-grid-1">{description[1]}</div>
+        <div className="header2 sub-grid-sub-header">{description[0]}</div>
+        {children && <div className="child-space">{children}</div>}
+        <div className="header2 sub-grid-1">{description[2]}</div>
+        {image_urls.length > 0 && (
+          <div className="portfolio-gallery sub-grid-wide" ref={gallery_ref}>
+            {image_urls.map((url: string) => {
+              return (
+                <img key={url} className="portfolio-gallery-photo" src={url} />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

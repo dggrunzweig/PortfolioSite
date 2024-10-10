@@ -71,9 +71,9 @@ const VirtualDesktop = ({ files }: props) => {
           );
         })}
       <div className="vd-base-grid">
-        <div className="vd-title">
-          <span>W 98/99</span>
-          <span>Limited Collection</span>
+        <div className="vd-title-div">
+          <div className="vd-title">W 98/99</div>
+          <div className="vd-title">Limited Collection</div>
         </div>
         <div className="vd-file-icons">
           {files.map((file, i) => {
