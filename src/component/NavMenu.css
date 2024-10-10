@@ -1,7 +1,7 @@
 :root {
-  --nav-menu-hero: #fdb421;
-  --nav-menu-hero-2: #fabb3d;
-  --nav-menu-text: #2d2d35;
+  --nav-menu-hero: #f0ba4f;
+  --nav-menu-hero-2: #e8b144;
+  --nav-menu-text: #0a0a0c;
 }
 
 .nav-menu {
@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 1400px;
   margin-left: max((100% - 1400px) / 2, 0px);
-  margin-top: 1em;
+  margin-top: 0em;
   padding: 0em 1em 1em 1em;
   height: 6em;
   column-gap: 2em;
@@ -25,7 +25,7 @@
   background-image: linear-gradient(
     90deg,
     var(--nav-menu-hero),
-    var(--nav-menu-hero-2) 50%,
+    var(--nav-menu-hero-2) 25%,
     var(--nav-menu-hero)
   );
   z-index: 100;
