@@ -222,4 +222,8 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .image-overlay .image-section {
+    width: clamp(10dvw, 95%, 95dvw);
+    height: clamp(10dvh, 95%, 95dvh);
+  }
 }
