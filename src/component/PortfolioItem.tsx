@@ -43,8 +43,8 @@ const PortfolioItem = ({
     >
       <div className="description-items">
         <div className="header1 sub-grid-header">{name}</div>
-        <div className="header2 sub-grid-1">{description[1]}</div>
         <div className="header2 sub-grid-sub-header">{description[0]}</div>
+        <div className="header2 sub-grid-1">{description[1]}</div>
         {children && <div className="child-space">{children}</div>}
         <div className="header2 sub-grid-1">{description[2]}</div>
         {image_urls.length > 0 && (

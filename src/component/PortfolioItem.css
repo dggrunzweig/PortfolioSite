@@ -70,12 +70,12 @@
 .portfolio-item .description-items .sub-grid-sub-header {
   grid-column: span 1;
   grid-row: span 3;
+  grid-column-start: 1;
   font-size: 2em;
   line-height: 1em;
   letter-spacing: 0.05em;
-  padding: var(--portfolio-text-size) var(--portfolio-text-size) 0em 0em;
+  padding: 0em var(--portfolio-text-size) var(--portfolio-text-size) 0em;
   border-right: var(--portfolio-divider-color) solid 1px;
-  border-top: var(--portfolio-divider-color) solid 1px;
 }
 
 .portfolio-item .description-items .sub-grid-1 {
@@ -130,28 +130,19 @@
   :root {
     --portfolio-text-size: 12px;
   }
-  /* .portfolio-item {
-    gap: 2em;
-    padding: 4em 0.5em 4em 0.5em;
-  }
-
-  .portfolio-item .header1 {
-    text-align: center;
-    font-size: 2em;
-  }
-
-  .portfolio-item .header2 {
-    font-size: 1.5em;
-  }
-
-  .portfolio-item .header3 {
-    text-align: left;
-    width: 100%;
-    padding: 0em;
-    font-size: 1em;
-  }
 
   .portfolio-item .description-items {
-    width: 100%;
-  } */
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    margin-top: 4em;
+  }
+
+  .portfolio-item .description-items .sub-grid-header {
+    border-right: transparent solid 1px;
+  }
+
+  .portfolio-item .description-items .sub-grid-sub-header {
+    border-right: transparent solid 1px;
+  }
 }

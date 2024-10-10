@@ -1,4 +1,4 @@
-import { MutableRefObject, useState } from "react";
+import { MutableRefObject } from "react";
 import "./NavMenu.css";
 interface props {
   menu_item_names: string[];

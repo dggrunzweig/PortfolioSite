@@ -1,5 +1,6 @@
 :root {
   --nav-menu-hero: #fdb421;
+  --nav-menu-hero-2: #fabb3d;
   --nav-menu-text: #2d2d35;
 }
 
@@ -21,6 +22,12 @@
   column-gap: 2em;
   align-items: end;
   background-color: var(--nav-menu-hero);
+  background-image: linear-gradient(
+    90deg,
+    var(--nav-menu-hero),
+    var(--nav-menu-hero-2) 50%,
+    var(--nav-menu-hero)
+  );
   z-index: 100;
 }
 
@@ -57,4 +64,25 @@
 .nav-menu-item:hover {
   animation: flashing 0.2s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
     alternate;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    font-size: 12px;
+    font-family: "DM Mono";
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100dvw;
+    margin-top: 0em;
+    padding: 0em 1em 1em 1em;
+    height: 12em;
+    align-items: end;
+    background-color: var(--nav-menu-hero);
+    z-index: 100;
+    box-sizing: border-box;
+  }
 }
