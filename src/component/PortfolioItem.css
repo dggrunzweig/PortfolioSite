@@ -128,14 +128,23 @@
 
 @media only screen and (max-width: 768px) {
   :root {
-    --portfolio-text-size: 12px;
+    --portfolio-text-size: 14px;
   }
 
   .portfolio-item .description-items {
     display: flex;
     flex-direction: column;
     width: 100dvw;
-    margin-top: 0em;
+    margin-top: 1em;
+  }
+
+  .portfolio-item .header1 {
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-item .header2 {
+    font-size: 1em;
   }
 
   .portfolio-item .description-items .sub-grid-header {
@@ -144,5 +153,6 @@
 
   .portfolio-item .description-items .sub-grid-sub-header {
     border-right: transparent solid 1px;
+    font-size: 1.5em;
   }
 }
