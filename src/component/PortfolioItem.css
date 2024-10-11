@@ -136,7 +136,7 @@
   color: var(--portfolio-type-color);
   font-size: 1em;
   font-family: "DM Mono";
-  letter-spacing: -1px;
+  font-weight: 300;
   text-transform: uppercase;
   padding: 0.5em 1em 0.5em 1em;
   border-color: var(--portfolio-divider-color);

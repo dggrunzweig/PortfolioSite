@@ -1,4 +1,12 @@
 /* inter-300 - latin */
+/* Font source https://www.onlinewebfonts.com/download/53dc764fd0dbbb3140b7909afd437722 */
+@font-face {
+  font-family: "Chicago";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/type/chicago/Chicago.woff2") format("woff2");
+}
+
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Inter";
@@ -6,14 +14,7 @@
   font-weight: 300;
   src: url("/type/Inter/inter-v18-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* inter-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/type/Inter/inter-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
+
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "IBM Plex Mono";
@@ -21,6 +22,16 @@
   font-weight: 400;
   src: url("/type/Plex/ibm-plex-mono-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+/* dm-mono-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/type/dm_mono/dm-mono-v14-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
   --app-grad-1-color: rgb(234, 237, 243);
   --app-grad-2-color: rgb(218, 222, 231);
