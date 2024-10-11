@@ -1,6 +1,7 @@
 :root {
   --nav-menu-hero: var(--grad-1-color);
   --nav-menu-text: #0a0a0c;
+  --nav-menu-text-light: #0a0a0c06;
 }
 
 .nav-menu {
@@ -31,8 +32,7 @@
   text-align: center;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--nav-menu-text);
-  border-top-color: transparent;
+  border-color: transparent;
   color: var(--nav-menu-text);
   text-transform: uppercase;
   font-size: 1.5em;
@@ -41,21 +41,27 @@
   align-items: end;
   justify-content: center;
   position: relative;
+  animation-name: flashing;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.43, 0.01, 0.67, 0.99);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes flashing {
-  to {
-    border-color: transparent;
-  }
   from {
     border-color: var(--nav-menu-text);
+    border-top-color: transparent;
+  }
+  to {
+    border-color: var(--nav-menu-text-light);
     border-top-color: transparent;
   }
 }
 
 .nav-menu-item:hover {
-  animation: flashing 0.4s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
-    alternate;
+  color: transparent;
+  text-shadow: var(--nav-menu-text) 0px 0px 2px;
 }
 
 @media only screen and (max-width: 768px) {

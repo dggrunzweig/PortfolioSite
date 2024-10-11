@@ -16,6 +16,7 @@ const NavMenu = ({ menu_item_names, portfolio_item_refs }: props) => {
             onClick={() => {
               portfolio_item_refs.current[i].current.scrollIntoView();
             }}
+            style={{ animationDelay: `${i * 200}ms` }}
           >
             {m}
           </div>
