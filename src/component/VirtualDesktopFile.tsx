@@ -66,21 +66,18 @@ const VirtualDesktopFile = ({
           {file.name}
           <div className="vd-button-row">
             <button
+              style={{ backgroundImage: "url(icons/maximize.png)" }}
               onClick={() => {
                 setMaximized(!maximized);
               }}
-            >
-              +
-            </button>
+            ></button>
             <button
-              style={{ backgroundColor: "#ed3f3f" }}
+              style={{ backgroundImage: "url(icons/close.png)" }}
               onClick={() => {
                 onClose();
                 setMaximized(false);
               }}
-            >
-              X
-            </button>
+            ></button>
           </div>
         </div>
 

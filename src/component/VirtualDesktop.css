@@ -175,14 +175,16 @@
 
 .vd-main .vd-open-image .vd-button-row button {
   border-radius: 20%;
-  aspect-ratio: 2.5;
-  height: max-content;
+  aspect-ratio: 1;
+  height: 1.5em;
   color: rgb(249, 238, 238);
-  background-color: #2fd034;
-  border: #fffefea9 solid 1px;
+  border: none;
   position: relative;
   text-align: center;
-  padding: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0px;
   /* padding: 4px 4px 4px 4px; */
   box-sizing: border-box;
 }
