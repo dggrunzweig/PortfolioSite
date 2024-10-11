@@ -73,7 +73,7 @@
   grid-row: span 3;
   grid-column-start: 1;
   font-size: 2em;
-  line-height: 1em;
+  line-height: 1.25em;
   letter-spacing: 0.05em;
   padding: 0em var(--portfolio-text-size) var(--portfolio-text-size) 0em;
   border-right: var(--portfolio-divider-color) solid 1px;
@@ -83,7 +83,7 @@
   grid-column: span 1;
   grid-row: span 1;
   grid-column-start: 2;
-  line-height: 1em;
+  line-height: 1.25em;
   padding: 0em 0em 1em 0em;
   height: 100%;
   display: flex;
@@ -185,6 +185,10 @@
   .portfolio-item .description-items .sub-grid-sub-header {
     border-right: transparent solid 1px;
     font-size: 1.5em;
+  }
+
+  .portfolio-item .description-items .sub-grid-1 {
+    line-height: 1.5em;
   }
 
   .portfolio-item .portfolio-source-button {
