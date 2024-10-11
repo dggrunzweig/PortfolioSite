@@ -17,8 +17,8 @@
   width: 100%;
   margin-top: 0em;
   padding-bottom: 2em;
-  padding-left: max((100% - 1400px) / 2, 1em);
-  padding-right: max((100% - 1400px) / 2, 1em);
+  padding-left: max((100% - 1400px + 2em) / 2, 1em);
+  padding-right: max((100% - 1400px + 2em) / 2, 1em);
   height: 7em;
   column-gap: 2em;
   align-items: end;
