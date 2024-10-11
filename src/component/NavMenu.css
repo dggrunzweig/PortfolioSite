@@ -1,6 +1,6 @@
 :root {
-  --nav-menu-hero: var(--grad-1-color);
-  --nav-menu-text: #0a0a0c;
+  --nav-menu-hero: #7e8088;
+  --nav-menu-text: var(--app-grad-1-color);
   --nav-menu-text-light: #0a0a0c06;
 }
 
@@ -14,11 +14,11 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   width: 100%;
-  max-width: 1400px;
-  margin-left: max((100% - 1400px) / 2, 0px);
   margin-top: 0em;
-  padding: 0em 1em 1em 1em;
-  height: 6em;
+  padding-bottom: 2em;
+  padding-left: max((100% - 1400px) / 2, 1em);
+  padding-right: max((100% - 1400px) / 2, 1em);
+  height: 7em;
   column-gap: 2em;
   align-items: end;
   background-color: var(--nav-menu-hero);
