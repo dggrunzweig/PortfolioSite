@@ -122,10 +122,8 @@ the input. The controls allow a user to restart, rewind,
 play/pause, fast forward and adjust the playback speed. The user
 can drag the position of the playhead to change to a different
 point in the track. The animation uses the frequency content of
-the current audio data to animate a custom waveform design. The
-ability for the user to modify the sound of the recording with the
-rewind, fast-forward, and playback rate controls reminds a user of
-more traditional formats like records or cassettes.`,
+the current audio data to animate a custom waveform design. The UX is reminiscent of
+more traditional formats like records or cassettes, allowing the user to hear variations in the sound as they interact with it.`,
             ]}
             image_urls={["images/ipod-classic.png", "images/winamp_skin.png"]}
             children={
