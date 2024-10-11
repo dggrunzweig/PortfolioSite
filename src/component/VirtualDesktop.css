@@ -24,7 +24,7 @@
 }
 
 :root {
-  --vd-border-color: #5b5b5b;
+  --vd-border-color: #272626;
   --vd-background-color: #eef0f1;
   --vd-window-bg-color: #bec5bf;
   --vd-box-shadow-color: #00000088;
@@ -35,19 +35,24 @@
   --vd-text-size: 16px;
 }
 
+.vd-background {
+  background-color: var(--vd-border-color);
+  width: 100%;
+  height: 90dvh;
+  max-height: 800px;
+}
 .vd-main {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   width: 100%;
-  height: 90dvh;
-  max-height: 800px;
+  height: 100%;
   font-size: var(--vd-text-size);
   border: var(--vd-border-color) solid 3px;
   background-color: var(--vd-background-color);
   border-radius: var(--vd-border-radius);
   box-sizing: border-box;
-  padding: 1em;
+  padding: 0em;
   font-family: "DM Mono";
   font-weight: 300;
   display: flex;
@@ -57,23 +62,40 @@
   cursor: default;
 }
 
+.vd-main .vd-home-bar {
+  background-color: var(--vd-window-bg-color);
+  color: var(--vd-text-title-color);
+  width: 100%;
+  height: 1.5em;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  border-bottom: var(--vd-text-instruction-color) solid 1px;
+  padding: 0em 1em 0em 1em;
+  box-sizing: border-box;
+  gap: 1em;
+  display: flex;
+  flex-direction: row;
+}
+
 .vd-main .vd-base-grid {
   display: grid;
-  grid-template-rows: 30% 60% 10%;
-  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
   width: 100%;
   height: 100%;
   justify-items: center;
+  row-gap: 2em;
+  padding: 0em 1em 2em 1em;
 }
 
 .vd-base-grid .vd-file-icons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1em;
   height: 100%;
   width: 100%;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
   overflow: hidden;
 }
@@ -100,7 +122,7 @@
 }
 
 .vd-file .vd-file-name {
-  text-align: left;
+  text-align: center;
   width: max-content;
   max-width: 200px;
   height: fit-content;
@@ -133,6 +155,7 @@
   box-shadow: var(--vd-box-shadow-color) 4px 5px 20px 2px;
   transition-duration: "100ms";
   transition-timing-function: "linear";
+  cursor: grab;
 }
 
 .vd-main .vd-open-image .vd-file-description {
@@ -161,6 +184,7 @@
   border-top-right-radius: var(--vd-file-border-radius);
   color: var(--vd-text-instruction-color);
 }
+
 .vd-main .vd-open-image .vd-top-bar .vd-button-row {
   display: flex;
   flex-direction: row;
@@ -171,11 +195,12 @@
   box-sizing: border-box;
   padding: 0px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .vd-main .vd-open-image .vd-button-row button {
   border-radius: 20%;
-  aspect-ratio: 1;
+  aspect-ratio: 2.5;
   height: max-content;
   color: rgb(249, 238, 238);
   background-color: #2fd034;
@@ -199,28 +224,35 @@
 }
 .vd-main .vd-title-div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: fit-content;
+  align-items: start;
+  padding-top: 1em;
 }
 .vd-main .vd-title {
   font-size: 4em;
   color: var(--vd-text-title-color);
   text-align: right;
   text-transform: uppercase;
-  letter-spacing: -6px;
+  letter-spacing: -4px;
   font-weight: 400;
   width: 100%;
   height: fit-content;
+  line-height: 1em;
+  /* helps with font top alignment issues */
+  margin-top: -0.1em;
 }
 
 .vd-main .vd-instructions {
+  justify-content: left;
   width: 100%;
+  height: fit-content;
   font-size: 1em;
-  display: flex;
-  align-items: end;
+  text-align: left;
   color: var(--vd-text-instruction-color);
   text-transform: uppercase;
+  line-height: 1em;
 }
 
 @media only screen and (max-width: 768px) {
