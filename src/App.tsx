@@ -3,7 +3,6 @@ import NavMenu from "./component/NavMenu";
 import AudioPlayer from "./component/AudioPlayer";
 import Knob from "./component/Knob";
 import ProductCard from "./component/ProductCard";
-import SummerSale from "./component/SummerSale";
 import PortfolioItem from "./component/PortfolioItem";
 import VirtualDesktop, {
   PseudoFile,
