@@ -105,8 +105,8 @@ function App() {
               </div>
             }
             image_urls={[
-              "images/profile/Frame 27.png",
-              "images/profile/Frame 28.png",
+              "images/profile/profile.avif",
+              "images/profile/artwork.avif",
             ]}
             source_link=""
           />
