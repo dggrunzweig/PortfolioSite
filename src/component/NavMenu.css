@@ -44,18 +44,17 @@
 }
 
 @keyframes flashing {
+  to {
+    border-color: transparent;
+  }
   from {
     border-color: var(--nav-menu-text);
-    border-top-color: transparent;
-  }
-  to {
-    border-color: var(--nav-menu-hero);
     border-top-color: transparent;
   }
 }
 
 .nav-menu-item:hover {
-  animation: flashing 0.2s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
+  animation: flashing 0.4s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
     alternate;
 }
 
