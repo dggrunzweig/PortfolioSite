@@ -131,6 +131,7 @@
   transition-duration: "100ms";
   transition-timing-function: "linear";
   cursor: grab;
+  overflow-x: hidden;
 }
 
 .vd-main .vd-open-image .vd-file-description {
@@ -146,14 +147,18 @@
 }
 
 .vd-main .vd-open-image .vd-top-bar {
+  position: sticky;
+  top: 0%;
+  left: 0%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   padding: 0.25em 0.5em 0.25em 0.5em;
-  background-color: rgba(255, 255, 255, 0.77);
+  background-color: rgb(255, 255, 255);
   border-bottom: var(--vd-border-color) solid 1px;
   border-top-left-radius: var(--vd-file-border-radius);
   border-top-right-radius: var(--vd-file-border-radius);
@@ -257,6 +262,7 @@
     width: clamp(200px, 60%, 400px);
     height: fit-content;
     min-height: 100px;
+    overflow-x: hidden;
   }
   .vd-main .vd-open-image img {
     margin: 0px;
