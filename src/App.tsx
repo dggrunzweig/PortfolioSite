@@ -62,13 +62,20 @@ function App() {
   );
 
   const intro_ref = useRef<HTMLDivElement>(null!);
-  const ap_ref = useRef<HTMLDivElement>(null!);
-  const vd_ref = useRef<HTMLDivElement>(null!);
-  const pc_ref = useRef<HTMLDivElement>(null!);
-  const ak_ref = useRef<HTMLDivElement>(null!);
-  const nb_ref = useRef<HTMLDivElement>(null!);
+  const audio_player_ref = useRef<HTMLDivElement>(null!);
+  const virtual_desktop_ref = useRef<HTMLDivElement>(null!);
+  const product_card_ref = useRef<HTMLDivElement>(null!);
+  const knob_ref = useRef<HTMLDivElement>(null!);
+  const substrata_ref = useRef<HTMLDivElement>(null!);
 
-  const refs = useRef([intro_ref, ap_ref, vd_ref, pc_ref, ak_ref, nb_ref]);
+  const refs = useRef([
+    intro_ref,
+    audio_player_ref,
+    virtual_desktop_ref,
+    product_card_ref,
+    knob_ref,
+    substrata_ref,
+  ]);
 
   return (
     <>
@@ -80,7 +87,7 @@ function App() {
             "Virtual Desktop",
             "product card",
             "analog knob",
-            "nostalgia",
+            "substrata",
           ]}
           portfolio_item_refs={refs}
         />
@@ -105,7 +112,7 @@ function App() {
             source_link=""
           />
         </div>
-        <div ref={ap_ref}>
+        <div ref={audio_player_ref}>
           <PortfolioItem
             name="Audio Player"
             description={[
@@ -131,7 +138,7 @@ more traditional formats like records or cassettes.`,
             source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/AudioPlayer.tsx"
           />
         </div>
-        <div ref={vd_ref}>
+        <div ref={virtual_desktop_ref}>
           <PortfolioItem
             name="Virtual Desktop"
             description={[
@@ -147,7 +154,7 @@ more traditional formats like records or cassettes.`,
             source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/VirtualDesktop.tsx"
           />
         </div>
-        <div ref={pc_ref}>
+        <div ref={product_card_ref}>
           <PortfolioItem
             name="Product Card"
             description={[
@@ -212,7 +219,7 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
             }
           />
         </div>
-        <div ref={ak_ref}>
+        <div ref={knob_ref}>
           <PortfolioItem
             name="Analog Knob"
             description={[
@@ -268,35 +275,51 @@ Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch lami
             }
           />
         </div>
-        <div ref={nb_ref}>
+        <div ref={substrata_ref}>
           <PortfolioItem
-            name="Nostalgia Animation"
+            name="Substrata"
             description={[
-              `An animated banner section with a nostalgic and hazy vibe.`,
-              `Inspired by light leak and noise in old films, the animation comes with two possible color palettes, one for spring / summer and one for fall /
-          winter.`,
-              `The animation is accomplished generatively with a canvas element,
-          the text defocusing is accomplished using CSS settings. `,
+              `A percussive low-frequency synthesizer. Designed for the ritualistic and hypnotic.`,
+              `Inspired by the instruments like the Moog DFAM and my experience programming low frequency drum sequences in my musical partnership Night Sea. The Substrata synthesizer is a full featured synthesizer on the web. The sequencing and audio core were created in C, compiled to WASM, and then wrapped in a Web Audio worklet node. The UI is built with React and Tailwind CSS.`,
+              `The synthesizer supports recording directly to WAV files, accomplished in C and then sent via ports as a blob of binary data for download. The use of Web MIDI allows the sequencer to be sync'd with external clock sources like a DAW or other hardware synthesizers. Internally the synthesizer uses wavetables for a crunchy and lo-fi digital tone.`,
             ]}
             image_urls={[]}
-            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/SummerSale.tsx"
+            source_link="https://github.com/dggrunzweig/Bassline"
             children={
-              <>
-                <SummerSale
-                  title="End of Summer Sale is Here!"
-                  onClick={() => {
-                    console.log("End of Summer Sale Button Clicked");
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1em",
+                }}
+              >
+                <div
+                  className="header2"
+                  style={{
+                    textDecoration: "underline",
+                    color: "var(--portfolio-header-color)",
                   }}
-                  dusk_mode={false}
-                ></SummerSale>
-                <SummerSale
-                  title="Winter Sale is Here!"
                   onClick={() => {
-                    console.log("Winter Sale Button Clicked");
+                    let new_tab = window.open(
+                      "https://substrata-synth.netlify.app/",
+                      "_blank"
+                    );
+                    new_tab?.focus();
                   }}
-                  dusk_mode={true}
-                ></SummerSale>
-              </>
+                >
+                  View the Project Live Here
+                </div>
+                <img
+                  src="substrata/Substrata.png"
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "auto",
+                  }}
+                />
+              </div>
             }
           />
         </div>

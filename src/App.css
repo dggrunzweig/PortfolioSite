@@ -22,8 +22,8 @@
   src: url("/type/Plex/ibm-plex-mono-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 :root {
-  --grad-1-color: rgb(234, 237, 243);
-  --grad-2-color: rgb(218, 222, 231);
+  --app-grad-1-color: rgb(234, 237, 243);
+  --app-grad-2-color: rgb(218, 222, 231);
   --app-text-size: 14px;
 }
 
@@ -52,19 +52,19 @@ body {
   box-sizing: border-box;
   background-image: -webkit-linear-gradient(
     to bottom right,
-    var(--grad-1-color),
-    var(--grad-2-color)
+    var(--app-grad-1-color),
+    var(--app-grad-2-color)
   );
   background-image: -moz-linear-gradient(
     to bottom right,
-    var(--grad-1-color),
-    var(--grad-2-color)
+    var(--app-grad-1-color),
+    var(--app-grad-2-color)
   );
 
   background-image: linear-gradient(
     to bottom right,
-    var(--grad-1-color),
-    var(--grad-2-color)
+    var(--app-grad-1-color),
+    var(--app-grad-2-color)
   );
   display: flex;
   flex-direction: column;
