@@ -60,20 +60,6 @@
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
-    font-size: 12px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    width: 100dvw;
-    margin-top: 0em;
-    padding: 0em 1em 1em 1em;
-    height: 10em;
-    align-items: end;
-    background-color: var(--nav-menu-hero);
-    z-index: 100;
-    box-sizing: border-box;
-  }
-
-  .nav-menu-item {
-    padding: 0em 0.5em 0em 0.5em;
+    display: none;
   }
 }

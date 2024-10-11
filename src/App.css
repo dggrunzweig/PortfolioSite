@@ -117,6 +117,7 @@ html {
     align-items: center;
     scroll-snap-type: none;
     flex-direction: column;
+    gap: 0em;
   }
   .intro {
     flex-direction: column;
