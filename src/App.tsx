@@ -159,7 +159,7 @@ more traditional formats like records or cassettes.`,
             description={[
               `An interactive product card ideal for technical leaning product design.`,
               `As a user moves their mouse across the image, the image will automatically change based on it's position within the image. Clicking "Info" will reveal a longer description of the product. Clicking the image will reveal an enlarged version of the image as an overlay. Swiping is used to changes images on mobile. The use of high-viz and concrete color scheme along with technical typeface reinforces the stripped back and utilitarian aesthetic of the products.`,
-              `The developer provides product name, id, image urls, descriptions, price, and buy function as inputs. Images from SSENSE, ACW, 1017 ALYX 9SM, and ACRONYM.`,
+              `The developer provides product name, id, image urls, descriptions, price, and buy function as inputs. Images from SSENSE, ACW, and ACRONYM.`,
             ]}
             image_urls={[]}
             source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/ProductCard.tsx"
