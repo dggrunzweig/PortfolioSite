@@ -44,10 +44,11 @@ Each component has a .tsx file (typescript React element) and a corresponding cs
 1. [Knob.css](src/component/Knob.css)
 2. [Knob.tsx](src/component/Knob.tsx)
 
-## Nostalgia
+## Substrata
 
-1. [SummerSale.css](src/component/SummerSale.css)
-2. [SummerSale.tsx](src/component/SummerSale.tsx)
+Substrata is an external project, built using React, Tailwind CSS, Web Audio, C, and WASM.
+
+1. [Substrata Repo](https://github.com/dggrunzweig/Bassline)
 
 ## Portfolio Item
 
