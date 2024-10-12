@@ -8,7 +8,7 @@ import VirtualDesktop, {
   PseudoFile,
   CreatePseudoFile,
 } from "./component/VirtualDesktop";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Contact from "./component/Contact";
 
 function App() {
