@@ -32,19 +32,13 @@ const Contact = ({ available }: props) => {
     }
   }, [copied_index]);
 
-  const contact_data = useRef([
-    "david@greentwig.xyz",
-    "(509)-863-3320",
-    "LinkedIn",
-    "Instagram",
-  ]);
+  const contact_data = useRef(["david@greentwig.xyz", "LinkedIn", "Instagram"]);
   const contact_copy = useRef([
     "david@greentwig.xyz",
-    "(509)-863-3320",
     "https://www.linkedin.com/in/david-grunzweig/",
     "https://www.instagram.com/dgg_av/",
   ]);
-  const open_link = useRef([false, false, true, true]);
+  const open_link = useRef([false, true, true]);
 
   return (
     <div className="contact-banner">
