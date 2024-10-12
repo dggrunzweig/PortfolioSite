@@ -51,9 +51,11 @@ const Contact = ({ available }: props) => {
       <div className="scroll-bar">
         {reps.map((_, i) => {
           return (
-            <div key={1235 * i} className="banner-item-scrolling">
-              Available For Work
-            </div>
+            available && (
+              <div key={1235 * i} className="banner-item-scrolling">
+                Available For Work
+              </div>
+            )
           );
         })}
       </div>

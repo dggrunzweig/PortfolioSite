@@ -1,6 +1,7 @@
 :root {
   --contact-type-color: rgb(123, 241, 76);
   --contact-button-type-color: #ffffff;
+  --contact-button-type-color-2: #ffffff77;
   --contact-banner-bg-color: #7e8088;
   --contact-button-bg-color: var(--portfolio-header-color);
   --contact-scroll-item-width: 12em;
@@ -49,6 +50,15 @@
   width: var(--contact-scroll-item-width);
 }
 
+@keyframes banner-flash {
+  from {
+    color: var(--contact-button-type-color);
+  }
+  to {
+    color: var(--contact-button-type-color-2);
+  }
+}
+
 .contact-banner .banner-item-fixed {
   position: absolute;
   top: 50%;
@@ -63,6 +73,8 @@
   justify-content: center;
   align-items: center;
   letter-spacing: 2px;
+  animation: banner-flash 0.8s cubic-bezier(0.43, 0.01, 0.67, 0.99) 0s infinite
+    alternate;
 }
 
 .contact-banner .banner-contact-info {
@@ -89,13 +101,4 @@
 .contact-banner .banner-contact-info .banner-contact-info-item:hover {
   color: var(--contact-type-color);
   cursor: copy;
-}
-
-@keyframes banner-copy {
-  from {
-    font-size: 1em;
-  }
-  to {
-    font-size: 1.1em;
-  }
 }
