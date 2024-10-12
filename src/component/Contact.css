@@ -1,0 +1,101 @@
+:root {
+  --contact-type-color: rgb(123, 241, 76);
+  --contact-button-type-color: #ffffff;
+  --contact-banner-bg-color: #7e8088;
+  --contact-button-bg-color: var(--portfolio-header-color);
+  --contact-scroll-item-width: 12em;
+}
+
+.contact-banner {
+  position: fixed;
+  display: flex;
+  font-size: var(--app-text-size);
+  font-family: "DM Mono";
+  font-weight: 300;
+  bottom: 0%;
+  left: 0%;
+  background-color: var(--contact-banner-bg-color);
+  z-index: 100;
+  width: 100%;
+  height: 2em;
+  align-items: center;
+  justify-content: start;
+  color: var(--contact-type-color);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+@keyframes banner-scroll {
+  from {
+    left: calc(-1 * var(--contact-scroll-item-width));
+  }
+  to {
+    left: 0em;
+  }
+}
+
+.contact-banner .scroll-bar {
+  position: absolute;
+  display: flex;
+  width: max-content;
+  animation: banner-scroll 2s linear 0s infinite forwards;
+  overflow: hidden;
+}
+
+.contact-banner .banner-item-scrolling {
+  display: flex;
+  text-align: center;
+  text-wrap: nowrap;
+  width: var(--contact-scroll-item-width);
+}
+
+.contact-banner .banner-item-fixed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--contact-button-bg-color);
+  color: var(--contact-button-type-color);
+  padding: 0em 3em 0em 3em;
+  height: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.contact-banner .banner-contact-info {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background-color: var(--contact-button-bg-color);
+  color: var(--contact-button-type-color);
+  padding: 1em 3em 1em 3em;
+  height: fit-content;
+  gap: 1em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.contact-banner .banner-contact-info .banner-contact-info-item:focus {
+  animation: banner-copy 1s linear 0s 4 alternate;
+}
+.contact-banner .banner-contact-info .banner-contact-info-item:hover {
+  color: var(--contact-type-color);
+  cursor: copy;
+}
+
+@keyframes banner-copy {
+  from {
+    font-size: 1em;
+  }
+  to {
+    font-size: 1.1em;
+  }
+}

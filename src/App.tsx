@@ -9,6 +9,7 @@ import VirtualDesktop, {
   CreatePseudoFile,
 } from "./component/VirtualDesktop";
 import { useRef } from "react";
+import Contact from "./component/Contact";
 
 function App() {
   const knobOnChange = (value: number) => {
@@ -79,6 +80,7 @@ function App() {
   return (
     <>
       <div className="app">
+        <Contact available={true}></Contact>
         <NavMenu
           menu_item_names={[
             "intro",
