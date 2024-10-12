@@ -73,7 +73,7 @@
   grid-row: span 3;
   grid-column-start: 1;
   font-size: 2em;
-  line-height: 1.25em;
+  line-height: 1em;
   letter-spacing: 0.05em;
   padding: 0em var(--portfolio-text-size) var(--portfolio-text-size) 0em;
   border-right: var(--portfolio-divider-color) solid 1px;
