@@ -11,7 +11,6 @@
   color: var(--portfolio-type-color);
   height: auto;
   font-size: var(--portfolio-text-size);
-  scroll-snap-align: start;
   box-sizing: border-box;
   position: relative;
 }

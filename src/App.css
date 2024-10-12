@@ -48,12 +48,10 @@
   align-items: start;
   width: 100dvw;
   max-width: 1400px;
-  overflow-x: scroll;
   height: 100%;
   gap: 2rem;
   box-sizing: border-box;
   padding: 0px;
-  scroll-snap-type: x mandatory;
   position: relative;
 }
 
@@ -126,7 +124,6 @@ html {
     padding: 0px;
     width: 100dvw;
     align-items: center;
-    scroll-snap-type: none;
     flex-direction: column;
     gap: 0em;
   }
