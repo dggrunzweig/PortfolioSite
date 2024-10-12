@@ -43,7 +43,7 @@ interface props {
 }
 
 const AudioPlayer = ({ audio_file_url, title }: props) => {
-  const canvas_ref = useRef(null);
+  const canvas_ref = useRef<HTMLCanvasElement>(null!);
   const audio_ctx = useRef<AudioContext>(createAudioContext());
   const [file_loaded, setFileLoaded] = useState(false);
   const canvas_setup = useRef(false);
@@ -61,6 +61,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
   const [current_time, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(1); // causes divide by zero if set to 0
   const timer_id = useRef(0);
+  const animation_id = useRef(0);
 
   const speeds = [0.5, 0.75, 1.0, 2.0];
   const speed_text = ["½", "¾", "1", "2"];
@@ -85,13 +86,19 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
     if (canvas_ref.current && !canvas_setup.current) {
       // prevents double assignment of this code while react is in strict mode
       canvas_setup.current = true;
+      cancelAnimationFrame(animation_id.current);
       // get the canvas context for drawing
-      const canvas = canvas_ref.current as HTMLCanvasElement;
+      const canvas = canvas_ref.current;
       const ctx = canvas.getContext("2d");
       const dpr = window.devicePixelRatio;
       if (ctx) ctx.scale(dpr, dpr);
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      if (canvas.width == 0 || canvas.height == 0) {
+        canvas_setup.current = false;
+        return () => {};
+      }
+      console.log(canvas_ref.current?.width);
       // load audio file into buffer
       CreateBufferFromFile(audio_ctx.current, audio_file_url)
         .then((buffer) => {
@@ -101,7 +108,6 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
             audio_buffer.current = buffer;
             rev_audio_buffer.current = ReverseAudioBuffer(buffer);
             ConnectNodes();
-            let requestID = 0;
             const num_samples = analyzer.current.frequencyBinCount;
             const low_bin = Math.floor((1000 / 24000) * num_samples);
             const mid_bin = Math.floor((4000 / 24000) * num_samples);
@@ -145,13 +151,13 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
                 }
                 frame_count++;
               }
-              requestID = requestAnimationFrame(render);
+              animation_id.current = requestAnimationFrame(render);
             };
             render();
             setFileLoaded(true);
 
             return () => {
-              cancelAnimationFrame(requestID);
+              cancelAnimationFrame(animation_id.current);
             };
           }
         })
@@ -160,7 +166,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           console.log(error.message);
         });
     }
-  }, []);
+  });
 
   const Play = () => {
     if (audio_ctx.current && file_player.current && file_loaded) {

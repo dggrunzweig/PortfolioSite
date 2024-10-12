@@ -4,7 +4,8 @@
   --nav-menu-text-light: #0a0a0c06;
 }
 
-.nav-menu {
+.nav-menu,
+.nav-menu-mobile {
   font-size: var(--app-text-size);
   font-family: "DM Mono";
   font-weight: 300;
@@ -24,6 +25,31 @@
   align-items: end;
   background-color: var(--nav-menu-hero);
   z-index: 100;
+  transition-duration: 200ms;
+}
+
+.nav-menu-mobile {
+  display: none;
+}
+
+.nav-mobile-button {
+  font-family: "DM Mono";
+  text-align: center;
+  font-weight: 300;
+  color: var(--nav-menu-text);
+  text-transform: uppercase;
+  font-size: 1.5em;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100dvw;
+  height: 2.5em;
+  background-color: var(--nav-menu-hero);
+  border-bottom: var(--nav-menu-text) solid 1px;
+  padding-bottom: 0em;
 }
 
 .nav-menu-item {
@@ -43,11 +69,6 @@
   align-items: end;
   justify-content: center;
   position: relative;
-  animation-name: flashing;
-  animation-duration: 0.8s;
-  animation-timing-function: cubic-bezier(0.43, 0.01, 0.67, 0.99);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 @keyframes flashing {
@@ -67,7 +88,22 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .nav-mobile-button {
+    display: flex;
+    z-index: 101;
+  }
   .nav-menu {
     display: none;
+  }
+  .nav-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--nav-menu-hero);
+    padding: 4em 1em 0.5em 1em;
+  }
+  .nav-menu-item {
+    height: 2.5em;
   }
 }

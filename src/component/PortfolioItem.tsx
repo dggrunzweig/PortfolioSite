@@ -6,6 +6,8 @@ interface props {
   image_urls: string[];
   children: ReactElement | null;
   source_link: string;
+  current_tab: number;
+  index: number;
 }
 
 const PortfolioItem = ({
@@ -14,6 +16,8 @@ const PortfolioItem = ({
   image_urls,
   children,
   source_link,
+  index,
+  current_tab,
 }: props) => {
   const gallery_ref = useRef<HTMLDivElement>(null!);
   useEffect(() => {
@@ -37,14 +41,18 @@ const PortfolioItem = ({
     };
   }, [gallery_ref]);
   return (
-    <div className="portfolio-item">
+    <div
+      className="portfolio-item"
+      style={{ display: index == current_tab ? "block" : "none" }}
+    >
       <div className="description-items">
         <div className="header1 sub-grid-header">{name}</div>
-
         <div className="header2 sub-grid-sub-header">{description[0]}</div>
         <div className="header2 sub-grid-1">{description[1]}</div>
         {children && <div className="child-space">{children}</div>}
-        <div className="header2 sub-grid-1">{description[2]}</div>
+        {description[2] != "" && (
+          <div className="header2 sub-grid-1">{description[2]}</div>
+        )}
         {image_urls.length > 0 && (
           <div className="portfolio-gallery sub-grid-1" ref={gallery_ref}>
             {image_urls.map((url: string) => {

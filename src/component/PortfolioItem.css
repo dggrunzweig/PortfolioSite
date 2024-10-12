@@ -7,7 +7,6 @@
 }
 
 .portfolio-item {
-  display: block;
   padding: 8em 0em 2em 0em;
   color: var(--portfolio-type-color);
   height: auto;
@@ -50,7 +49,7 @@
   grid-template-columns: 1fr 4fr;
   grid-auto-rows: min-content;
   row-gap: 0em;
-  column-gap: 2em;
+  column-gap: 0em;
   background-color: var(--portfolio-description-bg-color);
   padding: 1em;
   box-sizing: border-box;
@@ -86,7 +85,6 @@
   height: 100%;
   display: flex;
   align-items: start;
-  border-left: var(--portfolio-divider-color) solid 1px;
 }
 
 .portfolio-item .description-items .sub-grid-wide {
@@ -105,7 +103,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-left: var(--portfolio-divider-color) solid 1px;
 }
 
 .portfolio-item .description-items .portfolio-gallery {
@@ -169,8 +166,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 3em;
+    padding-bottom: 3em;
     border-bottom: var(--portfolio-divider-color) solid 1px;
   }
 

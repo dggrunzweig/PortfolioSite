@@ -1,28 +1,57 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject, useState } from "react";
 import "./NavMenu.css";
 interface props {
   menu_item_names: string[];
-  portfolio_item_refs: MutableRefObject<MutableRefObject<HTMLDivElement>[]>;
+  onItemClick: (index: number) => void;
 }
 
-const NavMenu = ({ menu_item_names, portfolio_item_refs }: props) => {
+const NavMenu = ({ menu_item_names, onItemClick }: props) => {
+  const [open_menu, setOpenMenu] = useState(false);
   return (
-    <div className="nav-menu">
-      {menu_item_names.map((m, i) => {
-        return (
-          <div
-            key={m}
-            className="nav-menu-item"
-            onClick={() => {
-              portfolio_item_refs.current[i].current.scrollIntoView();
-            }}
-            style={{ animationDelay: `${i * 200}ms` }}
-          >
-            {m}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div
+        className="nav-mobile-button"
+        onClick={() => {
+          setOpenMenu(!open_menu);
+        }}
+      >
+        Menu
+      </div>
+      <div
+        className="nav-menu-mobile"
+        style={{ top: open_menu ? "0%" : "-100%" }}
+      >
+        {menu_item_names.map((m, i) => {
+          return (
+            <div
+              key={m}
+              className="nav-menu-item"
+              onClick={() => {
+                onItemClick(i);
+                setOpenMenu(false);
+              }}
+            >
+              {m}
+            </div>
+          );
+        })}
+      </div>
+      <div className="nav-menu">
+        {menu_item_names.map((m, i) => {
+          return (
+            <div
+              key={m}
+              className="nav-menu-item"
+              onClick={() => {
+                onItemClick(i);
+              }}
+            >
+              {m}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
