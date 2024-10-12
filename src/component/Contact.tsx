@@ -62,7 +62,12 @@ const Contact = ({ available }: props) => {
         Contact
       </div>
       {contact_visible && (
-        <div className="banner-contact-info">
+        <div
+          className="banner-contact-info"
+          onMouseLeave={() => {
+            setContactVisible(false);
+          }}
+        >
           {contact_data.current.map((d, i) => {
             return (
               <div
