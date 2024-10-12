@@ -1,15 +1,8 @@
 :root {
-  font-size: 16px;
+  --ap-text-size: 16px;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  /* --ap-title-color: #fefefe;
-  --ap-text-color: #ffffff;
-  --ap-background-color: #2f4ae6e3;
-  --ap-border-color: #afb9e6; 
-  --ap-timeline-color: rgba(255, 255, 255, 0.583)
-  --ap-timeline-color-center:rgba(255, 255, 255, 1)
-  --ap-timeline-marker-color: #FFFFFF */
   --ap-title-color: #373030;
   --ap-text-color: #373030;
   --ap-background-color: #ecedf4e3;
@@ -21,7 +14,7 @@
 
 @media only screen and (max-width: 768px) {
   :root {
-    font-size: 12px;
+    --ap-text-size: 12px;
   }
 }
 
@@ -40,6 +33,7 @@
   box-sizing: border-box;
   border-radius: 16px;
   font-family: "Chicago";
+  font-size: var(--ap-text-size);
   box-shadow: 5px 10px 30px rgba(175, 185, 230, 0.383);
 }
 

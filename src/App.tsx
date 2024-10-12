@@ -103,7 +103,7 @@ function App() {
             children={
               <div className="header2">
                 All projects were built using ReactJS with vanilla Typescript
-                and CSS, no external libraries or React packages were used.{" "}
+                and CSS, no external libraries or React packages were used.
               </div>
             }
             image_urls={[

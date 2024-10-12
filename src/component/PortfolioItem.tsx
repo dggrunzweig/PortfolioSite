@@ -40,12 +40,13 @@ const PortfolioItem = ({
     <div className="portfolio-item">
       <div className="description-items">
         <div className="header1 sub-grid-header">{name}</div>
+
         <div className="header2 sub-grid-sub-header">{description[0]}</div>
         <div className="header2 sub-grid-1">{description[1]}</div>
         {children && <div className="child-space">{children}</div>}
         <div className="header2 sub-grid-1">{description[2]}</div>
         {image_urls.length > 0 && (
-          <div className="portfolio-gallery sub-grid-wide" ref={gallery_ref}>
+          <div className="portfolio-gallery sub-grid-1" ref={gallery_ref}>
             {image_urls.map((url: string) => {
               return (
                 <img key={url} className="portfolio-gallery-photo" src={url} />
@@ -53,18 +54,20 @@ const PortfolioItem = ({
             })}
           </div>
         )}
+        <div className="button-sub-grid">
+          {source_link != "" && (
+            <button
+              className="portfolio-source-button"
+              onClick={() => {
+                let new_tab = window.open(source_link, "_blank");
+                new_tab?.focus();
+              }}
+            >
+              View Source Code
+            </button>
+          )}
+        </div>
       </div>
-      {source_link != "" && (
-        <button
-          className="portfolio-source-button"
-          onClick={() => {
-            let win = window.open(source_link, "_blank");
-            win?.focus();
-          }}
-        >
-          View Source Code
-        </button>
-      )}
     </div>
   );
 };
