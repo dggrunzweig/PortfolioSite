@@ -231,9 +231,12 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
     StartBufferAtTime(Math.floor(x * duration), false, speeds[playback_speed]);
   };
   const TouchEnded = (event: React.TouchEvent<HTMLDivElement>) => {
+    event.stopPropagation();
     mouse_down.current = false;
     const bounds = event.currentTarget.getBoundingClientRect();
-    const x = (event.touches[0].clientX - bounds.left) / bounds.width;
+    const touch_list =
+      event.touches.length > 0 ? event.touches : event.changedTouches;
+    const x = (touch_list[0].clientX - bounds.left) / bounds.width;
     StartBufferAtTime(Math.floor(x * duration), false, speeds[playback_speed]);
   };
   return (
