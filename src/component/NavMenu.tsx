@@ -29,6 +29,7 @@ const NavMenu = ({ menu_item_names, onItemClick }: props) => {
               onClick={() => {
                 onItemClick(i);
                 setOpenMenu(false);
+                document.body.scrollTo({ top: 0, behavior: "instant" });
               }}
             >
               {m}
@@ -44,6 +45,7 @@ const NavMenu = ({ menu_item_names, onItemClick }: props) => {
               className="nav-menu-item"
               onClick={() => {
                 onItemClick(i);
+                document.body.scrollTo({ top: 0, behavior: "instant" });
               }}
             >
               {m}
