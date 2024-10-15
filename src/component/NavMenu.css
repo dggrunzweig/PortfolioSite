@@ -48,7 +48,7 @@
   width: 100dvw;
   height: 2em;
   background-color: var(--nav-menu-hero);
-  border-bottom: var(--nav-menu-text) solid 1px;
+  border-top: var(--nav-menu-text) solid 1px;
   padding-bottom: 0em;
 }
 
@@ -107,5 +107,7 @@
   .nav-menu-item {
     height: 2em;
     align-items: center;
+    border-top: var(--nav-menu-text) solid 1px;
+    border-bottom: none;
   }
 }
