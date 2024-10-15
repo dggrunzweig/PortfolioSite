@@ -46,7 +46,7 @@
   top: 0%;
   left: 0%;
   width: 100dvw;
-  height: 2.5em;
+  height: 2em;
   background-color: var(--nav-menu-hero);
   border-bottom: var(--nav-menu-text) solid 1px;
   padding-bottom: 0em;
@@ -101,9 +101,10 @@
     height: fit-content;
     width: 100%;
     background-color: var(--nav-menu-hero);
-    padding: 4em 1em 0.5em 1em;
+    padding: 3em 0em 0em 0em;
   }
   .nav-menu-item {
-    height: 2.5em;
+    height: 2em;
+    align-items: center;
   }
 }
