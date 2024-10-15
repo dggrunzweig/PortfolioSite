@@ -19,7 +19,7 @@ const NavMenu = ({ menu_item_names, onItemClick }: props) => {
       </div>
       <div
         className="nav-menu-mobile"
-        style={{ top: open_menu ? "0%" : "-100%" }}
+        style={{ bottom: open_menu ? "0%" : "-100%" }}
       >
         {menu_item_names.map((m, i) => {
           return (
