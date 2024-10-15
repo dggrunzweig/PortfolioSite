@@ -62,6 +62,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
   const [duration, setDuration] = useState(1); // causes divide by zero if set to 0
   const timer_id = useRef(0);
   const animation_id = useRef(0);
+  const mouse_down = useRef(false);
 
   const speeds = [0.5, 0.75, 1.0, 2.0];
   const speed_text = ["½", "¾", "1", "2"];
@@ -98,7 +99,6 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
         canvas_setup.current = false;
         return () => {};
       }
-      console.log(canvas_ref.current?.width);
       // load audio file into buffer
       CreateBufferFromFile(audio_ctx.current, audio_file_url)
         .then((buffer) => {
@@ -224,6 +224,18 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
     }
   };
 
+  const ClickEnded = (event: React.MouseEvent<HTMLDivElement>) => {
+    mouse_down.current = false;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    StartBufferAtTime(Math.floor(x * duration), false, speeds[playback_speed]);
+  };
+  const TouchEnded = (event: React.TouchEvent<HTMLDivElement>) => {
+    mouse_down.current = false;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.touches[0].clientX - bounds.left) / bounds.width;
+    StartBufferAtTime(Math.floor(x * duration), false, speeds[playback_speed]);
+  };
   return (
     <div className="audio-player">
       {title != "" && <span className="title">{title}</span>}
@@ -233,15 +245,35 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
       ) : (
         <div
           className="timeline"
-          onClick={(event) => {
-            const bounds = event.currentTarget.getBoundingClientRect();
-            const x = (event.clientX - bounds.left) / bounds.width;
-            StartBufferAtTime(
-              Math.floor(x * duration),
-              false,
-              speeds[playback_speed]
-            );
+          onMouseDown={() => {
+            mouse_down.current = true;
           }}
+          onTouchStart={() => {
+            mouse_down.current = true;
+          }}
+          onMouseUp={ClickEnded}
+          onTouchEnd={TouchEnded}
+          onMouseLeave={(event) => {
+            if (mouse_down.current) ClickEnded(event);
+          }}
+          onTouchCancel={(event) => {
+            if (mouse_down.current) TouchEnded(event);
+          }}
+          onMouseMove={(event) => {
+            if (mouse_down.current) {
+              const bounds = event.currentTarget.getBoundingClientRect();
+              const x = (event.clientX - bounds.left) / bounds.width;
+              setCurrentTime(x * duration);
+            }
+          }}
+          onTouchMove={(event) => {
+            if (mouse_down.current) {
+              const bounds = event.currentTarget.getBoundingClientRect();
+              const x = (event.touches[0].clientX - bounds.left) / bounds.width;
+              setCurrentTime(x * duration);
+            }
+          }}
+          onClick={ClickEnded}
         >
           <div className="timeline-line" />
           <div
