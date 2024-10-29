@@ -178,7 +178,9 @@ more traditional formats like records or cassettes, allowing the user to hear va
             nextPage={nextPage}
             prevPage={prevPage}
             name="About"
-            description={[`The front-end design portfolio of David Grunzweig`]}
+            description={[
+              `Design portfolio of David Grunzweig - software engineer, generative artist, electronic musician.`,
+            ]}
             image_urls={[]}
             source_link="https://github.com/dggrunzweig"
             children={<About />}
