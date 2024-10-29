@@ -5,8 +5,7 @@ import ProductCardDemo from "./component/ProductCardDemo";
 import PortfolioItem from "./component/PortfolioItem";
 import VirtualDesktop from "./component/VirtualDesktop";
 import { vd_files } from "./component/VirtualDesktopFileList";
-import { useEffect, useState, useRef } from "react";
-import Contact from "./component/Contact";
+import { useState, useRef } from "react";
 import Overview from "./component/Overview";
 import KnobDemo from "./component/KnobDemo";
 import About from "./component/About";
@@ -36,6 +35,7 @@ function App() {
     "linkedin",
     "email",
   ]);
+  const timer_id = useRef(0);
   const setMenuIndex = (i: number) => {
     if (i <= 6) setCurrentTab(i);
     if (i == 7) {
@@ -50,16 +50,13 @@ function App() {
       navigator.clipboard.writeText("david@greentwig.xyz");
       menu_items[8] = "Copied";
       setMenuItems([...menu_items]);
+      clearTimeout(timer_id.current);
+      timer_id.current = setTimeout(() => {
+        menu_items[8] = "email";
+        setMenuItems([...menu_items]);
+      }, 2000);
     }
   };
-  const timer_id = useRef(0);
-  useEffect(() => {
-    clearTimeout(timer_id.current);
-    timer_id.current = setTimeout(() => {
-      menu_items[8] = "email";
-      setMenuItems([...menu_items]);
-    }, 2000);
-  }, [menu_items]);
 
   return (
     <>
