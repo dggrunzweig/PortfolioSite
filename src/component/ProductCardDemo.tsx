@@ -1,18 +1,8 @@
 import ProductCard from "./ProductCard";
+import "./ProductCardDemo.css";
 const ProductCardDemo = () => {
-  const style = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: "1em",
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "6em 2em 6em 2em",
-    boxSizing: "border-box",
-  };
   return (
-    <div className="product-card-viewer" style={style}>
+    <div className="product-card-viewer">
       <ProductCard
         name="Contour Jacket"
         short_desc="A lightweight textured nylon jacket, in a relaxed fit."
