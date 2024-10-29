@@ -1,23 +1,11 @@
 import Knob from "./Knob";
+import "./KnobDemo.css";
 const KnobDemo = () => {
-  const style = {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: "1em",
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "transparent",
-    padding: "2em 2em 2em 2em",
-    boxSizing: "border-box",
-  };
-
   const knobOnChange = (value: number) => {
     console.log("Knob Value: " + value);
   };
   return (
-    <div className="knob-div" style={style}>
+    <div className="knob-div">
       <Knob
         name="Angle"
         units="˚"
