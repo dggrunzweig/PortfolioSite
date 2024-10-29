@@ -133,9 +133,8 @@ more traditional formats like records or cassettes, allowing the user to hear va
             prevPage={prevPage}
             name="Analog Knob"
             description={[
-              `Inspired by the
-              style of the legendary Vestex rotary mixers used by early House
-              and Techno DJs. `,
+              `Inspired by the legendary Vestex rotary mixers used by early House
+              and Techno DJs.`,
               `The subtle skeumorphic design pays tribute to it's
               physical ancestor while keeping a clean and minimal design style
               rooted in the digital present. `,

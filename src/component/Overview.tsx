@@ -15,7 +15,6 @@ const Overview = ({ visible, onButtonClick }: props) => {
       <>
         <div className="overview">
           <div className="scroll-indicator">
-            <div className="body">Please Scroll</div>
             <div className="scroll-animation">
               <div className="scroll-blink" style={{ animationDelay: "0s" }}>
                 &gt;
