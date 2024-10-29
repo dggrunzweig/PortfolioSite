@@ -1,12 +1,32 @@
 .about-div {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% auto;
   grid-auto-rows: min-content;
   column-gap: var(--p1);
   row-gap: var(--p1);
   height: 100%;
+  width: 100%;
 }
 
 .profile-photo {
-  width: 70%;
+  width: 100%;
+}
+
+.about-body {
+  padding-right: var(--p1);
+}
+
+@media only screen and (max-width: 768px) {
+  .about-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 0px;
+  }
+
+  .about-body {
+    padding-bottom: 80px;
+    padding-right: 0px;
+  }
 }

@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="about-div">
       <img src="images/profile/profile.avif" className="profile-photo" />
-      <div className="body">
+      <div className="body about-body">
         <div className="header2">Hello!</div>
         <br />
         Interested in seeing how my design style and engineering skillset could
