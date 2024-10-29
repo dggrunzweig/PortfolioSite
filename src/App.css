@@ -124,6 +124,7 @@
   margin: 0px;
   text-align: left;
   width: 100%;
+  text-wrap: wrap;
   max-width: 35em;
 }
 
@@ -249,5 +250,12 @@ html {
     font-size: 16px;
     line-height: 20px;
     text-wrap: wrap;
+  }
+  body {
+    background-image: linear-gradient(
+      to bottom right,
+      var(--grey-8),
+      var(--grey-7)
+    );
   }
 }
