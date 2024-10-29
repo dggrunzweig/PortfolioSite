@@ -169,7 +169,11 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
           console.log(error.message);
         });
     }
-  });
+    return () => {
+      audio_ctx.current.suspend();
+      cancelAnimationFrame(animation_id.current);
+    };
+  }, []);
 
   const Play = () => {
     if (audio_ctx.current && file_player.current && file_loaded) {
