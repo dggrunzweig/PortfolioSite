@@ -28,10 +28,20 @@
   background-color: var(--orange-5);
 }
 
+.nav-menu-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
-  .nav-menu {
+  .side-bar {
+    display: none;
+  }
+
+  .nav-menu-mobile {
+    display: flex;
+    flex-direction: column-reverse;
     position: fixed;
-    bottom: 0%;
+    bottom: -1px;
     width: 100dvw;
     padding-top: var(--p1);
     padding-bottom: var(--p1);
@@ -39,12 +49,12 @@
     box-shadow: var(--grey-7) 0px -2px 1px 0px;
     border-top-left-radius: var(--p1);
     border-top-right-radius: var(--p1);
-    display: flex;
-    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     background-color: var(--grey-9);
+    z-index: 100;
   }
+
   .copyright {
     display: none;
   }
