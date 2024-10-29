@@ -63,7 +63,7 @@ const NavMenu = ({ menu_item_names, onItemClick, current_page }: props) => {
                   onClick={() => {
                     onItemClick(i);
                     document.body.scrollTo({ top: 0, behavior: "instant" });
-                    setOpenMenu(false);
+                    if (i != 8) setOpenMenu(false);
                   }}
                 >
                   {m}
