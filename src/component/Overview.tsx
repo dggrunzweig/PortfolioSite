@@ -39,6 +39,25 @@ const Overview = ({ visible, onButtonClick }: props) => {
             >
               Audio Player
             </div>
+            <div className="scroll-indicator-mobile">
+              <div className="scroll-animation">
+                <div className="scroll-blink" style={{ animationDelay: "0s" }}>
+                  &gt;
+                </div>
+                <div
+                  className="scroll-blink"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  &gt;
+                </div>
+                <div
+                  className="scroll-blink"
+                  style={{ animationDelay: "0.4s" }}
+                >
+                  &gt;
+                </div>
+              </div>
+            </div>
           </div>
           <div className="overview-section">
             <VirtualDesktop files={vd_files} />
@@ -82,6 +101,7 @@ const Overview = ({ visible, onButtonClick }: props) => {
             </div>
           </div>
         </div>
+        <div className="body copyright-mobile">David Grunzweig &#169; 2024</div>
       </>
     )
   );
