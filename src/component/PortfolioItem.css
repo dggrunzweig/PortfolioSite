@@ -1,214 +1,107 @@
-:root {
-  --portfolio-type-color: #121221;
-  --portfolio-header-color: #24249b;
-  --portfolio-description-bg-color: transparent;
-  --portfolio-divider-color: #acacb9;
-  --portfolio-text-size: 14px;
-}
-
 .portfolio-item {
-  padding: 8em 0em 2em 0em;
-  color: var(--portfolio-type-color);
-  height: auto;
-  font-size: var(--portfolio-text-size);
+  padding: 0px;
+  height: calc(100dvh - 2 * var(--p1));
   box-sizing: border-box;
+  width: calc(100dvw - var(--desktop-side-bar-width) - 2 * var(--p1));
+}
+
+.portfolio-head {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.portfolio-title {
+  width: max-content;
+}
+
+.portfolio-buttons {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+}
+
+.portfolio-item .child-space {
   position: relative;
-}
-
-.portfolio-item .header1 {
-  padding: 0em;
-  margin: 0em;
-  font-family: "Inter";
-  font-weight: 300;
-  font-size: 3em;
-  letter-spacing: 2px;
-  text-align: left;
-  box-sizing: border-box;
-  color: var(--portfolio-header-color);
-  text-transform: uppercase;
-  /* box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.109); */
-}
-
-.portfolio-item .header2 {
-  padding: 0em;
-  margin: 0em;
-  font-family: "Inter";
-  font-size: 1.5em;
-  font-weight: 300;
-  color: var(--portfolio-type-color);
-  text-align: left;
-  width: 100%;
-  letter-spacing: -0.05em;
-}
-
-.portfolio-item .description-items {
-  display: grid;
-  width: clamp(800px, 100dvw, 1400px);
-  height: clamp(800px, fit-content, 1000px);
-  grid-template-columns: 1fr 4fr;
-  grid-auto-rows: min-content;
-  row-gap: 0em;
-  column-gap: 0em;
-  background-color: var(--portfolio-description-bg-color);
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.portfolio-item .description-items .sub-grid-header {
-  grid-column: span 1;
-  grid-row: span 1;
-  line-height: 1.25em;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: start;
-  padding: 0em 0em var(--portfolio-text-size) 0em;
-}
-
-.portfolio-item .description-items .sub-grid-sub-header {
-  grid-column: span 1;
-  grid-row: span 3;
-  grid-column-start: 1;
-  font-size: 2em;
-  line-height: 1em;
-  letter-spacing: 0.05em;
-  padding: 0em 0em var(--portfolio-text-size) 0em;
-}
-
-.portfolio-item .description-items .sub-grid-1 {
-  grid-column: span 1;
-  grid-row: span 1;
-  grid-column-start: 2;
-  line-height: 1.25em;
-  padding: 0em 0em 2em 2em;
-  height: 100%;
-  display: flex;
-  align-items: start;
-}
-
-.portfolio-item .description-items .sub-grid-wide {
-  grid-column: span 2;
-  grid-row: span 1;
-  padding: 1em 0em 0em 0em;
-}
-
-.portfolio-item .description-items .child-space {
-  grid-column: span 1;
-  grid-row: span 1;
-  grid-column-start: 2;
-  padding: 0em 0em 3em 3em;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: calc(100% - 90px);
+  padding-top: var(--p1);
 }
 
-.portfolio-item .description-items .portfolio-gallery {
+.portfolio-info-pane {
+  position: absolute;
+  top: var(--p1);
+  left: calc(-1 * var(--p1));
+  z-index: 100;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
+  background-color: rgba(213, 216, 222, 0.822);
+  padding-top: var(--p1);
+  padding-bottom: var(--p1);
+  padding-left: var(--p1);
+  border-radius: var(--p1);
   display: grid;
-  width: 100%;
-  max-width: 100%;
-  height: fit-content;
-  font-size: 1.5em;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: auto;
+  row-gap: 1em;
+  height: calc(100% - 1 * var(--p1));
+  width: calc(100% + var(--p1) + 2px);
+  align-items: start;
 }
 
-.portfolio-item .portfolio-gallery .portfolio-gallery-photo {
-  width: 100%;
-  height: 100%;
+.portfolio-gallery-photo {
+  display: block;
+  width: calc(100% - var(--p1));
+  height: 80%;
   background-color: #ffffff;
   object-fit: contain;
-}
-
-.portfolio-item .description-items .button-sub-grid {
-  grid-column: span 1;
-  grid-row: span 1;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  line-height: 1.25em;
-  padding: 0em 0em 1em 0em;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: start;
-  justify-content: end;
-}
-
-.portfolio-item .button-sub-grid .portfolio-source-button {
-  background-color: transparent;
-  color: var(--portfolio-type-color);
-  font-size: 1em;
-  font-family: "DM Mono";
-  font-weight: 300;
-  text-transform: uppercase;
-  padding: 0.5em 1em 0.5em 1em;
-  border-color: var(--portfolio-divider-color);
-  border-style: solid;
-  border-width: 2px;
-  width: fit-content;
-}
-
-.portfolio-item .portfolio-source-button:hover {
-  background-color: #06040415;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 0;
+  border-radius: var(--p1);
 }
 
 @media only screen and (max-width: 768px) {
-  :root {
-    --portfolio-text-size: 14px;
-  }
-
-  .portfolio-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    border-bottom: var(--portfolio-divider-color) solid 1px;
-  }
-
-  .portfolio-item .description-items {
+  .portfolio-head {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     width: 100dvw;
+    padding-top: var(--p2);
+    padding-bottom: var(--p2);
+    padding-left: var(--p1);
+    padding-right: var(--p1);
+    box-shadow: var(--grey-7) 0px 2px 1px 0px;
+    border-bottom-left-radius: var(--p1);
+    border-bottom-right-radius: var(--p1);
   }
-
-  .portfolio-item .header1 {
-    font-size: 2em;
-    letter-spacing: 2px;
-    text-align: center;
+  .portfolio-title {
+    width: 100dvw;
+    padding-bottom: var(--p2);
   }
-
-  .portfolio-item .header2 {
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-
-  .portfolio-item .description-items .sub-grid-sub-header {
-    font-size: 1.5em;
-    text-align: left;
-  }
-
-  .portfolio-item .description-items .sub-grid-1 {
-    line-height: 1.5em;
-    border-left: transparent solid 1px;
-    padding: 0em 0em 2em 0em;
-  }
-
-  .portfolio-item .description-items .child-space {
-    border-left: transparent solid 1px;
-    padding: 0em 0em 2em 0em;
-  }
-
-  .portfolio-item .description-items .button-sub-grid {
+  .portfolio-buttons {
     width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding-top: 2em;
-    padding-bottom: 0em;
+    text-align: left;
+    justify-content: space-between;
+  }
+  .portfolio-item {
+    height: 100dvh;
+    box-sizing: border-box;
+    width: 100dvw;
+  }
+  .portfolio-item .child-space {
+    height: calc(100% - 180px);
   }
 }

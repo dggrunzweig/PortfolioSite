@@ -21,7 +21,7 @@
 .audio-player {
   color: var(--ap-text-color);
   background-color: var(--ap-background-color);
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   height: min-content;
   display: flex;

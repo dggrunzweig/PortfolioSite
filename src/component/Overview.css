@@ -1,0 +1,55 @@
+.overview {
+  width: 100%;
+  height: calc(100dvh - 2 * var(--p1));
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-indicator {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: var(--p1);
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-family: "DM Mono";
+  font-size: 40px;
+  color: var(--grey-4);
+}
+
+.scroll-blink {
+  animation: slow-flash 0.5s linear 0s infinite alternate;
+}
+
+@keyframes slow-flash {
+  from {
+    color: var(--grey-4);
+  }
+  to {
+    color: var(--grey-8);
+  }
+}
+
+.overview-section {
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - 2 * var(--p1));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  scroll-snap-align: start;
+  z-index: 2;
+}
+
+.overview-button {
+  padding-top: var(--p1);
+}
+
+@media only screen and (max-width: 768px) {
+  .scroll-indicator {
+    bottom: calc(10 * var(--p1));
+    font-size: 30px;
+  }
+}

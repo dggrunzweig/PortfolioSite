@@ -114,7 +114,9 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
             let frame_count = 0;
             const p_frames = 10;
             let p = 0;
-            const last_frame = new Array<number>(num_samples).fill(0);
+            const last_frame = new Array<number>(
+              Math.max(num_samples, canvas.width)
+            ).fill(0);
             const r = 0.2;
             const render = () => {
               if (ctx) {
@@ -146,6 +148,7 @@ const AudioPlayer = ({ audio_file_url, title }: props) => {
                     r * WaveForm(bin_sum, x / canvas.width, p) +
                     (1 - r) * last_frame[x];
                   last_frame[x] = y;
+                  // const y = WaveForm(bin_sum, x / canvas.width, p);
                   // minus three ensure the rects show up a bit even without data
                   ctx.fillRect(x, canvas.height, 1, -y * canvas.height - 3);
                 }
