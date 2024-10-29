@@ -50,24 +50,23 @@
   border-radius: var(--p1);
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-auto-rows: auto;
-  row-gap: 1em;
-  height: calc(100% - 1 * var(--p1));
-  width: calc(100% + var(--p1) + 2px);
-  align-items: start;
+  grid-template-rows: auto 65% auto;
+  height: calc(100% - var(--p1) + 1px);
+  width: calc(100% + var(--p1) + 1px);
+  transition-duration: 200ms;
+  box-shadow: var(--grey-7) 2px 2px 4px 0px;
+}
+.portfolio-info-text {
+  grid-column: span 2;
 }
 
 .portfolio-gallery-photo {
   display: block;
-  width: calc(100% - var(--p1));
-  height: 80%;
+  aspect-ratio: 1;
   background-color: #ffffff;
   object-fit: contain;
-  margin-left: 0px;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: 0;
   border-radius: var(--p1);
+  box-shadow: var(--grey-6) 1px 1px 2px 0px;
 }
 
 @media only screen and (max-width: 768px) {

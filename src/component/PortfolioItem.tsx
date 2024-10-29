@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import "./PortfolioItem.css";
 interface props {
   name: string;
@@ -21,31 +21,10 @@ const PortfolioItem = ({
   nextPage,
   prevPage,
 }: props) => {
-  const gallery_ref = useRef<HTMLDivElement>(null!);
   const [more_info, showMoreInfo] = useState(false);
   useEffect(() => {
     if (!visible) showMoreInfo(false);
   }, [visible]);
-  useEffect(() => {
-    const RearrangeGallery = () => {
-      if (window.innerWidth > 768) {
-        gallery_ref.current.style.gridTemplateColumns =
-          "repeat(" + image_urls.length + ", 1fr)";
-        gallery_ref.current.style.gridTemplateRows = "1fr";
-      } else {
-        gallery_ref.current.style.gridTemplateColumns = "1fr";
-        gallery_ref.current.style.gridTemplateRows =
-          "repeat(" + image_urls.length + ", 1fr)";
-      }
-    };
-    if (gallery_ref.current) {
-      RearrangeGallery();
-      window.addEventListener("resize", RearrangeGallery);
-    }
-    return () => {
-      window.removeEventListener("resize", RearrangeGallery);
-    };
-  }, [gallery_ref]);
   return (
     <>
       {visible && (
@@ -98,22 +77,34 @@ const PortfolioItem = ({
           {children && (
             <div className="child-space">
               {children}
-              {more_info && (
-                <div className="portfolio-info-pane">
-                  <div className="body">{description[1]}</div>
-                  <div className="body">{description[2]}</div>
-                  {image_urls.length > 0 &&
-                    image_urls.map((url: string) => {
-                      return (
-                        <img
-                          key={url}
-                          className="portfolio-gallery-photo"
-                          src={url}
-                        />
-                      );
-                    })}
-                </div>
-              )}
+              <div
+                className="portfolio-info-pane"
+                style={{ display: more_info ? "grid" : "none" }}
+              >
+                <div className="body portfolio-info-text">{description[1]}</div>
+                {image_urls.length > 0 &&
+                  image_urls.map((url: string) => {
+                    return (
+                      <img
+                        key={url}
+                        className="portfolio-gallery-photo"
+                        src={url}
+                        onLoad={(event) => {
+                          const image = event.currentTarget;
+                          const ar = image.naturalWidth / image.naturalHeight;
+                          image.style.width = "auto";
+                          image.style.height = "auto";
+                          if (ar < 1) {
+                            image.style.width = "calc(100% - var(--p1))";
+                          } else {
+                            image.style.height = "calc(100% - var(--p1))";
+                          }
+                        }}
+                      />
+                    );
+                  })}
+                <div className="body portfolio-info-text">{description[2]}</div>
+              </div>
             </div>
           )}
         </div>
