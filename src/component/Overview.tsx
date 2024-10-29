@@ -1,9 +1,6 @@
-import React from "react";
 import AudioPlayer from "./AudioPlayer";
 import VirtualDesktop from "./VirtualDesktop";
 import { vd_files } from "./VirtualDesktopFileList";
-import ProductCard from "./ProductCard";
-import Knob from "./Knob";
 import "./Overview.css";
 import ProductCardDemo from "./ProductCardDemo";
 import KnobDemo from "./KnobDemo";
@@ -13,24 +10,24 @@ interface props {
   onButtonClick: (i: number) => void;
 }
 const Overview = ({ visible, onButtonClick }: props) => {
-  const scroll_y = window.scrollY;
   return (
     visible && (
       <>
-        {scroll_y < 200 && (
+        <div className="overview">
           <div className="scroll-indicator">
-            <div className="scroll-blink" style={{ animationDelay: "0s" }}>
-              &gt;
-            </div>
-            <div className="scroll-blink" style={{ animationDelay: "0.2s" }}>
-              &gt;
-            </div>
-            <div className="scroll-blink" style={{ animationDelay: "0.4s" }}>
-              &gt;
+            <div className="body">Please Scroll</div>
+            <div className="scroll-animation">
+              <div className="scroll-blink" style={{ animationDelay: "0s" }}>
+                &gt;
+              </div>
+              <div className="scroll-blink" style={{ animationDelay: "0.2s" }}>
+                &gt;
+              </div>
+              <div className="scroll-blink" style={{ animationDelay: "0.4s" }}>
+                &gt;
+              </div>
             </div>
           </div>
-        )}
-        <div className="overview">
           <div className="overview-section">
             <AudioPlayer
               audio_file_url="audio_files/Ron_Trent.mp3"
