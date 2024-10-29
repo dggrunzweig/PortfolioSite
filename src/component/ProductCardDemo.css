@@ -11,6 +11,6 @@
 }
 @media only screen and (max-width: 768px) {
   .product-card-viewer {
-    padding: 0em 0em 4em 0em;
+    padding: 0em 0em 0em 0em;
   }
 }
