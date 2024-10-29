@@ -23,10 +23,9 @@ const NavMenu = ({ menu_item_names, onItemClick, current_page }: props) => {
           {open_menu &&
             menu_item_names.map((m, i) => {
               return (
-                <div className="menu-item">
+                <div className="menu-item" key={m}>
                   {i == current_page && <div className="page-indicator"></div>}
                   <div
-                    key={m}
                     className="small-button"
                     onClick={() => {
                       onItemClick(i);
