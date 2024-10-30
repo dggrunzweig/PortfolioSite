@@ -207,12 +207,7 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
-  background-image: linear-gradient(
-    to bottom right,
-    var(--grey-9),
-    var(--grey-8)
-  );
+  background-image: radial-gradient(var(--grey-9), var(--grey-8));
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -258,10 +253,6 @@ html {
     letter-spacing: 2px;
   }
   body {
-    background-image: linear-gradient(
-      to bottom right,
-      var(--grey-8),
-      var(--grey-7)
-    );
+    background-image: radial-gradient(var(--grey-8), var(--grey-7));
   }
 }
