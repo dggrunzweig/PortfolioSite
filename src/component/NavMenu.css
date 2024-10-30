@@ -22,12 +22,12 @@
 }
 
 .page-indicator {
-  width: 4px;
-  height: 4px;
-  margin-left: -8px;
-  margin-right: 4px;
+  width: 6px;
+  height: 6px;
+  margin-left: -12px;
+  margin-right: 6px;
   margin-top: 2px;
-  background-color: var(--orange-5);
+  background-color: var(--orange-4);
 }
 
 .nav-menu-mobile {
