@@ -54,7 +54,7 @@
   height: calc(100% - var(--p1) + 1px);
   width: calc(100% + var(--p1) + 1px);
   transition-duration: 200ms;
-  box-shadow: var(--grey-7) 2px 2px 4px 0px;
+  box-shadow: var(--grey-6) 2px 2px 4px 0px;
 }
 .portfolio-info-text {
   grid-column: span 2;
