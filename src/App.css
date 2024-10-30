@@ -173,6 +173,7 @@
   text-transform: uppercase;
   text-decoration: underline;
   cursor: crosshair;
+  letter-spacing: 3px;
 }
 
 .large-button:hover {
@@ -250,6 +251,11 @@ html {
     font-size: 16px;
     line-height: 20px;
     text-wrap: wrap;
+  }
+  .large-button {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2px;
   }
   body {
     background-image: linear-gradient(
