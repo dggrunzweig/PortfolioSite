@@ -20,23 +20,29 @@ const NavMenu = ({ menu_item_names, onItemClick, current_page }: props) => {
           >
             Menu
           </div>
-          {open_menu &&
-            menu_item_names.map((m, i) => {
-              return (
-                <div className="menu-item" key={m}>
-                  {i == current_page && <div className="page-indicator"></div>}
-                  <div
-                    className="small-button"
-                    onClick={() => {
-                      onItemClick(i);
-                      document.body.scrollTo({ top: 0, behavior: "instant" });
-                    }}
-                  >
-                    {m}
-                  </div>
+          {menu_item_names.map((m, i) => {
+            return (
+              <div
+                className="menu-item"
+                key={m}
+                style={{
+                  marginLeft: open_menu ? "0px" : "-180px",
+                  transitionDelay: open_menu ? i * 20 + "ms" : "0ms",
+                }}
+              >
+                {i == current_page && <div className="page-indicator"></div>}
+                <div
+                  className="small-button"
+                  onClick={() => {
+                    onItemClick(i);
+                    document.body.scrollTo({ top: 0, behavior: "instant" });
+                  }}
+                >
+                  {m}
                 </div>
-              );
-            })}
+              </div>
+            );
+          })}
         </div>
         <div className="body copyright">
           David Grunzweig
