@@ -85,13 +85,18 @@ const Overview = ({ visible, onButtonClick }: props) => {
               Analog Knob
             </div>
           </div>
-          <div className="overview-section">
+          <div className="overview-section ">
             <iframe
+              className="substrata-desktop"
               src="https://substrata-synth.netlify.app/"
               width="100%"
               height="100%"
               style={{ border: "none" }}
             />
+            <div className="substrata-mobile">
+              <img src="./substrata/Substrata.png" />
+              <div className="body">Not Available on Mobile</div>
+            </div>
             <div
               className="large-button overview-button"
               onClick={() => onButtonClick(5)}

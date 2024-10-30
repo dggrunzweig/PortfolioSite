@@ -68,6 +68,10 @@
   display: none;
 }
 
+.substrata-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .scroll-indicator-mobile {
     display: flex;
@@ -108,5 +112,25 @@
     border-bottom-right-radius: var(--p1);
     background-color: var(--grey-9);
     z-index: 100;
+  }
+
+  .substrata-mobile {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .substrata-mobile img {
+    width: 100%;
+    height: auto;
+  }
+
+  .substrata-mobile .body {
+    text-align: center;
+  }
+
+  .substrata-desktop {
+    display: none;
   }
 }
