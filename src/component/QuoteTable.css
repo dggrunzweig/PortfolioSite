@@ -245,7 +245,8 @@
     grid-template-areas:
       "quote quote"
       "name date";
-    border-right: solid 1px var(--grey-4);
+    border-top: none;
+    border-bottom: solid 1px var(--grey-6);
     min-height: 120px;
     height: 120px;
   }
@@ -253,7 +254,8 @@
   .table-entry,
   .quote-header-row-item {
     text-wrap: wrap;
-    border: solid var(--grey-3) 1px;
+    border-top: solid var(--grey-4) 1px;
+    border-left: solid var(--grey-4) 1px;
     min-height: 60px;
     height: fit-content;
     display: flex;
