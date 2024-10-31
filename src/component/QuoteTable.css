@@ -250,7 +250,6 @@
     height: fit-content;
     min-height: 120px;
     height: fit-content;
-    max-height: 100%;
   }
 
   .table-entry,
@@ -260,14 +259,13 @@
     border: solid var(--grey-3) 1px;
     min-height: 60px;
     height: min-content;
-    max-height: 100%;
     display: flex;
     align-items: center;
     padding: 10px 10px 10px 10px;
   }
 
   .table-view {
-    padding-top: 60px;
+    margin-top: 60px;
   }
   .quote-viewer {
     width: 80%;
