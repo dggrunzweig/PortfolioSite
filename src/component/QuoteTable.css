@@ -248,6 +248,9 @@
       "name date";
     border-right: solid 1px var(--grey-4);
     height: fit-content;
+  }
+  .quote-table-row,
+  .quote-header-row {
     max-height: 120px;
   }
   .table-entry,
