@@ -12,15 +12,16 @@ import About from "./component/About";
 
 function App() {
   const [current_tab, setCurrentTab] = useState(0);
+  const total_projects = 8;
   const nextPage = () => {
     setCurrentTab((t) => {
-      return (t + 1) % 7;
+      return (t + 1) % total_projects;
     });
   };
   const prevPage = () => {
     setCurrentTab((t) => {
       t = t - 1;
-      if (t < 0) t += 7;
+      if (t < 0) t += total_projects;
       return t;
     });
   };
@@ -30,6 +31,7 @@ function App() {
     "Virtual Desktop",
     "product card",
     "analog knob",
+    "quote table",
     "substrata",
     "about",
     "linkedin",
@@ -37,8 +39,8 @@ function App() {
   ]);
   const timer_id = useRef(0);
   const setMenuIndex = (i: number) => {
-    if (i <= 6) setCurrentTab(i);
-    if (i == 7) {
+    if (i <= total_projects - 1) setCurrentTab(i);
+    if (i == total_projects) {
       // go to linked in
       const new_tab = window.open(
         "https://www.linkedin.com/in/david-grunzweig/",
@@ -46,13 +48,13 @@ function App() {
       );
       new_tab?.focus();
     }
-    if (i == 8) {
+    if (i == total_projects + 1) {
       navigator.clipboard.writeText("david@greentwig.xyz");
-      menu_items[8] = "Copied";
+      menu_items[total_projects + 1] = "Copied";
       setMenuItems([...menu_items]);
       clearTimeout(timer_id.current);
       timer_id.current = setTimeout(() => {
-        menu_items[8] = "email";
+        menu_items[total_projects + 1] = "email";
         setMenuItems([...menu_items]);
       }, 2000);
     }
@@ -150,9 +152,29 @@ more traditional formats like records or cassettes, allowing the user to hear va
             image_urls={["images/vestax-1.webp", "images/vestax-2.webp"]}
             children={<KnobDemo />}
           />
-
           <PortfolioItem
             visible={current_tab == 5}
+            nextPage={nextPage}
+            prevPage={prevPage}
+            name="Quote Table"
+            description={[
+              `A percussive low-frequency synthesizer. Designed for the ritualistic and hypnotic.`,
+              `Inspired by the instruments like the Moog DFAM and my experience programming low frequency drum sequences in my musical partnership Night Sea. The Substrata synthesizer is a full featured synthesizer on the web. The sequencing and audio core were created in C, compiled to WASM, and then wrapped in a Web Audio worklet node. The UI is built with React and Tailwind CSS.`,
+              `The synthesizer supports recording directly to WAV files, accomplished in C and then sent via ports as a blob of binary data for download. The use of Web MIDI allows the sequencer to be sync'd with external clock sources like a DAW or other hardware synthesizers. Internally the synthesizer uses wavetables for a crunchy and lo-fi digital tone.`,
+            ]}
+            image_urls={[]}
+            source_link="https://github.com/dggrunzweig/Bassline"
+            children={
+              <iframe
+                src="https://substrata-synth.netlify.app/"
+                width="100%"
+                height="100%"
+                style={{ border: "none" }}
+              />
+            }
+          />
+          <PortfolioItem
+            visible={current_tab == 6}
             nextPage={nextPage}
             prevPage={prevPage}
             name="Substrata"
@@ -173,7 +195,7 @@ more traditional formats like records or cassettes, allowing the user to hear va
             }
           />
           <PortfolioItem
-            visible={current_tab == 6}
+            visible={current_tab == 7}
             nextPage={nextPage}
             prevPage={prevPage}
             name="About"

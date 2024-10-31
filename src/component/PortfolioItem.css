@@ -103,11 +103,11 @@
   .portfolio-item {
     height: min-content;
     box-sizing: border-box;
-    width: 100dvw;
+    width: 100%;
   }
   .portfolio-item .child-space {
     margin-top: 140px;
-    padding: var(--p1) var(--p1) var(--p1) var(--p1);
+    padding: var(--p1) 0px var(--p2) 0px;
     justify-content: start;
     height: calc(100dvh - 180px);
   }
