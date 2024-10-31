@@ -9,6 +9,7 @@ import { useState, useRef } from "react";
 import Overview from "./component/Overview";
 import KnobDemo from "./component/KnobDemo";
 import About from "./component/About";
+import QuoteTableDemo from "./component/QuoteTableDemo";
 
 function App() {
   const [current_tab, setCurrentTab] = useState(0);
@@ -158,20 +159,13 @@ more traditional formats like records or cassettes, allowing the user to hear va
             prevPage={prevPage}
             name="Quote Table"
             description={[
-              `A percussive low-frequency synthesizer. Designed for the ritualistic and hypnotic.`,
-              `Inspired by the instruments like the Moog DFAM and my experience programming low frequency drum sequences in my musical partnership Night Sea. The Substrata synthesizer is a full featured synthesizer on the web. The sequencing and audio core were created in C, compiled to WASM, and then wrapped in a Web Audio worklet node. The UI is built with React and Tailwind CSS.`,
-              `The synthesizer supports recording directly to WAV files, accomplished in C and then sent via ports as a blob of binary data for download. The use of Web MIDI allows the sequencer to be sync'd with external clock sources like a DAW or other hardware synthesizers. Internally the synthesizer uses wavetables for a crunchy and lo-fi digital tone.`,
+              `A table view for storing quotes. Quotes can be added, removed, or previewed.`,
+              "",
+              "",
             ]}
             image_urls={[]}
-            source_link="https://github.com/dggrunzweig/Bassline"
-            children={
-              <iframe
-                src="https://substrata-synth.netlify.app/"
-                width="100%"
-                height="100%"
-                style={{ border: "none" }}
-              />
-            }
+            source_link="https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx"
+            children={<QuoteTableDemo />}
           />
           <PortfolioItem
             visible={current_tab == 6}
