@@ -85,7 +85,7 @@
   }
   .overview-section {
     min-height: calc(100dvh - 40px);
-    width: 100dvw;
+    width: 100%;
     overflow: hidden;
     height: fit-content;
     align-items: center;

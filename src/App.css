@@ -253,14 +253,15 @@ html {
     --p2: 20px;
   }
   .app {
-    padding: 0px;
+    padding: 0px var(--p1);
     width: 100dvw;
     align-items: start;
     flex-direction: column;
+    box-sizing: border-box;
   }
   .view-area {
     margin-left: 0px;
-    width: 100dvw;
+    width: 100%;
   }
   .header1 {
     font-size: 16px;
