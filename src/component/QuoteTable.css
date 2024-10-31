@@ -24,7 +24,6 @@
 }
 
 .table-entry,
-.table-entry-highlighted,
 .quote-header-row-item {
   font-size: 16px;
   line-height: 30px;
@@ -247,21 +246,24 @@
       "quote quote"
       "name date";
     border-right: solid 1px var(--grey-4);
-    height: fit-content;
     min-height: 120px;
-    height: fit-content;
+    height: 120px;
   }
 
   .table-entry,
-  .table-entry-highlighted,
   .quote-header-row-item {
     text-wrap: wrap;
     border: solid var(--grey-3) 1px;
     min-height: 60px;
-    height: min-content;
+    height: fit-content;
     display: flex;
     align-items: center;
     padding: 10px 10px 10px 10px;
+  }
+
+  .quote-table-row-highlighted {
+    height: fit-content;
+    max-height: 100%;
   }
 
   .table-view {
