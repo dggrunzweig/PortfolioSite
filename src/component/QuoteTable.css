@@ -248,6 +248,7 @@
       "name date";
     border-right: solid 1px var(--grey-4);
     height: fit-content;
+    max-height: 120px;
   }
   .table-entry,
   .table-entry-highlighted,
