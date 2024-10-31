@@ -4,7 +4,7 @@ import { vd_files } from "./VirtualDesktopFileList";
 import "./Overview.css";
 import ProductCardDemo from "./ProductCardDemo";
 import KnobDemo from "./KnobDemo";
-
+import QuoteTableDemo from "./QuoteTableDemo";
 interface props {
   visible: boolean;
   onButtonClick: (i: number) => void;
@@ -85,6 +85,15 @@ const Overview = ({ visible, onButtonClick }: props) => {
               Analog Knob
             </div>
           </div>
+          <div className="overview-section">
+            <QuoteTableDemo />
+            <div
+              className="large-button overview-button"
+              onClick={() => onButtonClick(5)}
+            >
+              Quote Table
+            </div>
+          </div>
           <div className="overview-section ">
             <iframe
               className="substrata-desktop"
@@ -99,7 +108,7 @@ const Overview = ({ visible, onButtonClick }: props) => {
             </div>
             <div
               className="large-button overview-button"
-              onClick={() => onButtonClick(5)}
+              onClick={() => onButtonClick(6)}
             >
               Substrata
             </div>

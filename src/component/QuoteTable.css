@@ -1,0 +1,263 @@
+.quote-table {
+  max-width: 945px;
+  max-height: 600px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--grey-2);
+  font-family: "IBM Plex Mono", monospace;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  padding-top: 60px;
+  overflow-y: hidden;
+  z-index: 0;
+}
+
+.table-view {
+  height: 100%;
+}
+.quote-table-table-area {
+  overflow-y: scroll;
+  display: block;
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.table-entry,
+.table-entry-highlighted,
+.quote-header-row-item {
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--grey-9);
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 20px;
+  border-left: solid var(--grey-4) 1px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.quote-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.quote-text-highlighted {
+  color: var(--blue-9);
+  overflow: hidden;
+  text-wrap: wrap;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 14px;
+}
+
+.quote-table-row,
+.quote-table-row-highlighted,
+.quote-header-row {
+  display: grid;
+  grid-template-columns: max(60%, 180px) max(20%, 180px) max(20%, 180px);
+  grid-template-areas: "quote name date";
+  grid-template-rows: auto;
+  width: 100%;
+  border-bottom: solid var(--grey-4) 1px;
+  height: 60px;
+  align-items: center;
+}
+
+.quote-table-row-highlighted {
+  background-color: var(--grey-3);
+  height: fit-content;
+}
+
+.quote-table-row:hover {
+  background-color: var(--grey-3);
+}
+
+.quote-header-row {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  background-color: var(--grey-2);
+}
+
+.quote-header-row-item {
+  color: var(--grey-6);
+  font-weight: 400;
+}
+
+.quote-table-toolbar {
+  position: absolute;
+  bottom: 0%;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+  border-top: solid var(--grey-4) 1px;
+  z-index: 1;
+  background-color: var(--grey-2);
+}
+
+.quote-table-toolbar img {
+  padding-right: 10px;
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+/* Add View */
+.add-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.qt-submit-button,
+.qt-cancel-button {
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--grey-9);
+  font-weight: 500;
+  border: solid var(--blue-7) 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.qt-submit-button:hover,
+.qt-cancel-button:hover {
+  background-color: var(--grey-3);
+}
+
+.qt-cancel-button {
+  color: var(--grey-7);
+  background-color: transparent;
+  border: solid var(--grey-5) 1px;
+}
+.quote-add-section {
+  padding: 10px 10px 60px 10px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 60px;
+  align-items: center;
+}
+
+.qt-add-quote-textarea,
+.qt-add-author-textarea {
+  font-family: "IBM Plex Mono", monospace;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--grey-1);
+  background-color: var(--grey-8);
+}
+
+.qt-add-quote-textarea {
+  height: 100%;
+}
+
+.qt-add-author-textarea {
+  height: 40px;
+}
+
+/* Viewer */
+.quote-viewer-overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #edeff2ba;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 3;
+}
+.quote-viewer {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: auto;
+  height: 760px;
+  border-radius: 25px;
+  padding: 20px;
+  grid-template-columns: 100%;
+  grid-template-rows: 40px auto 40px;
+  background-image: radial-gradient(var(--blue-9), var(--blue-7));
+  z-index: 4;
+  box-shadow: var(--grey-5) 4px 4px 4px 0px;
+}
+
+.quote-viewer img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.quote-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.qt-quote-viewer-quote {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+  color: var(--blue-1);
+  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.qt-quote-viewer-author {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 200;
+  color: var(--blue-1);
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .quote-table-row,
+  .quote-table-row-highlighted,
+  .quote-header-row {
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "quote quote"
+      "name date";
+    border-right: solid 1px var(--grey-4);
+    height: fit-content;
+  }
+  .table-entry,
+  .table-entry-highlighted,
+  .quote-header-row-item {
+    text-wrap: wrap;
+    border: solid var(--grey-3) 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+  .quote-table {
+    padding-top: 100px;
+  }
+}
