@@ -179,9 +179,15 @@ const QuoteTable = ({ initial_list, visible }: props) => {
                   }}
                 />
                 <img
-                  src="./icons/quote_open.png"
+                  src={
+                    current_selection == -1
+                      ? "./icons/quote_open_deactive.png"
+                      : "./icons/quote_open.png"
+                  }
                   onClick={() => {
-                    setViewState(states.view);
+                    if (current_selection != -1) {
+                      setViewState(states.view);
+                    }
                   }}
                 />
               </div>
