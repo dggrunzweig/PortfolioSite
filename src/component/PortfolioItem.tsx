@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useState } from "react";
+import PortfolioItemInfo from "./PortfolioItemInfo";
 import "./PortfolioItem.css";
 interface props {
   name: string;
@@ -48,12 +49,12 @@ const PortfolioItem = ({
               )}
               {description.length > 1 && (
                 <div
-                  className="small-button"
+                  className="small-button more-info-button-mobile"
                   onClick={() => {
                     showMoreInfo(!more_info);
                   }}
                 >
-                  More Info
+                  Project desc
                 </div>
               )}
               <div
@@ -77,34 +78,28 @@ const PortfolioItem = ({
           {children && (
             <div className="child-space">
               {children}
-              <div
-                className="portfolio-info-pane"
-                style={{ display: more_info ? "grid" : "none" }}
-              >
-                <div className="body portfolio-info-text">{description[1]}</div>
-                {image_urls.length > 0 &&
-                  image_urls.map((url: string) => {
-                    return (
-                      <img
-                        key={url}
-                        className="portfolio-gallery-photo"
-                        src={url}
-                        onLoad={(event) => {
-                          const image = event.currentTarget;
-                          const ar = image.naturalWidth / image.naturalHeight;
-                          image.style.width = "auto";
-                          image.style.height = "auto";
-                          if (ar < 1) {
-                            image.style.width = "calc(100% - var(--p1))";
-                          } else {
-                            image.style.height = "calc(100% - var(--p1))";
-                          }
-                        }}
-                      />
-                    );
-                  })}
-                <div className="body portfolio-info-text">{description[2]}</div>
-              </div>
+              {more_info && (
+                <PortfolioItemInfo
+                  problem_text={description[0]}
+                  problem_image_urls={image_urls}
+                  exploration_text="how i explored the problem"
+                  exploration_image_urls={[]}
+                  challenges_text="all my challenges"
+                  challenges_image_urls={[]}
+                  outcome_text="the outcomes of my project"
+                  outcome_image_urls={[]}
+                />
+              )}
+            </div>
+          )}
+          {description.length > 1 && (
+            <div
+              className="large-button more-info-button-desktop"
+              onClick={() => {
+                showMoreInfo(!more_info);
+              }}
+            >
+              Project Brief
             </div>
           )}
         </div>

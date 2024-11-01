@@ -3,6 +3,9 @@
   height: calc(100dvh - 2 * var(--p1));
   box-sizing: border-box;
   width: calc(100dvw - var(--desktop-side-bar-width) - 2 * var(--p1));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .portfolio-head {
@@ -25,6 +28,18 @@
   text-align: right;
 }
 
+.more-info-button-desktop {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding-top: var(--p1);
+}
+
+.more-info-button-mobile {
+  display: none;
+}
+
 .portfolio-item .child-space {
   position: relative;
   width: 100%;
@@ -32,41 +47,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 90px);
+  height: 100%;
+  max-height: calc(100% - 140px);
   padding-top: var(--p1);
-}
-
-.portfolio-info-pane {
-  position: absolute;
-  top: var(--p1);
-  left: calc(-1 * var(--p1));
-  z-index: 100;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(40px);
-  background-color: rgba(213, 216, 222, 0.822);
-  padding-top: var(--p1);
-  padding-bottom: var(--p1);
-  padding-left: var(--p1);
-  border-radius: var(--p1);
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto 65% auto;
-  height: calc(100% - var(--p1) + 1px);
-  width: calc(100% + var(--p1) + 1px);
-  transition-duration: 200ms;
-  box-shadow: var(--grey-6) 2px 2px 4px 0px;
-}
-.portfolio-info-text {
-  grid-column: span 2;
-}
-
-.portfolio-gallery-photo {
-  display: block;
-  aspect-ratio: 1;
-  background-color: #ffffff;
-  object-fit: contain;
-  border-radius: var(--p1);
-  box-shadow: var(--grey-6) 1px 1px 2px 0px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -100,6 +83,12 @@
     text-align: left;
     justify-content: space-between;
   }
+  .more-info-button-desktop {
+    display: none;
+  }
+  .more-info-button-mobile {
+    display: block;
+  }
   .portfolio-item {
     height: min-content;
     box-sizing: border-box;
@@ -110,33 +99,5 @@
     padding: var(--p1) 0px var(--p2) 0px;
     justify-content: start;
     height: calc(100dvh - 180px);
-  }
-
-  .portfolio-info-pane {
-    position: fixed;
-    z-index: 10;
-    bottom: 0%;
-    left: 0%;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: var(--grey-7);
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    min-height: calc(100dvh);
-    height: calc(100dvh);
-    padding-top: 140px;
-    padding-bottom: 60px;
-    width: max(100dvw, 100%);
-    overflow: scroll;
-  }
-
-  .portfolio-info-text {
-    grid-column: span 1;
-    padding-bottom: var(--p1);
-  }
-
-  .portfolio-gallery-photo {
-    width: 100% !important;
-    object-fit: contain;
   }
 }

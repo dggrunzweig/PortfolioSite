@@ -1,0 +1,123 @@
+.portfolio-info-pane {
+  position: absolute;
+  top: 0%;
+  left: calc(-1 * var(--p1));
+  z-index: 100;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px);
+  background-color: rgba(213, 216, 222, 0.822);
+  padding: var(--p1);
+  padding-top: 0px;
+  width: calc(100% + var(--p1));
+  height: calc(100% - var(--p1));
+  border-radius: var(--p1);
+  display: block;
+  box-shadow: var(--grey-6) 2px 2px 4px 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-info-pane::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-info-page {
+  padding-top: var(--p1);
+  position: relative;
+  width: 100%;
+  height: calc(100% + var(--p2));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px auto;
+  column-gap: var(--p1);
+  row-gap: var(--p1);
+  grid-template-areas:
+    "header header"
+    "body images";
+  scroll-snap-align: start;
+}
+
+.portfolio-info-page-header {
+  grid-area: header;
+}
+
+.portfolio-info-page-body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+
+.portfolio-info-images {
+  grid-area: images;
+  display: flex;
+  flex-direction: column;
+  gap: var(--p1);
+  align-items: end;
+  justify-content: center;
+}
+
+.portfolio-info-images img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--p1);
+  box-shadow: var(--grey-6) 2px 2px 4px 0px;
+}
+
+.portfolio-info-scroll-indicator {
+  position: absolute;
+  left: var(--p1);
+  bottom: var(--p1);
+  font-family: "articulat cf", sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--grey-4);
+  transform: rotate(90deg) translate(-25%, 100%);
+}
+
+@media only screen and (max-width: 768px) {
+  .portfolio-info-pane {
+    position: fixed;
+    margin-top: 0px;
+    z-index: 5;
+    top: 0%;
+    left: 0%;
+    padding: 150px var(--p1) 60px var(--p1);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: var(--grey-7);
+    min-height: calc(100dvh);
+    height: calc(100dvh);
+    width: 100dvw;
+    overflow: scroll;
+    scroll-snap-type: none;
+  }
+
+  .portfolio-info-page {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: var(--p1);
+    scroll-snap-align: none;
+    padding-bottom: var(--p3);
+    padding-top: 0px;
+  }
+
+  .portfolio-info-page-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .portfolio-info-scroll-indicator {
+    display: none;
+  }
+}

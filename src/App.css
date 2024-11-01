@@ -111,6 +111,7 @@
 
   --p1: 20px;
   --p2: 40px;
+  --p3: 60px;
   --desktop-side-bar-width: 180px;
   --max-flex-width: 1500px;
   --mobile-break-point: 475px;
@@ -251,6 +252,7 @@ html {
   :root {
     --p1: 10px;
     --p2: 20px;
+    --p3: 30px;
   }
   .app {
     padding: 0px var(--p1);
