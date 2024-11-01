@@ -1,27 +1,30 @@
 import { ReactElement, useEffect, useState } from "react";
 import PortfolioItemInfo from "./PortfolioItemInfo";
 import "./PortfolioItem.css";
-interface props {
+
+export interface PortfolioEntry {
   name: string;
-  description: string[];
-  image_urls: string[];
-  children: ReactElement | null;
   source_link: string;
+  description: string;
+  more_info: boolean;
+  element?: ReactElement;
+  problem_text?: string;
+  problem_image_urls?: string[];
+  exploration_text?: string;
+  exploration_image_urls?: string[];
+  challenges_text?: string;
+  challenges_image_urls?: string[];
+  outcome_text?: string;
+  outcome_image_urls?: string[];
+}
+interface props {
+  entry: PortfolioEntry;
   visible: boolean;
   nextPage: () => void;
   prevPage: () => void;
 }
 
-const PortfolioItem = ({
-  name,
-  description,
-  image_urls,
-  children,
-  source_link,
-  visible,
-  nextPage,
-  prevPage,
-}: props) => {
+const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
   const [more_info, showMoreInfo] = useState(false);
   useEffect(() => {
     if (!visible) showMoreInfo(false);
@@ -32,22 +35,22 @@ const PortfolioItem = ({
         <div className="portfolio-item">
           <div className="portfolio-head">
             <div className="portfolio-title">
-              <div className="header1">{name}</div>
-              <div className="header2">{description[0]}</div>
+              <div className="header1">{entry.name}</div>
+              <div className="header2">{entry.description}</div>
             </div>
             <div className="portfolio-buttons">
-              {source_link != "" && (
+              {entry.source_link != "" && (
                 <div
                   className="small-button"
                   onClick={() => {
-                    let new_tab = window.open(source_link, "_blank");
+                    let new_tab = window.open(entry.source_link, "_blank");
                     new_tab?.focus();
                   }}
                 >
                   Source Code
                 </div>
               )}
-              {description.length > 1 && (
+              {entry.more_info && (
                 <div
                   className="small-button more-info-button-mobile"
                   onClick={() => {
@@ -75,24 +78,15 @@ const PortfolioItem = ({
               </div>
             </div>
           </div>
-          {children && (
+          {entry.element && (
             <div className="child-space">
-              {children}
-              {more_info && (
-                <PortfolioItemInfo
-                  problem_text={description[0]}
-                  problem_image_urls={image_urls}
-                  exploration_text="how i explored the problem"
-                  exploration_image_urls={[]}
-                  challenges_text="all my challenges"
-                  challenges_image_urls={[]}
-                  outcome_text="the outcomes of my project"
-                  outcome_image_urls={[]}
-                />
+              {entry.element}
+              {more_info && entry.more_info && (
+                <PortfolioItemInfo entry={entry} />
               )}
             </div>
           )}
-          {description.length > 1 && (
+          {entry.more_info && (
             <div
               className="large-button more-info-button-desktop"
               onClick={() => {

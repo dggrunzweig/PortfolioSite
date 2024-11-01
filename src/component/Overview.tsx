@@ -1,10 +1,6 @@
-import AudioPlayer from "./AudioPlayer";
-import VirtualDesktop from "./VirtualDesktop";
-import { vd_files } from "./VirtualDesktopFileList";
 import "./Overview.css";
-import ProductCardDemo from "./ProductCardDemo";
-import KnobDemo from "./KnobDemo";
-import QuoteTableDemo from "./QuoteTableDemo";
+import "./../PortfolioEntries";
+import { portfolio_entries } from "./../PortfolioEntries";
 interface props {
   visible: boolean;
   onButtonClick: (i: number) => void;
@@ -27,93 +23,45 @@ const Overview = ({ visible, onButtonClick }: props) => {
               </div>
             </div>
           </div>
-          <div className="overview-section">
-            <AudioPlayer
-              audio_file_url="audio_files/Ron_Trent.mp3"
-              title="Ron Trent - Morning Factory"
-            />
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(1)}
-            >
-              Audio Player
-            </div>
-            <div className="scroll-indicator-mobile">
-              <div className="scroll-animation">
-                <div className="scroll-blink" style={{ animationDelay: "0s" }}>
-                  &gt;
-                </div>
+          {portfolio_entries.map((entry, i) => {
+            return (
+              <div className="overview-section">
+                {entry.element}
                 <div
-                  className="scroll-blink"
-                  style={{ animationDelay: "0.2s" }}
+                  className="large-button overview-button"
+                  onClick={() => onButtonClick(i + 1)}
                 >
-                  &gt;
+                  {entry.name}
                 </div>
-                <div
-                  className="scroll-blink"
-                  style={{ animationDelay: "0.4s" }}
-                >
-                  &gt;
-                </div>
+                {i == 0 && (
+                  <div className="scroll-indicator-mobile">
+                    <div className="scroll-animation">
+                      <div
+                        className="scroll-blink"
+                        style={{ animationDelay: "0s" }}
+                      >
+                        &gt;
+                      </div>
+                      <div
+                        className="scroll-blink"
+                        style={{ animationDelay: "0.2s" }}
+                      >
+                        &gt;
+                      </div>
+                      <div
+                        className="scroll-blink"
+                        style={{ animationDelay: "0.4s" }}
+                      >
+                        &gt;
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          </div>
-          <div className="overview-section">
-            <VirtualDesktop files={vd_files} />
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(2)}
-            >
-              Virtual Desktop
-            </div>
-          </div>
-          <div className="overview-section">
-            <ProductCardDemo />
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(3)}
-            >
-              Product Card
-            </div>
-          </div>
-          <div className="overview-section">
-            <KnobDemo />
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(4)}
-            >
-              Analog Knob
-            </div>
-          </div>
-          <div className="overview-section">
-            <QuoteTableDemo />
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(5)}
-            >
-              Quote Table
-            </div>
-          </div>
-          <div className="overview-section ">
-            <iframe
-              className="substrata-desktop"
-              src="https://substrata-synth.netlify.app/"
-              width="100%"
-              height="100%"
-              style={{ border: "none" }}
-            />
-            <div className="substrata-mobile">
-              <img src="./substrata/Substrata.png" />
-              <div className="body">Not Available on Mobile</div>
-            </div>
-            <div
-              className="large-button overview-button"
-              onClick={() => onButtonClick(6)}
-            >
-              Substrata
-            </div>
-          </div>
+            );
+          })}
         </div>
+
         <div className="body copyright-mobile">David Grunzweig &#169; 2024</div>
       </>
     )
