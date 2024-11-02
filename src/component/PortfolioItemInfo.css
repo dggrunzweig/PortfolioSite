@@ -9,7 +9,7 @@
   padding: var(--p1);
   padding-top: 0px;
   width: calc(100% + var(--p1));
-  height: calc(100%);
+  height: 100%;
   border-radius: var(--p1);
   display: block;
   box-shadow: var(--grey-6) 2px 2px 4px 0px;
@@ -74,13 +74,13 @@
 
 .portfolio-info-scroll-indicator {
   position: absolute;
-  left: var(--p1);
+  left: calc(50%);
   bottom: var(--p1);
   font-family: "articulat cf", sans-serif;
   font-size: 30px;
   line-height: 30px;
   color: var(--grey-4);
-  transform: rotate(90deg) translate(25%, 100%);
+  transform: rotate(90deg) translate(0%, 18px);
 }
 
 @media only screen and (max-width: 768px) {
