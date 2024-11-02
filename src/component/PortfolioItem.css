@@ -29,11 +29,19 @@
 }
 
 .more-info-button-desktop {
-  width: 100%;
   display: flex;
+  width: fit-content;
   flex-direction: row;
-  justify-content: end;
+  justify-content: start;
+  padding-bottom: var(--p1);
   padding-top: var(--p1);
+  text-transform: lowercase;
+  text-decoration: underline;
+  cursor: crosshair;
+}
+
+.more-info-button-desktop:hover {
+  color: var(--grey-5);
 }
 
 .more-info-button-mobile {
@@ -48,8 +56,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  max-height: calc(100% - 140px);
-  padding-top: var(--p1);
+  max-height: calc(100% - 160px);
 }
 
 @media only screen and (max-width: 768px) {

@@ -78,22 +78,22 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
               </div>
             </div>
           </div>
+          {entry.more_info && (
+            <div
+              className="header2 more-info-button-desktop"
+              onClick={() => {
+                showMoreInfo(!more_info);
+              }}
+            >
+              {!more_info ? "Read More..." : "View Project"}
+            </div>
+          )}
           {entry.element && (
             <div className="child-space">
               {entry.element}
               {more_info && entry.more_info && (
                 <PortfolioItemInfo entry={entry} />
               )}
-            </div>
-          )}
-          {entry.more_info && (
-            <div
-              className="large-button more-info-button-desktop"
-              onClick={() => {
-                showMoreInfo(!more_info);
-              }}
-            >
-              Project Brief
             </div>
           )}
         </div>
