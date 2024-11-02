@@ -1,8 +1,9 @@
 .portfolio-item {
   padding: 0px;
-  height: calc(100dvh - 2 * var(--p1));
+  height: 100%;
+  max-height: 100%;
   box-sizing: border-box;
-  width: calc(100dvw - var(--desktop-side-bar-width) - 2 * var(--p1));
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,7 +57,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  max-height: calc(100% - 160px);
+  max-height: 100%;
+  padding-top: var(--p1);
 }
 
 @media only screen and (max-width: 768px) {

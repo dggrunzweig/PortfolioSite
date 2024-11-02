@@ -25,7 +25,7 @@ const Overview = ({ visible, onButtonClick }: props) => {
           </div>
           {portfolio_entries.map((entry, i) => {
             return (
-              <div className="overview-section">
+              <div className="overview-section" key={entry.name}>
                 {entry.element}
                 <div
                   className="large-button overview-button"

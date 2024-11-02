@@ -216,8 +216,9 @@
   flex-direction: row;
   align-items: start;
   width: 100dvw;
-  max-width: 1800px;
-  height: 100%;
+  max-width: 2000px;
+  height: 100dvh;
+  max-height: 100dvh;
   box-sizing: border-box;
   padding: var(--p1);
   position: relative;
@@ -226,6 +227,7 @@
 .view-area {
   margin-left: var(--desktop-side-bar-width);
   width: 100%;
+  height: 100%;
   max-width: 1620px;
 }
 

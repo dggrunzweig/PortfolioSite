@@ -3,16 +3,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
-  width: 100%;
+  width: fit-content;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background-color: transparent;
-  padding: 2em 2em 2em 2em;
+  padding: 0em;
   box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
   .knob-div {
     padding: 0em 2em 0em 2em;
+    justify-content: center;
   }
 }

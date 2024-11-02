@@ -70,6 +70,7 @@ function App() {
                 nextPage={nextPage}
                 prevPage={prevPage}
                 entry={e}
+                key={e.name}
               />
             );
           })}
