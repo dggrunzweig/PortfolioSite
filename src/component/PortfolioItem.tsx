@@ -57,7 +57,7 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
                     showMoreInfo(!more_info);
                   }}
                 >
-                  Project desc
+                  {!more_info ? "project desc" : "close desc"}
                 </div>
               )}
               <div
