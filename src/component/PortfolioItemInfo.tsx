@@ -17,7 +17,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
             return <img src={url} />;
           })}
         </div>
-        <div className="portfolio-info-scroll-indicator">&gt;&gt;&gt;</div>
+        <div className="portfolio-info-scroll-indicator" />
       </div>
       <div className="portfolio-info-page">
         <div className="header1 portfolio-info-page-header">Exploration</div>
@@ -29,7 +29,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
             return <img src={url} />;
           })}
         </div>
-        <div className="portfolio-info-scroll-indicator">&gt;&gt;&gt;</div>
+        <div className="portfolio-info-scroll-indicator" />
       </div>
       <div className="portfolio-info-page">
         <div className="header1 portfolio-info-page-header">Challenges</div>
@@ -41,7 +41,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
             return <img src={url} />;
           })}
         </div>
-        <div className="portfolio-info-scroll-indicator">&gt;&gt;&gt;</div>
+        <div className="portfolio-info-scroll-indicator" />
       </div>
       <div className="portfolio-info-page">
         <div className="header1 portfolio-info-page-header">Outcome</div>
