@@ -1,11 +1,11 @@
 .about-div {
   display: grid;
-  grid-template-columns: 40% auto;
-  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
   column-gap: var(--p1);
-  row-gap: var(--p1);
-  height: 100%;
+  height: min-content;
   width: 100%;
+  align-items: start;
 }
 
 .profile-photo {

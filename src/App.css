@@ -154,7 +154,9 @@
   max-width: 35em;
 }
 
-.small-button {
+.link,
+.small-button,
+a {
   font-family: "articulat-cf";
   font-size: 16px;
   line-height: 20px;
@@ -170,6 +172,16 @@
 
 .small-button:hover {
   color: var(--grey-5);
+}
+
+.link,
+a {
+  color: var(--blue-4);
+  cursor: default;
+}
+
+.link:hover {
+  color: var(--blue-7);
 }
 
 .small-button-inactive {
