@@ -82,13 +82,13 @@ export const portfolio_entries = [
     false,
     <ProductCardDemo />
   ),
-  createEntry(
-    "Analog Knob",
-    "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/Knob.tsx",
-    "Inspired by the legendary Vestex rotary mixers used by early House and Techno DJs.",
-    false,
-    <KnobDemo />
-  ),
+  // createEntry(
+  //   "Analog Knob",
+  //   "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/Knob.tsx",
+  //   "Inspired by the legendary Vestex rotary mixers used by early House and Techno DJs.",
+  //   false,
+  //   <KnobDemo />
+  // ),
   createEntry(
     "Quote Table",
     "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
