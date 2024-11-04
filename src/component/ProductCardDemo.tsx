@@ -5,7 +5,6 @@ const ProductCardDemo = () => {
     <div className="product-card-viewer">
       <ProductCard
         name="Contour Jacket"
-        short_desc="A lightweight textured nylon jacket, in a relaxed fit."
         price={575.0}
         full_desc="A lightweight textured nylon jacket, in a relaxed fit. CORDURA® pads the chest and neck, adding contrast to the zip area and a technical affect. Sleeves carry a deep hem and internal cuff. On the body, curved panels build a long, asymmetric seam running from front to back hem."
         id="1"
@@ -21,7 +20,6 @@ const ProductCardDemo = () => {
       />
       <ProductCard
         name="Frontage Knit Crewneck"
-        short_desc="A Merino wool crewneck."
         price={535.0}
         full_desc="A Merino wool crewneck. The layering effect is achieved through a double-bed jacquard technique. This is augmented by the fashioning of threads throughout."
         id="2"
@@ -37,7 +35,6 @@ const ProductCardDemo = () => {
       />
       <ProductCard
         name="J123A-GT Bomber Jacket"
-        short_desc="GORE-TEX® 3L nylon ripstop bomber jacket."
         price={1655.0}
         full_desc="
 Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch laminate stand collar, hem, and cuffs. Zip closure. Zip pockets. Velcro tabs at front and sleeves. Concealed bungee-style drawstring at hem. Zip expansion panel at sides seams. Flap pocket at sleeve. Locker loop at back collar. Detachable elasticized shoulder strap at interior. Taped seams. Unlined. Includes studded and logo-printed velcro tape"

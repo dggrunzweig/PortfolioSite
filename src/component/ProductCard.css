@@ -1,24 +1,29 @@
 :root {
-  --pc-button-color: #ece3de;
-  --pc-button-color-hover: #dad2ce;
+  --pc-button-color: #f4efec;
+  --pc-button-color-hover: #e8e1de;
   --pc-background-color: #c9c2be;
-  --pc-accent-color: rgb(123, 241, 76);
-  --pc-desc-color: rgba(123, 241, 76, 0.939);
+  --pc-accent-color: rgb(41, 240, 6);
+  --pc-desc-color: rgb(41, 240, 6);
   --pc-border-color: #45413e;
-  --pc-type-color: #171615;
+  --pc-type-color: #181716;
+  --pc-type-color-md: #2d2c2a;
+  --pc-font-large: 24px;
+  --pc-font-medium: 20px;
+  --pc-font-small: 16px;
+  --pc-p1: 16px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  align-items: end;
   width: fit-content;
   height: fit-content;
   box-sizing: border-box;
-  font-size: 12px;
   font-family: "IBM Plex Mono";
   border: var(--pc-border-color) solid 1px;
-  padding: 1em;
-  gap: 0.5em;
+  padding: var(--pc-p1);
+  gap: var(--pc-p1);
   color: var(--pc-type-color);
   background-color: var(--pc-background-color);
   user-select: none;
@@ -29,25 +34,18 @@
 .name {
   border-bottom: var(--pc-border-color) solid 1px;
   border-left: var(--pc-border-color) solid 1px;
-  height: 3em;
-  width: 20em;
+  font-size: var(--pc-font-large);
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-}
-
-.name .scroll {
-  top: 0%;
-  width: 100%;
-  height: 100%;
-  font-size: 1.5em;
   text-align: right;
   text-transform: uppercase;
-  transform-box: content-box;
   letter-spacing: -0.05em;
   padding-left: 1em;
+  padding-bottom: 0.5em;
   box-sizing: border-box;
-  position: absolute;
 }
 
 .side {
@@ -63,6 +61,7 @@
   justify-content: flex-start;
   position: relative;
   background-color: #ffffff;
+  border: var(--pc-border-color) solid 1px;
 }
 
 .side .image {
@@ -77,22 +76,12 @@
   object-fit: scale-down;
 }
 
-.side .short-desc {
-  height: min-content;
-  width: 100%;
-  position: absolute;
-  bottom: 0%;
-  text-align: start;
-  background-color: var(--pc-desc-color);
-  box-sizing: border-box;
-  padding: 0.25em;
-}
-
 .side .full-desc-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em 0.5em 1em 0.5em;
+  font-size: var(--pc-font-small);
+  padding: 3em 0.5em 1em 0.5em;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -100,7 +89,6 @@
   position: absolute;
   line-break: normal;
   background-color: rgba(255, 255, 255, 0.652);
-  border: var(--pc-border-color) solid 1px;
 }
 
 .full-desc-div .full-desc {
@@ -108,40 +96,61 @@
 }
 
 .price {
-  width: 100%;
-  font-size: 1em;
-  height: fit-content;
-  text-align: right;
-}
-
-.card .button-holder {
-  width: 100%;
-  height: 2em;
   display: flex;
-  flex-direction: row;
-  gap: 0.25em;
+  width: 100%;
+  font-size: var(--pc-font-medium);
+  color: var(--pc-type-color-md);
+  height: fit-content;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(2 * var(--pc-p1));
 }
 
-.card button {
-  width: 50%;
+.pc-info-button,
+.pc-buy-button {
+  font-family: "IBM Plex Mono";
+  text-align: center;
+  border: var(--pc-border-color) solid 1px;
+  color: var(--pc-type-color-md);
+}
+
+.pc-info-button {
+  font-size: var(--pc-font-small);
+  position: absolute;
+  background-color: transparent;
+  aspect-ratio: 1;
+  width: min-content;
+  height: auto;
+  top: 0.25em;
+  left: 0.25em;
+  z-index: 3;
+}
+
+.pc-info-button:hover {
+  color: transparent;
+}
+
+.pc-buy-button {
+  font-size: var(--pc-font-medium);
+  width: 100%;
   margin: 0px;
   padding: 0.25em;
   height: min-content;
   background-color: var(--pc-button-color);
-  border: var(--pc-border-color) solid 1px;
-  color: var(--pc-type-color);
 }
 
-.card button:hover {
+.pc-buy-button:hover {
   background-color: var(--pc-button-color-hover);
 }
 
 .card button .button-text {
   font-family: "IBM Plex Mono";
+  font-size: var(--pc-font-medium);
   text-align: center;
-  letter-spacing: 0.3em;
+  letter-spacing: 0em;
   text-transform: uppercase;
-  margin-right: -0.3em; /* removes the effect of the letter spacing on the button*/
+  margin-right: -0em; /* removes the effect of the letter spacing on the button*/
 }
 
 /* Image Counter / Position indicator */
@@ -221,6 +230,12 @@
 }
 
 @media only screen and (max-width: 768px) {
+  :root {
+    --pc-font-large: 16px;
+    --pc-font-medium: 16px;
+    --pc-font-small: 12px;
+    --pc-p1: 12px;
+  }
   .image-overlay .image-section {
     width: clamp(10dvw, 95%, 95dvw);
     height: clamp(10dvh, 95%, 95dvh);

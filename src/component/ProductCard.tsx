@@ -4,7 +4,6 @@ import "./ProductCard.css";
 interface props {
   name: string;
   id: string;
-  short_desc: string;
   full_desc: string;
   image_url: string[];
   price: number;
@@ -14,7 +13,6 @@ interface props {
 const ProductCard = ({
   name,
   id,
-  short_desc,
   full_desc,
   image_url,
   price,
@@ -103,9 +101,7 @@ const ProductCard = ({
         </div>
       )}
       <div className="card">
-        <div className="name">
-          <span className="scroll">{name}</span>
-        </div>
+        <div className="name">{name}</div>
         <div
           className="side"
           ref={card_ref}
@@ -139,26 +135,29 @@ const ProductCard = ({
               })}
             </div>
           )}
-          {showing_front && <div className="short-desc">{short_desc}</div>}
+          {
+            <button
+              className="pc-info-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowingFront(!showing_front);
+              }}
+            >
+              {showing_front ? "i" : "X"}
+            </button>
+          }
           {!showing_front && (
             <div className="full-desc-div">
               <div className="full-desc">{full_desc}</div>
             </div>
           )}
         </div>
-        <div className="price">{"$" + price.toFixed(2)}</div>
-        <div className="button-holder">
-          <button
-            onClick={() => {
-              setShowingFront(!showing_front);
-            }}
-          >
-            <div className="button-text">Info</div>
-          </button>
+
+        <div className="price">
+          {"$" + price.toFixed(2)}
           {onClickBuy && (
-            <button onClick={() => onClickBuy(id)}>
-              {" "}
-              <div className="button-text">Buy</div>
+            <button className="pc-buy-button" onClick={() => onClickBuy(id)}>
+              Add To Cart
             </button>
           )}
         </div>
