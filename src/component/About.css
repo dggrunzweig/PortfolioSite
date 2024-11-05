@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: auto;
   column-gap: var(--p1);
-  height: min-content;
+  height: 100%;
   width: 100%;
   align-items: start;
 }
@@ -12,8 +12,13 @@
   width: 100%;
 }
 
+.about-div .header2 {
+  margin-bottom: var(--p1);
+}
+
 .about-body {
   padding-right: var(--p1);
+  padding-bottom: var(--p1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -23,10 +28,15 @@
     align-items: center;
     justify-content: start;
     padding-top: 0px;
+    padding-bottom: 60px;
   }
 
   .about-body {
-    padding-bottom: 80px;
+    padding-bottom: 0px;
     padding-right: 0px;
+  }
+
+  .about-div .header2 {
+    margin-top: var(--p2);
   }
 }

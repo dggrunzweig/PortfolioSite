@@ -142,6 +142,10 @@ const ProductCard = ({
                 e.stopPropagation();
                 setShowingFront(!showing_front);
               }}
+              onTouchEnd={(e) => {
+                e.stopPropagation();
+                setShowingFront(!showing_front);
+              }}
             >
               {showing_front ? "i" : "X"}
             </button>
