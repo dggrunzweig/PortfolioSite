@@ -46,6 +46,7 @@ const TaskTableAddEdit = ({
         is_header={true}
         highlighted={false}
         onSelect={() => {}}
+        onClose={() => {}}
       />
       <div className="task-add-section">
         <textarea
