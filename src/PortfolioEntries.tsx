@@ -81,13 +81,7 @@ export const portfolio_entries = [
     false,
     <ProductCardDemo />
   ),
-  // createEntry(
-  //   "Analog Knob",
-  //   "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/Knob.tsx",
-  //   "Inspired by the legendary Vestex rotary mixers used by early House and Techno DJs.",
-  //   false,
-  //   <KnobDemo />
-  // ),
+
   createEntry(
     "Task Table",
     "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
@@ -99,7 +93,7 @@ export const portfolio_entries = [
     "Substrata",
     "https://github.com/dggrunzweig/Bassline",
     "A percussive low-frequency synthesizer. Designed for the ritualistic and hypnotic.",
-    false,
+    true,
     <>
       <iframe
         className="substrata-desktop"
@@ -112,7 +106,15 @@ export const portfolio_entries = [
         <img src="./substrata/Substrata.png" />
         <div className="body">Not Available on Mobile</div>
       </div>
-    </>
+    </>,
+    "When writing kick drum and bassline patterns in my musical project, Night Sea, I often reuse a consistent process for sound design and sequencing. I wondered if I could create the ideal synthesizer and sequencer for this purpose using my experience with web audio and web midi. As a web-based instrument, it’s a free tool that is accessible to everyone, providing a way for total beginners and professionals alike to explore creating drum sequences.",
+    ["./images/substrata/substrata_problem.png"],
+    "My initial approach was inspired by existing drum synthesizers like the Moog DFAM or the Elektron Machinedrum. I wanted to bring the design fully into the digital realm, creating a UI that leveraged the power of a mouse and keyboard rather than try to emulate a physical device. This resulted in the design of the 2D Button, the central part of the sequencer which allows a user to turn on or off a step and set specific synthesizer settings per each step with the draggable dots.",
+    ["./images/substrata/substrata_inspiration.png"],
+    "After designing the audio system initially with web audio, I found there to be frustrating timbre differences between browsers. This felt “unprofessional” in quality for a synthesizer. I decided to pursue using WASM for audio engine instead, writing all of the sequencing and synthesis code in C and then compiling it with Emscripten into a web audio worklet. In addition, I wanted Substrata to be able to integrate into my larger hardware synth setup, so it needed to be able to synchronize with other instruments using a centralized MIDI clock. I designed Substrata to accept a midi clock signal from a selectable source and use that to synchronize the step sequencer onboard.",
+    ["./images/substrata/substrata_challenges.png"],
+    "Substrata is still a work in progress, with a few more features planned. The current version however has perfect cross browser compatibility thanks to the C and WASM backend. The audio code is fully tested in C using GoogleTest as well. The synthesizer has become a favorite tool for me and my collaborator in our studio projects, creating hypnotic and driving bassline and kick patterns for our techno releases.",
+    ["./images/substrata/substrata_outcomes.png"]
   ),
   createEntry(
     "About",
