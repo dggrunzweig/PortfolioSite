@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   background-color: var(--grey-3);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Inter", sans-serif;
   display: block;
   position: relative;
   border-radius: 5px;

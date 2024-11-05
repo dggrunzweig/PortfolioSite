@@ -40,7 +40,7 @@
 
 .tt-add-long-textarea,
 .tt-add-short-textarea {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Inter", san-serif;
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
@@ -63,7 +63,6 @@
 .tt-due-date-selector,
 .tt-priority-selector {
   display: flex;
-  font-family: "IBM Plex Mono", monospace;
   font-size: 16px;
   line-height: 20px;
   gap: var(--p1);
