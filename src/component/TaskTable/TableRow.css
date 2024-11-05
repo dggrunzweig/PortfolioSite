@@ -43,10 +43,11 @@
 .tt-row-highlighted,
 .tt-header-row {
   display: grid;
-  grid-template-columns: auto 120px 120px 120px 120px 180px 180px;
+  grid-template-columns: 300px 120px 120px 120px 120px 180px 180px;
   grid-template-areas: "title open priority assignee creator date-due date-created";
   grid-template-rows: auto;
   width: 100%;
+  max-width: 100%;
   border-bottom: solid var(--grey-6) 1px;
   height: 60px;
   align-items: center;
@@ -115,5 +116,13 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
+  }
+  .tt-table-cell-hidden-mobile {
+    display: none;
+  }
+
+  .tt-cell-text-highlighted {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }

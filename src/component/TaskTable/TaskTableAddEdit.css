@@ -64,9 +64,12 @@
 .tt-priority-selector {
   display: flex;
   font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  line-height: 20px;
   gap: var(--p1);
   color: var(--grey-8);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .tt-priority-checkbox-holder {

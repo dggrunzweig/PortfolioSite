@@ -5,9 +5,16 @@ interface props {
   highlighted: boolean;
   is_header: boolean;
   onSelect: () => void;
+  onClose: () => void;
 }
 
-const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
+const TableRow = ({
+  values,
+  highlighted,
+  is_header,
+  onSelect,
+  onClose,
+}: props) => {
   let cell_text_class_name = highlighted
     ? "tt-cell-text-highlighted"
     : "tt-cell-text";
@@ -16,6 +23,10 @@ const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
   if (is_header) {
     row_class_name = "tt-header-row";
   }
+
+  const mobile_modifier =
+    " " + (highlighted ? "" : " tt-table-cell-hidden-mobile");
+
   return (
     <div
       className={row_class_name}
@@ -25,7 +36,6 @@ const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
     >
       <div className={cell_class_name} style={{ gridArea: "title" }}>
         <div className={cell_text_class_name}>
-          <div className="tt-mobile-label">Title</div>
           {values[0]}
           {highlighted && (
             <div className="tt-table-cell-description">{values[1]}</div>
@@ -34,26 +44,53 @@ const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
       </div>
       <div className={cell_class_name} style={{ gridArea: "open" }}>
         <div className="tt-mobile-label">Status</div>
-        <div className={cell_text_class_name}>{values[2]}</div>
+        <div
+          className={cell_text_class_name}
+          onMouseEnter={(e) => {
+            if (values[2] != "Closed")
+              e.currentTarget.style.textDecoration = "line-through";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.textDecoration = "none";
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+        >
+          {values[2]}
+        </div>
       </div>
       <div className={cell_class_name} style={{ gridArea: "priority" }}>
         <div className="tt-mobile-label">Priority</div>
         <div className={cell_text_class_name}>{values[5]}</div>
       </div>
 
-      <div className={cell_class_name} style={{ gridArea: "assignee" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "assignee" }}
+      >
         <div className="tt-mobile-label">Assignee</div>
         <div className={cell_text_class_name}>{values[3]}</div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "creator" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "creator" }}
+      >
         <div className="tt-mobile-label">Creator</div>
         <div className={cell_text_class_name}>{values[4]}</div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "date-due" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "date-due" }}
+      >
         <div className="tt-mobile-label">Due</div>
         <div className={cell_text_class_name}>{values[6]}</div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "date-created" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "date-created" }}
+      >
         <div className="tt-mobile-label">Created</div>
         <div className={cell_text_class_name}>{values[7]}</div>
       </div>

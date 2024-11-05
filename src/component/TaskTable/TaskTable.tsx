@@ -112,6 +112,7 @@ const TaskTable = ({ initial_list, visible }: props) => {
                 is_header={true}
                 highlighted={false}
                 onSelect={() => {}}
+                onClose={() => {}}
               />
               <div className="tt-table-area">
                 {items.map((t, i) => {
@@ -124,6 +125,10 @@ const TaskTable = ({ initial_list, visible }: props) => {
                       onSelect={() => {
                         if (i == current_selection) setCurrentSelection(-1);
                         else setCurrentSelection(i);
+                      }}
+                      onClose={() => {
+                        items[i].open = !items[i].open;
+                        setItems([...items]);
                       }}
                     />
                   );
@@ -153,8 +158,8 @@ const TaskTable = ({ initial_list, visible }: props) => {
                 <img
                   src={
                     current_selection == -1
-                      ? "./icons/quote_open_deactive.png"
-                      : "./icons/quote_open.png"
+                      ? "./icons/quote_edit_deactive.png"
+                      : "./icons/quote_edit.png"
                   }
                   onClick={() => {
                     if (current_selection != -1) {
