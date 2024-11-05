@@ -5,7 +5,7 @@ import AudioPlayer from "./component/AudioPlayer";
 import KnobDemo from "./component/KnobDemo";
 import { PortfolioEntry } from "./component/PortfolioItem";
 import ProductCardDemo from "./component/ProductCardDemo";
-import QuoteTableDemo from "./component/QuoteTableDemo";
+import TaskTableDemo from "./component/TaskTableDemo";
 import VirtualDesktop from "./component/VirtualDesktop";
 import { vd_files } from "./component/VirtualDesktopFileList";
 
@@ -90,11 +90,11 @@ export const portfolio_entries = [
   //   <KnobDemo />
   // ),
   createEntry(
-    "Quote Table",
+    "Task Table",
     "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
-    "A table view for storing quotes. Quotes can be added, removed, or previewed.",
+    "A table view for storing task. Tasks can be added, removed, and re-ordered.",
     false,
-    <QuoteTableDemo />
+    <TaskTableDemo />
   ),
   createEntry(
     "Substrata",

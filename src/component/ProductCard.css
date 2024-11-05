@@ -6,7 +6,7 @@
   --pc-desc-color: rgb(41, 240, 6);
   --pc-border-color: #45413e;
   --pc-type-color: #181716;
-  --pc-type-color-md: #2d2c2a;
+  --pc-type-color-md: #424140;
   --pc-font-large: 24px;
   --pc-font-medium: 20px;
   --pc-font-small: 16px;
@@ -128,29 +128,23 @@
 }
 
 .pc-info-button:hover {
-  color: transparent;
+  border: solid transparent 1px;
 }
 
 .pc-buy-button {
-  font-size: var(--pc-font-medium);
-  width: 100%;
+  font-size: var(--pc-font-small);
+  width: 50%;
+  max-width: 12em;
   margin: 0px;
   padding: 0.25em;
   height: min-content;
   background-color: var(--pc-button-color);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
 }
 
 .pc-buy-button:hover {
   background-color: var(--pc-button-color-hover);
-}
-
-.card button .button-text {
-  font-family: "IBM Plex Mono";
-  font-size: var(--pc-font-medium);
-  text-align: center;
-  letter-spacing: 0em;
-  text-transform: uppercase;
-  margin-right: -0em; /* removes the effect of the letter spacing on the button*/
 }
 
 /* Image Counter / Position indicator */

@@ -1,5 +1,5 @@
-.quote-table {
-  max-width: 945px;
+.task-table {
+  max-width: 1200px;
   max-height: 600px;
   height: 100%;
   width: 100%;
@@ -20,7 +20,7 @@
   height: 100%;
   width: 100%;
 }
-.quote-table-table-area {
+.task-table-table-area {
   overflow-y: scroll;
   display: block;
   height: calc(100% - 60px);
@@ -30,7 +30,7 @@
 }
 
 .table-entry,
-.quote-header-row-item {
+.task-header-row-item {
   font-size: 16px;
   line-height: 30px;
   color: var(--grey-2);
@@ -43,14 +43,14 @@
   align-items: center;
 }
 
-.quote-text {
+.task-text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
 }
 
-.quote-text-highlighted {
+.task-text-highlighted {
   color: var(--grey-1);
   overflow: hidden;
   text-wrap: wrap;
@@ -59,12 +59,12 @@
   padding-bottom: 14px;
 }
 
-.quote-table-row,
-.quote-table-row-highlighted,
-.quote-header-row {
+.task-table-row,
+.task-table-row-highlighted,
+.task-header-row {
   display: grid;
-  grid-template-columns: max(60%, 180px) max(20%, 180px) max(20%, 180px);
-  grid-template-areas: "quote name date";
+  grid-template-columns: auto 100px 100px 150px 150px 180px 180px;
+  grid-template-areas: "title open priority assignee creator  date-due date-created";
   grid-template-rows: auto;
   width: 100%;
   border-bottom: solid var(--grey-6) 1px;
@@ -72,16 +72,21 @@
   align-items: center;
 }
 
-.quote-table-row-highlighted {
+.table-entry-description {
+  padding-top: var(--p1);
+  padding-bottom: var(--p1);
+}
+
+.task-table-row-highlighted {
   background-color: var(--grey-7);
   height: fit-content;
 }
 
-.quote-table-row:hover {
+.task-table-row:hover {
   background-color: var(--grey-7);
 }
 
-.quote-header-row {
+.task-header-row {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -92,13 +97,13 @@
   border-bottom: none;
 }
 
-.quote-header-row-item {
+.task-header-row-item {
   color: var(--grey-7);
   font-weight: 400;
   border-left: none;
 }
 
-.quote-table-toolbar {
+.task-table-toolbar {
   position: absolute;
   bottom: 0%;
   left: 0%;
@@ -113,7 +118,7 @@
   padding-right: 20px;
 }
 
-.quote-table-toolbar img {
+.task-table-toolbar img {
   padding-right: 10px;
   height: 40px;
   width: 40px;
@@ -128,8 +133,8 @@
   height: 100%;
 }
 
-.qt-submit-button,
-.qt-cancel-button {
+.tt-submit-button,
+.tt-cancel-button {
   font-size: 16px;
   line-height: 30px;
   color: var(--grey-9);
@@ -140,28 +145,28 @@
   margin-right: 10px;
 }
 
-.qt-submit-button:hover,
-.qt-cancel-button:hover {
+.tt-submit-button:hover,
+.tt-cancel-button:hover {
   background-color: var(--grey-5);
 }
 
-.qt-cancel-button {
+.tt-cancel-button {
   color: var(--grey-8);
   background-color: transparent;
   border: solid var(--grey-5) 1px;
 }
-.quote-add-section {
-  padding: 0px 0px 60px 0px;
+.task-add-section {
+  padding: 0px 0px calc(60px + var(--p1)) 0px;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto 60px;
-  align-items: center;
+  display: flex;
+  gap: calc(var(--p1) / 2);
+  flex-direction: column;
+  align-items: left;
 }
 
-.qt-add-quote-textarea,
-.qt-add-author-textarea {
+.tt-add-long-textarea,
+.tt-add-short-textarea {
   font-family: "IBM Plex Mono", monospace;
   border-radius: 5px;
   padding: 10px;
@@ -173,125 +178,72 @@
   resize: none;
 }
 
-.qt-add-quote-textarea:focus {
-  border: none;
-}
-
-.qt-add-quote-textarea {
+.tt-add-long-textarea {
   height: 100%;
 }
 
-.qt-add-author-textarea {
+.tt-add-short-textarea {
   height: 40px;
+  min-height: 40px;
 }
 
-/* Viewer */
-.quote-viewer-overlay {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100dvw;
-  height: 100dvh;
-  background-color: #edeff2ba;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(5px);
-  z-index: 3;
-}
-.quote-viewer {
-  position: absolute;
-  display: grid;
+.tt-due-date-selector,
+.tt-priority-selector {
+  display: flex;
+  font-family: "IBM Plex Mono", monospace;
+  gap: var(--p1);
+  color: var(--grey-8);
   align-items: center;
-  justify-items: end;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 1;
-  width: auto;
-  height: 760px;
-  border-radius: 25px;
-  padding: 20px;
-  grid-template-columns: 100%;
-  grid-template-rows: 40px auto 40px;
-  background-image: radial-gradient(var(--blue-9), var(--blue-7));
-  z-index: 4;
-  box-shadow: var(--grey-5) 4px 4px 4px 0px;
-  font-family: "Inter", sans-serif;
-  font-size: 30px;
-  line-height: 40px;
 }
 
-.quote-viewer img {
-  height: 40px;
-  width: 40px;
-  object-fit: contain;
-}
-
-.quote-canvas {
-  width: 100%;
-  height: 100%;
-}
-
-.qt-quote-viewer-quote {
-  font-weight: 500;
-  color: var(--blue-1);
-  text-align: center;
+.tt-priority-checkbox-holder {
   display: flex;
-  width: 100%;
-  justify-content: center;
+  gap: 8px;
+  align-items: center;
 }
 
-.qt-quote-viewer-author {
-  font-weight: 200;
-  color: var(--blue-1);
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  width: 100%;
+.tt-priority-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: solid var(--grey-7) 1px;
 }
 
 @media only screen and (max-width: 768px) {
-  .quote-table {
+  .task-table {
     height: 80dvh;
     width: 100%;
+    padding-top: 120px;
   }
 
-  .quote-table-row,
-  .quote-table-row-highlighted,
-  .quote-header-row {
-    grid-template-columns: 50% 50%;
+  .task-table-row,
+  .task-table-row-highlighted,
+  .task-header-row {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "quote quote"
-      "name date";
+      "title title"
+      "priority open"
+      "assignee creator"
+      "date-due date-created";
     border-top: none;
-    border-bottom: solid 1px var(--grey-6);
     min-height: 120px;
-    height: 120px;
+    height: auto;
   }
 
   .table-entry,
-  .quote-header-row-item {
+  .task-header-row-item {
     text-wrap: wrap;
-    border-top: solid var(--grey-4) 1px;
-    border-left: solid var(--grey-4) 1px;
-    min-height: 60px;
+    min-height: 30px;
     height: fit-content;
     display: flex;
     align-items: center;
-    padding: 10px 10px 10px 10px;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
   }
 
-  .quote-table-row-highlighted {
+  .task-table-row-highlighted {
     height: fit-content;
     max-height: 100%;
-  }
-
-  .table-view {
-    margin-top: 60px;
-  }
-  .quote-viewer {
-    width: 80%;
-    height: 70%;
-    font-size: 20px;
-    line-height: 25px;
   }
 }
