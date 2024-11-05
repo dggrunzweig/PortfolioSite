@@ -25,6 +25,7 @@ const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
     >
       <div className={cell_class_name} style={{ gridArea: "title" }}>
         <div className={cell_text_class_name}>
+          <div className="tt-mobile-label">Title</div>
           {values[0]}
           {highlighted && (
             <div className="tt-table-cell-description">{values[1]}</div>
@@ -32,21 +33,28 @@ const TableRow = ({ values, highlighted, is_header, onSelect }: props) => {
         </div>
       </div>
       <div className={cell_class_name} style={{ gridArea: "open" }}>
+        <div className="tt-mobile-label">Status</div>
         <div className={cell_text_class_name}>{values[2]}</div>
       </div>
+      <div className={cell_class_name} style={{ gridArea: "priority" }}>
+        <div className="tt-mobile-label">Priority</div>
+        <div className={cell_text_class_name}>{values[5]}</div>
+      </div>
+
       <div className={cell_class_name} style={{ gridArea: "assignee" }}>
+        <div className="tt-mobile-label">Assignee</div>
         <div className={cell_text_class_name}>{values[3]}</div>
       </div>
       <div className={cell_class_name} style={{ gridArea: "creator" }}>
+        <div className="tt-mobile-label">Creator</div>
         <div className={cell_text_class_name}>{values[4]}</div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "priority" }}>
-        <div className={cell_text_class_name}>{values[5]}</div>
-      </div>
       <div className={cell_class_name} style={{ gridArea: "date-due" }}>
+        <div className="tt-mobile-label">Due</div>
         <div className={cell_text_class_name}>{values[6]}</div>
       </div>
       <div className={cell_class_name} style={{ gridArea: "date-created" }}>
+        <div className="tt-mobile-label">Created</div>
         <div className={cell_text_class_name}>{values[7]}</div>
       </div>
     </div>

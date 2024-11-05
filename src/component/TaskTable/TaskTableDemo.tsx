@@ -4,7 +4,7 @@ const TaskTableDemo = () => {
 
   tasks.push(
     CreateTask(
-      "Feed Dog",
+      "Feed Dog and check her for fleas",
       "Remember to feed your dog sophie 2 cups of food per day, once in the morning and once after dinner. She needs plenty of treats but not too many!",
       "David Grunzweig",
       "David Grunzweig",

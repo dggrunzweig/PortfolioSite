@@ -53,4 +53,13 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .task-table {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 80dvh;
+  }
+  .tt-toolbar {
+    justify-content: center;
+  }
 }

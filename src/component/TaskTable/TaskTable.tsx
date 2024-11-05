@@ -122,7 +122,8 @@ const TaskTable = ({ initial_list, visible }: props) => {
                       highlighted={i == current_selection}
                       is_header={false}
                       onSelect={() => {
-                        setCurrentSelection(i);
+                        if (i == current_selection) setCurrentSelection(-1);
+                        else setCurrentSelection(i);
                       }}
                     />
                   );
