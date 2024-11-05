@@ -2,10 +2,9 @@ import { ReactElement } from "react";
 
 import About from "./component/About";
 import AudioPlayer from "./component/AudioPlayer";
-import KnobDemo from "./component/KnobDemo";
 import { PortfolioEntry } from "./component/PortfolioItem";
 import ProductCardDemo from "./component/ProductCardDemo";
-import TaskTableDemo from "./component/TaskTableDemo";
+import TaskTableDemo from "./component/TaskTable/TaskTableDemo";
 import VirtualDesktop from "./component/VirtualDesktop";
 import { vd_files } from "./component/VirtualDesktopFileList";
 

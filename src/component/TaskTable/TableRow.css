@@ -1,0 +1,73 @@
+.tt-table-cell,
+.tt-header-cell {
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--grey-2);
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tt-header-cell {
+  color: var(--grey-7);
+  font-weight: 400;
+  border-left: none;
+}
+
+.tt-cell-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.tt-cell-text-highlighted {
+  color: var(--grey-1);
+  overflow: hidden;
+  text-wrap: wrap;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 14px;
+}
+
+.tt-table-cell-description {
+  padding-top: var(--p1);
+  padding-bottom: var(--p1);
+}
+
+.tt-row,
+.tt-row-highlighted,
+.tt-header-row {
+  display: grid;
+  grid-template-columns: auto 120px 120px 120px 120px 180px 180px;
+  grid-template-areas: "title open priority assignee creator  date-due date-created";
+  grid-template-rows: auto;
+  width: 100%;
+  border-bottom: solid var(--grey-6) 1px;
+  height: 60px;
+  align-items: center;
+}
+
+.tt-row-highlighted {
+  background-color: var(--grey-7);
+  height: fit-content;
+}
+
+.tt-row:hover {
+  background-color: var(--grey-7);
+}
+
+.tt-header-row {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  background-color: var(--grey-3);
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: none;
+}
