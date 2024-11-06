@@ -119,7 +119,6 @@
   position: absolute;
   background-color: transparent;
   aspect-ratio: 1;
-  width: min-content;
   height: auto;
   top: 4px;
   left: 4px;
@@ -236,6 +235,6 @@
   .pc-info-button {
     font-size: var(--pc-font-medium);
     width: 24px;
-    height: 28px;
+    height: 24px;
   }
 }

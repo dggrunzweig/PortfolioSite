@@ -104,10 +104,6 @@ const ProductCard = ({
         <div className="name">{name}</div>
         <div
           className="side"
-          ref={card_ref}
-          onClick={() => {
-            if (showing_front) setEnlargeImage(true);
-          }}
           onMouseMove={(event) => {
             if (showing_front && !is_mobile.current) {
               const bounds = event.currentTarget.getBoundingClientRect();
@@ -118,7 +114,13 @@ const ProductCard = ({
           }}
         >
           {
-            <div className="image">
+            <div
+              className="image"
+              ref={card_ref}
+              onClick={() => {
+                if (showing_front) setEnlargeImage(true);
+              }}
+            >
               <img
                 src={image_url[current_image]}
                 style={showing_front ? {} : { filter: "blur(40px)" }}
@@ -136,20 +138,16 @@ const ProductCard = ({
             </div>
           )}
           {
-            <button
+            <div
               className="pc-info-button"
               onClick={(e) => {
-                e.stopPropagation();
-                setShowingFront(!showing_front);
-              }}
-              onTouchEnd={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
                 setShowingFront(!showing_front);
               }}
             >
               {showing_front ? "i" : "X"}
-            </button>
+            </div>
           }
           {!showing_front && (
             <div className="full-desc-div">
