@@ -83,7 +83,7 @@ export const portfolio_entries = [
   ),
   createEntry(
     "Task Table",
-    "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
+    "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/TaskTable/TaskTable.tsx",
     "A table view for storing task with automatic re-ordering. Tasks can be added, removed, and edited.",
     false,
     <TaskTableDemo />

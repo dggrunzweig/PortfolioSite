@@ -2,7 +2,7 @@
 
 Currently hosted live via [GitHub Pages](https://dggrunzweig.github.io/PortfolioSite/).
 
-A collection of front end design artifacts intended to represent my skillset and design taste. All components were built using ReactJS and vanilla Typescript and CSS. No external libraries or React packages were used (feel free to check [package.json](package.json)).
+A collection of front end design artifacts intended to represent my skillset and design taste. All components were built using ReactJS and vanilla Typescript and CSS. All projects were built without the assistance of external libraries or components, with the exception of the date picker used in the quote table.
 
 Mobile and Desktop Friendly.
 
@@ -39,10 +39,10 @@ Each component has a .tsx file (typescript React element) and a corresponding cs
 1. [ProductCard.css](src/component/ProductCard.css)
 2. [ProductCard.tsx](src/component/ProductCard.tsx)
 
-## Analog Knob
+## Task Table
 
-1. [Knob.css](src/component/Knob.css)
-2. [Knob.tsx](src/component/Knob.tsx)
+1. [TaskTable.css](src/component/TaskTable/TaskTable.css)
+2. [TaskTable.tsx](src/component/TaskTable/TaskTable.tsx)
 
 ## Substrata
 
@@ -57,7 +57,7 @@ Each entry in the portfolio is organized and styled by the Portfolio Item compon
 1. [PortfolioItem.css](src/component/PortfolioItem.css)
 2. [PortfolioItem.tsx](src/component/PortfolioItem.tsx)
 
-## Navigation Menu
+## Overview
 
-1. [NavMenu.css](src/component/NavMenu.css)
-2. [NavMenu.tsx](src/component/NavMenu.tsx)
+1. [Overview.css](src/component/Overview.css)
+2. [Overview.tsx](src/component/Overview.tsx)
