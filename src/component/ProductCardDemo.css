@@ -1,7 +1,7 @@
 .product-card-viewer {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 1em;
   width: 100%;
   align-items: center;
@@ -9,10 +9,19 @@
   padding: 0em 0em 0em 0em;
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 1275px) {
+  .pcd-exclude-narrow {
+    display: none;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .product-card-viewer {
     padding: 0em 0em 50px 0em;
     justify-content: center;
     flex-direction: column;
+  }
+  .pcd-exclude-narrow {
+    display: block;
   }
 }

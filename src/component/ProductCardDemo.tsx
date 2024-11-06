@@ -33,22 +33,24 @@ const ProductCardDemo = () => {
           console.log("Attempting to buy: " + id);
         }}
       />
-      <ProductCard
-        name="J123A-GT Bomber Jacket"
-        price={1655.0}
-        full_desc="
+      <div className="pcd-exclude-narrow">
+        <ProductCard
+          name="J123A-GT Bomber Jacket"
+          price={1655.0}
+          full_desc="
 Windproof, water-repellent, breathable, and lightweight. GORE-TEX® stretch laminate stand collar, hem, and cuffs. Zip closure. Zip pockets. Velcro tabs at front and sleeves. Concealed bungee-style drawstring at hem. Zip expansion panel at sides seams. Flap pocket at sleeve. Locker loop at back collar. Detachable elasticized shoulder strap at interior. Taped seams. Unlined. Includes studded and logo-printed velcro tape"
-        id="3"
-        image_url={[
-          "ACRONYM-Jacket/jacket-1.avif",
-          "ACRONYM-Jacket/jacket-2.avif",
-          "ACRONYM-Jacket/jacket-3.avif",
-          "ACRONYM-Jacket/jacket-4.avif",
-        ]}
-        onClickBuy={(id: string): void => {
-          console.log("Attempting to buy: " + id);
-        }}
-      />
+          id="3"
+          image_url={[
+            "ACRONYM-Jacket/jacket-1.avif",
+            "ACRONYM-Jacket/jacket-2.avif",
+            "ACRONYM-Jacket/jacket-3.avif",
+            "ACRONYM-Jacket/jacket-4.avif",
+          ]}
+          onClickBuy={(id: string): void => {
+            console.log("Attempting to buy: " + id);
+          }}
+        />
+      </div>
     </div>
   );
 };
