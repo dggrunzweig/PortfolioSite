@@ -3,16 +3,13 @@
   top: var(--p1);
   left: calc(-1 * var(--p1));
   z-index: 100;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  background-color: rgba(213, 216, 222, 0.822);
+  background-color: var(--grey-9);
   padding: var(--p1);
   padding-top: 0px;
   width: calc(100% + var(--p1));
   height: calc(100% - var(--p1));
-  border-radius: var(--p1);
   display: block;
-  box-shadow: var(--grey-6) 2px 2px 4px 0px;
+  box-shadow: var(--grey-7) 0px 0px 4px 0px;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
@@ -28,16 +25,18 @@
   padding-top: var(--p1);
   position: relative;
   width: 100%;
-  height: calc(100%);
+  height: 100%;
+  max-height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30px auto;
-  column-gap: var(--p1);
+  grid-template-rows: 30px calc(100% - 120px);
+  column-gap: var(--p2);
   row-gap: var(--p1);
   grid-template-areas:
     "header header"
     "images body";
   scroll-snap-align: start;
+  align-items: start;
 }
 
 .portfolio-info-page-header {
@@ -59,17 +58,28 @@
   gap: var(--p1);
   align-items: start;
   justify-content: start;
+  height: 100%;
   max-height: 100%;
 }
 
 .portfolio-info-images img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: var(--p1);
-  box-shadow: var(--grey-6) 2px 2px 4px 0px;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: var(--grey-8) 2px 2px 4px 0px;
   object-fit: contain;
   background-color: #ffffff;
+}
+
+@keyframes pi-slow-flash {
+  from {
+    border-left: solid var(--grey-5) 2px;
+    border-bottom: solid var(--grey-5) 2px;
+  }
+  to {
+    border-left: solid var(--grey-7) 2px;
+    border-bottom: solid var(--grey-7) 2px;
+  }
 }
 
 .portfolio-info-scroll-indicator {
@@ -81,6 +91,7 @@
   border-left: solid var(--grey-5) 2px;
   border-bottom: solid var(--grey-5) 2px;
   transform: rotate(-45deg) translate(-50%, -50%);
+  animation: pi-slow-flash 0.5s linear 0s infinite alternate;
 }
 
 @media only screen and (max-width: 768px) {
@@ -91,9 +102,7 @@
     top: 0%;
     left: 0%;
     padding: 150px var(--p1) 60px var(--p1);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: var(--grey-7);
+    background-color: var(--grey-8);
     min-height: calc(100dvh);
     height: calc(100dvh);
     width: 100dvw;
@@ -111,6 +120,7 @@
     scroll-snap-align: none;
     padding-bottom: var(--p3);
     padding-top: 0px;
+    max-height: fit-content;
   }
 
   .portfolio-info-page-body {

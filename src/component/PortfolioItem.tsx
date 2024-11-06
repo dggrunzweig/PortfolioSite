@@ -102,7 +102,7 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
 
           {entry.element && (
             <div className="child-space">
-              {entry.element}
+              {!more_info && entry.element}
               {more_info && entry.more_info && (
                 <PortfolioItemInfo entry={entry} />
               )}
