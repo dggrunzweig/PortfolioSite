@@ -91,9 +91,12 @@
   }
   .portfolio-title {
     width: 100%;
-    padding-bottom: var(--p2);
+    height: 80px;
   }
   .portfolio-buttons {
+    display: none;
+  }
+  .pi-nav-buttons {
     display: none;
   }
   .portfolio-item {

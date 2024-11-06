@@ -39,6 +39,14 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
               <div className="header2">{entry.description}</div>
             </div>
             <div className="pi-nav-buttons-mobile">
+              <div
+                className="small-button"
+                onClick={() => {
+                  prevPage();
+                }}
+              >
+                prev
+              </div>
               {entry.more_info && (
                 <div
                   className="small-button"
@@ -60,21 +68,14 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
                   Source Code
                 </div>
               )}
-              <div
-                className="small-button"
-                onClick={() => {
-                  prevPage();
-                }}
-              >
-                prev page
-              </div>
+
               <div
                 className="small-button"
                 onClick={() => {
                   nextPage();
                 }}
               >
-                next page
+                next
               </div>
             </div>
             <div className="portfolio-buttons">
