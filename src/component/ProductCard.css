@@ -80,7 +80,7 @@
   flex-direction: column;
   align-items: center;
   font-size: var(--pc-font-small);
-  padding: 3em 0.5em 1em 0.5em;
+  padding: 3em 0.5em 0em 0.5em;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -235,5 +235,7 @@
   }
   .pc-info-button {
     font-size: var(--pc-font-medium);
+    width: 24px;
+    height: 28px;
   }
 }

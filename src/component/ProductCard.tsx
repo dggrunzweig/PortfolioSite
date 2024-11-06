@@ -144,6 +144,7 @@ const ProductCard = ({
               }}
               onTouchEnd={(e) => {
                 e.stopPropagation();
+                e.preventDefault();
                 setShowingFront(!showing_front);
               }}
             >
