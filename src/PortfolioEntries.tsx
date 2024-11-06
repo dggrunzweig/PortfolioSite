@@ -85,7 +85,7 @@ export const portfolio_entries = [
   createEntry(
     "Task Table",
     "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
-    "A table view for storing task. Tasks can be added, removed, and re-ordered.",
+    "A table view for storing task with automatic re-ordering. Tasks can be added, removed, and edited.",
     false,
     <TaskTableDemo />
   ),
@@ -104,7 +104,9 @@ export const portfolio_entries = [
       />
       <div className="substrata-mobile">
         <img src="./substrata/Substrata.png" />
-        <div className="body">Not Available on Mobile</div>
+        <div className="body" style={{ maxWidth: "100%" }}>
+          Not Available on Mobile
+        </div>
       </div>
     </>,
     "When writing kick drum and bassline patterns in my musical project, Night Sea, I consistently reuse the same process for sound design and sequencing. I wondered if I could leverage my knowledge of web audio and web midi to create the ideal synthesizer and sequencer for this purpose. I sought to build a free, web-based instrument. It should provide a way for total beginners to learn and play around, while also having features and a sound quality that would appeal to more experienced gear heads.",

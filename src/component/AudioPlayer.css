@@ -12,7 +12,7 @@
   --ap-timeline-marker-color: #fba701;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   :root {
     --ap-text-size: 12px;
   }
@@ -146,7 +146,7 @@
   height: 2em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   :root {
     font-size: 12px;
   }

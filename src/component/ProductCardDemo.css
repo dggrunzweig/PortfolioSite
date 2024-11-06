@@ -1,7 +1,7 @@
 .product-card-viewer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1em;
   width: fit-content;
   align-items: center;
@@ -9,7 +9,7 @@
   padding: 0em 0em 0em 0em;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .product-card-viewer {
     padding: 0em 0em 50px 0em;
     justify-content: center;

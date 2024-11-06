@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .knob-div {
     padding: 0em 2em 0em 2em;
     justify-content: center;

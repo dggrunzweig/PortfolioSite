@@ -94,7 +94,7 @@
   animation: pi-slow-flash 0.5s linear 0s infinite alternate;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .portfolio-info-pane {
     position: fixed;
     margin-top: 0px;
