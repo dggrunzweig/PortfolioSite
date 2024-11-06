@@ -66,7 +66,7 @@ export const portfolio_entries = [
     true,
     <VirtualDesktop files={vd_files} />,
     "All e-commerce companies need a way to showcase their products - I sought to create an interactive experience that lets users actively explore products in a way that was both familiar and novel.",
-    [],
+    ["./images/helmut_lang/vd_problem.png"],
     "I was inspired after reading about Helmet Lang's 1998 runway show 'Seance De Travail' which was the first digital only runway show. It was released as a website and a CD-ROM containing photos and videos of the show. I thought about what it would be like to receive that CD in 1998 and pop it into my computer to view the various shots and clothing pieces. The idea of re-creating the desktop experience of an old computer and browsing files felt like a great (although indirect) UI experience. I took inspiration from the UI of the iMac G3 (Mac OS9) released the same year.",
     ["./images/helmut_lang/hl-cd-rom.webp"],
     "The project presented a few unique challenges. I wanted users to be able to interact with window panes in a similar fashion to a normal desktop, so it was critical that they could be dragged, re-ordered, maximized and closed. This required using state in React in clever ways to ensure that the z-indexes of each open pane could be modified based on the user's interactions. Allowing the user to drag also presented a challenge - it required calculating the x and y pixel offset of the panes in relation to the desktop but the coordinate system of the mouse is connected to the viewport position. The project was built using only React and Vanilla CSS.",

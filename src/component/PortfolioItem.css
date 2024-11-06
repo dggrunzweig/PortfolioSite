@@ -44,13 +44,13 @@
   background-color: transparent;
   text-align: right;
   font-family: "articulate-cf", sans-serif;
-  color: var(--grey-2);
+  color: var(--grey-1);
   text-transform: lowercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-decoration: underline;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 30px;
+  line-height: 20px;
   cursor: crosshair;
 }
 

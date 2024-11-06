@@ -118,7 +118,7 @@
 }
 
 .header1 {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 24px;
   line-height: 30px;
   font-weight: 800;
@@ -129,7 +129,7 @@
 }
 
 .header2 {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 24px;
   line-height: 30px;
   font-weight: 600;
@@ -141,7 +141,7 @@
 }
 
 .body {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
@@ -157,7 +157,7 @@
 .link,
 .small-button,
 a {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
@@ -185,7 +185,7 @@ a {
 }
 
 .small-button-inactive {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
@@ -200,7 +200,7 @@ a {
 }
 
 .large-button {
-  font-family: "articulat-cf";
+  font-family: "articulat-cf", sans-serif;
   font-size: 24px;
   line-height: 30px;
   font-weight: 400;
