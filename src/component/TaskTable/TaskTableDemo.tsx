@@ -29,8 +29,8 @@ const TaskTableDemo = () => {
   );
   tasks.push(
     CreateTask(
-      "Apply for Jobs",
-      "At least a few a day, it's a numbers game. If anyone is even reading this other than you, it's a good sign.",
+      "Look for Jobs",
+      "Find good fits for your skillset, talk to friends, look for interesting open positions.",
       "David Grunzweig",
       "David Grunzweig",
       TaskPriority.high,
@@ -57,7 +57,7 @@ const TaskTableDemo = () => {
       week_1
     )
   );
-
+  tasks[1].open = false;
   return <TaskTable initial_list={tasks} visible={true} />;
 };
 

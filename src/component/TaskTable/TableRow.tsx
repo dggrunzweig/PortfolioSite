@@ -43,7 +43,10 @@ const TableRow = ({
           )}
         </div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "open" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "open" }}
+      >
         <div className="tt-mobile-label">Status</div>
         <div
           className={cell_text_class_name}
@@ -62,7 +65,10 @@ const TableRow = ({
           {values[2]}
         </div>
       </div>
-      <div className={cell_class_name} style={{ gridArea: "priority" }}>
+      <div
+        className={cell_class_name + mobile_modifier}
+        style={{ gridArea: "priority" }}
+      >
         <div className="tt-mobile-label">Priority</div>
         <div className={cell_text_class_name}>{values[5]}</div>
       </div>
