@@ -52,7 +52,7 @@
   object-fit: contain;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .task-table {
     padding-top: 10px;
     padding-left: 10px;

@@ -1,9 +1,5 @@
 .tt-table-cell,
 .tt-header-cell {
-  font-size: 16px;
-  line-height: 30px;
-  color: var(--grey-2);
-  font-weight: 500;
   padding-left: 10px;
   padding-right: 10px;
   height: 100%;
@@ -13,8 +9,6 @@
 }
 
 .tt-header-cell {
-  color: var(--grey-7);
-  font-weight: 400;
   border-left: none;
 }
 
@@ -26,7 +20,6 @@
 }
 
 .tt-cell-text-highlighted {
-  color: var(--grey-1);
   overflow: hidden;
   text-wrap: wrap;
   width: 100%;
@@ -41,7 +34,8 @@
 
 .tt-row,
 .tt-row-highlighted,
-.tt-header-row {
+.tt-header-row,
+.tt-row-done {
   display: grid;
   grid-template-columns: 300px 120px 120px 120px 120px 180px 180px;
   grid-template-areas: "title open priority assignee creator date-due date-created";
@@ -51,10 +45,15 @@
   border-bottom: solid var(--grey-6) 1px;
   height: 60px;
   align-items: center;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--grey-2);
+  font-weight: 500;
 }
 
 .tt-row-highlighted {
   background-color: var(--grey-7);
+  color: var(--grey-1);
   height: fit-content;
 }
 
@@ -71,13 +70,19 @@
   padding-left: 20px;
   padding-right: 20px;
   border-bottom: none;
+  color: var(--grey-7);
+  font-weight: 400;
+}
+
+.tt-row-done {
+  color: var(--grey-6);
 }
 
 .tt-mobile-label {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .tt-header-row {
     display: none;
   }

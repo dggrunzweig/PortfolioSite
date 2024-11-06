@@ -72,6 +72,10 @@ const TaskTable = ({ initial_list, visible }: props) => {
   const [current_selection, setCurrentSelection] = useState(-1);
   const [view_state, setViewState] = useState(TaskTableViewStates.table);
 
+  items.sort((a: Task, _) => {
+    return !a.open ? 1 : -1;
+  });
+
   return (
     <>
       {visible && (

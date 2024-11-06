@@ -20,6 +20,7 @@ const TableRow = ({
     : "tt-cell-text";
   let cell_class_name = is_header ? "tt-header-cell" : "tt-table-cell";
   let row_class_name = highlighted ? "tt-row-highlighted" : "tt-row";
+  if (values[2] == "Closed") row_class_name = row_class_name + " tt-row-done";
   if (is_header) {
     row_class_name = "tt-header-row";
   }
@@ -47,11 +48,11 @@ const TableRow = ({
         <div
           className={cell_text_class_name}
           onMouseEnter={(e) => {
-            if (values[2] != "Closed")
-              e.currentTarget.style.textDecoration = "line-through";
+            if (values[2] != "Closed") e.currentTarget.innerHTML = "Close?";
+            else e.currentTarget.innerHTML = "Open?";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.textDecoration = "none";
+            e.currentTarget.innerHTML = values[2];
           }}
           onClick={(e) => {
             e.stopPropagation();
