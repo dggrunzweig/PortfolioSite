@@ -68,13 +68,25 @@ const TaskToRowEntry = (task: Task): string[] => {
 };
 
 const TaskTable = ({ initial_list, visible }: props) => {
+  const SortFunction = (a: Task, b: Task): number => {
+    if (!a.open && b.open) return 1;
+    else if (!b.open && a.open) return -1;
+    else if (!b.open && !a.open) return 0;
+    else {
+      if (a.priority < b.priority) return -1;
+      if (a.priority > b.priority) return 1;
+      return 0;
+    }
+  };
+  initial_list.sort(SortFunction);
   const [items, setItems] = useState(initial_list);
   const [current_selection, setCurrentSelection] = useState(-1);
   const [view_state, setViewState] = useState(TaskTableViewStates.table);
 
-  items.sort((a: Task, _) => {
-    return !a.open ? 1 : -1;
-  });
+  const updateItems = (new_task_list: Task[]) => {
+    new_task_list.sort(SortFunction);
+    setItems(new_task_list);
+  };
 
   return (
     <>
@@ -87,10 +99,10 @@ const TaskTable = ({ initial_list, visible }: props) => {
               edit_task={items[current_selection]}
               onSubmit={(new_task: Task) => {
                 if (view_state == TaskTableViewStates.add) {
-                  setItems([...items, new_task]);
+                  updateItems([...items, new_task]);
                 } else {
                   items[current_selection] = new_task;
-                  setItems([...items]);
+                  updateItems([...items]);
                 }
                 setViewState(TaskTableViewStates.table);
               }}
@@ -132,7 +144,7 @@ const TaskTable = ({ initial_list, visible }: props) => {
                       }}
                       onClose={() => {
                         items[i].open = !items[i].open;
-                        setItems([...items]);
+                        updateItems([...items]);
                       }}
                     />
                   );
@@ -154,7 +166,7 @@ const TaskTable = ({ initial_list, visible }: props) => {
                   onClick={() => {
                     if (current_selection != -1) {
                       items.splice(current_selection, 1);
-                      setItems([...items]);
+                      updateItems([...items]);
                       setCurrentSelection(-1);
                     }
                   }}
