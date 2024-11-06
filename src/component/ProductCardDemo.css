@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 1em;
-  width: fit-content;
+  width: 100%;
   align-items: center;
   justify-content: start;
   padding: 0em 0em 0em 0em;
@@ -13,5 +13,6 @@
   .product-card-viewer {
     padding: 0em 0em 50px 0em;
     justify-content: center;
+    flex-direction: column;
   }
 }

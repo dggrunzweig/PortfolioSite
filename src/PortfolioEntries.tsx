@@ -81,7 +81,6 @@ export const portfolio_entries = [
     false,
     <ProductCardDemo />
   ),
-
   createEntry(
     "Task Table",
     "https://github.com/dggrunzweig/PortfolioSite/blob/main/src/component/QuoteTable.tsx",
