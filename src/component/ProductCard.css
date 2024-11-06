@@ -10,7 +10,7 @@
   --pc-font-large: 24px;
   --pc-font-medium: 20px;
   --pc-font-small: 16px;
-  --pc-p1: 16px;
+  --pc-p1: 8px;
 }
 
 .card {
@@ -43,8 +43,7 @@
   text-align: right;
   text-transform: uppercase;
   letter-spacing: -0.05em;
-  padding-left: 1em;
-  padding-bottom: 0.5em;
+  padding-bottom: var(--pc-p1);
   box-sizing: border-box;
 }
 
@@ -228,7 +227,7 @@
     --pc-font-large: 16px;
     --pc-font-medium: 16px;
     --pc-font-small: 12px;
-    --pc-p1: 12px;
+    --pc-p1: 8px;
   }
   .image-overlay .image-section {
     width: clamp(10dvw, 95%, 95dvw);
