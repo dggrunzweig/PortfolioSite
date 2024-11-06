@@ -38,7 +38,17 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
               <div className="header1">{entry.name}</div>
               <div className="header2">{entry.description}</div>
             </div>
-            <div className="portfolio-buttons">
+            <div className="pi-nav-buttons-mobile">
+              {entry.more_info && (
+                <div
+                  className="small-button"
+                  onClick={() => {
+                    showMoreInfo(!more_info);
+                  }}
+                >
+                  {!more_info ? "project desc" : "close desc"}
+                </div>
+              )}
               {entry.source_link != "" && (
                 <div
                   className="small-button"
@@ -50,24 +60,6 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
                   Source Code
                 </div>
               )}
-              {entry.more_info && (
-                <div
-                  className="small-button more-info-button-mobile"
-                  onClick={() => {
-                    showMoreInfo(!more_info);
-                  }}
-                >
-                  {!more_info ? "project desc" : "close desc"}
-                </div>
-              )}
-              <div
-                className="small-button"
-                onClick={() => {
-                  nextPage();
-                }}
-              >
-                next page
-              </div>
               <div
                 className="small-button"
                 onClick={() => {
@@ -76,18 +68,38 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
               >
                 prev page
               </div>
+              <div
+                className="small-button"
+                onClick={() => {
+                  nextPage();
+                }}
+              >
+                next page
+              </div>
+            </div>
+            <div className="portfolio-buttons">
+              {entry.more_info && (
+                <button
+                  onClick={() => {
+                    showMoreInfo(!more_info);
+                  }}
+                >
+                  {!more_info ? "project desc" : "close desc"}
+                </button>
+              )}
+              {entry.source_link != "" && (
+                <button
+                  onClick={() => {
+                    let new_tab = window.open(entry.source_link, "_blank");
+                    new_tab?.focus();
+                  }}
+                >
+                  Source Code
+                </button>
+              )}
             </div>
           </div>
-          {entry.more_info && (
-            <div
-              className="header2 more-info-button-desktop"
-              onClick={() => {
-                showMoreInfo(!more_info);
-              }}
-            >
-              {!more_info ? "Read More..." : "View Project"}
-            </div>
-          )}
+
           {entry.element && (
             <div className="child-space">
               {entry.element}
@@ -96,6 +108,24 @@ const PortfolioItem = ({ entry, visible, nextPage, prevPage }: props) => {
               )}
             </div>
           )}
+          <div className="pi-nav-buttons">
+            <div
+              className="small-button"
+              onClick={() => {
+                prevPage();
+              }}
+            >
+              prev page
+            </div>
+            <div
+              className="small-button"
+              onClick={() => {
+                nextPage();
+              }}
+            >
+              next page
+            </div>
+          </div>
         </div>
       )}
     </>

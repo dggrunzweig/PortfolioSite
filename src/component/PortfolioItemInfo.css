@@ -1,6 +1,6 @@
 .portfolio-info-pane {
   position: absolute;
-  top: 0%;
+  top: var(--p1);
   left: calc(-1 * var(--p1));
   z-index: 100;
   -webkit-backdrop-filter: blur(40px);
@@ -9,7 +9,7 @@
   padding: var(--p1);
   padding-top: 0px;
   width: calc(100% + var(--p1));
-  height: 100%;
+  height: calc(100% - var(--p1));
   border-radius: var(--p1);
   display: block;
   box-shadow: var(--grey-6) 2px 2px 4px 0px;
