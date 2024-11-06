@@ -118,6 +118,7 @@
   font-size: var(--pc-font-small);
   position: absolute;
   background-color: transparent;
+  width: 24px;
   aspect-ratio: 1;
   height: auto;
   top: 4px;
