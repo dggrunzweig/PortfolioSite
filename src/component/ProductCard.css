@@ -1,9 +1,9 @@
 :root {
-  --pc-button-color: #f4efec;
-  --pc-button-color-hover: #e8e1de;
-  --pc-background-color: #c9c2be;
-  --pc-accent-color: rgb(41, 240, 6);
-  --pc-desc-color: rgb(41, 240, 6);
+  --pc-button-color: #fcf7f4;
+  --pc-button-color-hover: #e9e6e5;
+  --pc-background-color: #e7e6e2;
+  /* --pc-background-color: #b8b1ad; */
+  --pc-accent-color: #29f006;
   --pc-border-color: #45413e;
   --pc-type-color: #181716;
   --pc-type-color-md: #424140;
@@ -29,6 +29,7 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  position: relative;
 }
 
 .name {
@@ -104,6 +105,7 @@
   align-items: center;
   justify-content: space-between;
   gap: calc(2 * var(--pc-p1));
+  z-index: 2;
 }
 
 .pc-info-button,
