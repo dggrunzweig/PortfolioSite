@@ -37,7 +37,7 @@
 .tt-header-row,
 .tt-row-done {
   display: grid;
-  grid-template-columns: 300px 120px 120px 120px 120px 180px 180px;
+  grid-template-columns: 350px 120px 120px 120px 120px 180px 180px;
   grid-template-areas: "title open priority assignee creator date-due date-created";
   grid-template-rows: auto;
   width: 100%;
