@@ -49,14 +49,7 @@ const TableRow = ({
       >
         <div className="tt-mobile-label">Status</div>
         <div
-          className={cell_text_class_name}
-          onMouseEnter={(e) => {
-            if (values[2] != "Closed") e.currentTarget.innerHTML = "Close?";
-            else e.currentTarget.innerHTML = "Open?";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.innerHTML = values[2];
-          }}
+          className={cell_text_class_name + (is_header ? "" : " tt-clickable")}
           onClick={(e) => {
             e.stopPropagation();
             onClose();

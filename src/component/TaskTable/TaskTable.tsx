@@ -152,17 +152,13 @@ const TaskTable = ({ initial_list, visible }: props) => {
               </div>
               <div className="tt-toolbar">
                 <img
-                  src="./icons/quote_add.png"
+                  src="./icons/task_add.svg"
                   onClick={() => {
                     setViewState(TaskTableViewStates.add);
                   }}
                 />
                 <img
-                  src={
-                    current_selection == -1
-                      ? "./icons/quote_remove_deactive.png"
-                      : "./icons/quote_remove.png"
-                  }
+                  src="./icons/task_remove.svg"
                   onClick={() => {
                     if (current_selection != -1) {
                       items.splice(current_selection, 1);
@@ -172,11 +168,10 @@ const TaskTable = ({ initial_list, visible }: props) => {
                   }}
                 />
                 <img
-                  src={
-                    current_selection == -1
-                      ? "./icons/quote_edit_deactive.png"
-                      : "./icons/quote_edit.png"
-                  }
+                  src="./icons/task_edit.svg"
+                  style={{
+                    marginRight: current_selection == -1 ? "-90px" : "10px",
+                  }}
                   onClick={() => {
                     if (current_selection != -1) {
                       setViewState(TaskTableViewStates.edit);
