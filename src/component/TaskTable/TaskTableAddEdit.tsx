@@ -97,7 +97,7 @@ const TaskTableAddEdit = ({
               style={{
                 backgroundColor:
                   task.priority == TaskPriority.emergency
-                    ? "var(--grey-7)"
+                    ? "var(--grey-5)"
                     : "transparent",
               }}
             />
@@ -117,7 +117,7 @@ const TaskTableAddEdit = ({
               style={{
                 backgroundColor:
                   task.priority == TaskPriority.high
-                    ? "var(--grey-7)"
+                    ? "var(--grey-5)"
                     : "transparent",
               }}
             />
@@ -137,7 +137,7 @@ const TaskTableAddEdit = ({
               style={{
                 backgroundColor:
                   task.priority == TaskPriority.medium
-                    ? "var(--grey-7)"
+                    ? "var(--grey-5)"
                     : "transparent",
               }}
             />
@@ -157,7 +157,7 @@ const TaskTableAddEdit = ({
               style={{
                 backgroundColor:
                   task.priority == TaskPriority.low
-                    ? "var(--grey-7)"
+                    ? "var(--grey-5)"
                     : "transparent",
               }}
             />
@@ -177,7 +177,7 @@ const TaskTableAddEdit = ({
               style={{
                 backgroundColor:
                   task.priority == TaskPriority.optional
-                    ? "var(--grey-7)"
+                    ? "var(--grey-5)"
                     : "transparent",
               }}
             />

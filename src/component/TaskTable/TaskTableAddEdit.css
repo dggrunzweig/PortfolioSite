@@ -10,9 +10,9 @@
 .tt-cancel-button {
   font-size: 16px;
   line-height: 30px;
-  color: var(--grey-9);
+  color: var(--grey-3);
   font-weight: 500;
-  border: solid var(--grey-7) 1px;
+  border: solid var(--grey-3) 1px;
   border-radius: 5px;
   padding: 5px 10px;
   margin-right: 10px;
@@ -20,34 +20,36 @@
 
 .tt-submit-button:hover,
 .tt-cancel-button:hover {
-  background-color: var(--grey-5);
+  background-color: var(--grey-7);
 }
 
 .tt-cancel-button {
-  color: var(--grey-8);
+  color: var(--grey-4);
   background-color: transparent;
-  border: solid var(--grey-5) 1px;
+  border: solid var(--grey-6) 1px;
 }
 .task-add-section {
-  padding: 0px 0px calc(60px + var(--p1)) 0px;
+  padding: 10px 0px calc(60px + var(--p1)) 0px;
   width: 100%;
   height: 100%;
   display: flex;
-  gap: calc(var(--p1) / 2);
+  gap: 10px;
   flex-direction: column;
   align-items: left;
 }
 
 .tt-add-long-textarea,
 .tt-add-short-textarea {
-  font-family: "Inter", san-serif;
+  font-family: "articulat-cf", san-serif;
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
   line-height: 20px;
   color: var(--grey-1);
   background-color: var(--grey-8);
-  border: none;
+  border: solid var(--grey-5) 1px;
+  margin-left: 10px;
+  margin-right: 10px;
   resize: none;
 }
 
@@ -66,7 +68,9 @@
   font-size: 16px;
   line-height: 20px;
   gap: var(--p1);
-  color: var(--grey-8);
+  color: var(--grey-2);
+  margin-left: 11px;
+  margin-right: 10px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -81,5 +85,5 @@
   width: 16px;
   height: 16px;
   border-radius: 100%;
-  border: solid var(--grey-7) 1px;
+  border: solid var(--grey-5) 1px;
 }
