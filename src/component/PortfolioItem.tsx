@@ -9,13 +9,13 @@ export interface PortfolioEntry {
   more_info: boolean;
   element?: ReactElement;
   problem_text?: string;
-  problem_image_urls?: string[];
+  problem_image_url?: string;
   exploration_text?: string;
-  exploration_image_urls?: string[];
+  exploration_image_url?: string;
   challenges_text?: string;
-  challenges_image_urls?: string[];
+  challenges_image_url?: string;
   outcome_text?: string;
-  outcome_image_urls?: string[];
+  outcome_image_url?: string;
 }
 interface props {
   entry: PortfolioEntry;

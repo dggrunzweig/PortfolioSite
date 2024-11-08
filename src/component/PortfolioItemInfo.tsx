@@ -13,9 +13,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
           {entry.problem_text}
         </div>
         <div className="portfolio-info-images">
-          {entry.problem_image_urls?.map((url) => {
-            return <img src={url} />;
-          })}
+          <img src={entry.problem_image_url} />
         </div>
         <div className="portfolio-info-scroll-indicator" />
       </div>
@@ -25,9 +23,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
           {entry.exploration_text}
         </div>
         <div className="portfolio-info-images">
-          {entry.exploration_image_urls?.map((url) => {
-            return <img src={url} />;
-          })}
+          <img src={entry.exploration_image_url} />
         </div>
         <div className="portfolio-info-scroll-indicator" />
       </div>
@@ -37,9 +33,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
           {entry.challenges_text}
         </div>
         <div className="portfolio-info-images">
-          {entry.challenges_image_urls?.map((url) => {
-            return <img src={url} />;
-          })}
+          <img src={entry.challenges_image_url} />
         </div>
         <div className="portfolio-info-scroll-indicator" />
       </div>
@@ -49,9 +43,7 @@ const PortfolioItemInfo = ({ entry }: props) => {
           {entry.outcome_text}
         </div>
         <div className="portfolio-info-images">
-          {entry.outcome_image_urls?.map((url) => {
-            return <img src={url} />;
-          })}
+          <img src={entry.outcome_image_url} />
         </div>
       </div>
     </div>
