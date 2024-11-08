@@ -129,8 +129,13 @@
   z-index: 3;
 }
 
-.pc-info-button:hover {
-  border: solid transparent 1px;
+@media (hover: hover) {
+  .pc-info-button:hover {
+    border: solid transparent 1px;
+  }
+  .pc-buy-button:hover {
+    background-color: var(--pc-button-color-hover);
+  }
 }
 
 .pc-buy-button {
@@ -143,10 +148,6 @@
   background-color: var(--pc-button-color);
   text-transform: uppercase;
   letter-spacing: -0.05em;
-}
-
-.pc-buy-button:hover {
-  background-color: var(--pc-button-color-hover);
 }
 
 /* Image Counter / Position indicator */

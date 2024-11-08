@@ -59,8 +59,10 @@
   outline: none;
 }
 
-.button-holder .button:hover {
-  background-color: rgb(227, 228, 229);
+@media (hover: hover) {
+  .button-holder .button:hover {
+    background-color: rgb(227, 228, 229);
+  }
 }
 
 .audio-player .time-viewer {
