@@ -49,6 +49,9 @@
   flex-direction: column;
   align-items: end;
   justify-content: start;
+  line-height: 36px;
+  font-weight: 300;
+  color: var(--grey-3);
 }
 
 .portfolio-info-images {
