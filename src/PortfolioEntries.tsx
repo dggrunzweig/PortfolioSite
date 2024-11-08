@@ -81,13 +81,13 @@ export const portfolio_entries = [
     true,
     <ProductCardDemo />,
     "Showcasing a product requires a combination of text, media, and interactions to fulfill all the feature requirements and convey the full story behind the item. However, shoppers typically want a way to view multiple products in the same category quickly and don’t want to be presented with all the information about a product up front. If a single image is selected to represent the product that doesn’t connect with the viewer, they likely won’t look into it further. A low effort mechanism is needed to allow a customer to quickly get a better idea of the product.",
-    "/images/ProductCard/problem.png",
+    "./images/ProductCard/problem.png",
     "I wanted the images to seamlessly change as the users moved their mouse across the page, revealing different views of each product without the user needing to click into the image. I wanted to explore a minimalistic and technical style for this project, inspired by tech wear clothing makers like Arc’Teryx, ACW, and ACRONYM. The interface utilizes a flat layout and is styled with colors influenced by high-vis clothing and concrete structures, and ideally suited for products like Tech Wear, Mechanical Keyboards, or Everyday Carry.",
-    "/images/ProductCard/exploration.png",
+    "./images/ProductCard/exploration.png",
     "The primary challenges for this project was finding a way to recreate a similar experience on mobile devices. Without a mouse position to track, the basic mechanism of the project no longer works. I opted instead to use swiping on mobile devices, allowing a user to quickly swipe through all the photos on a product without needing to go to the main product page.",
-    "/images/ProductCard/challenges.png",
+    "./images/ProductCard/challenges.png",
     "The final product is a standalone react component that can be reused as many times as necessary. The component accepts a name, product ID, price, description, a list of image urls, and a function for the buy button as inputs. The project was built using vanilla react and CSS without additional libraries or packages.",
-    "/images/ProductCard/outcome.png"
+    "./images/ProductCard/outcome.png"
   ),
   createEntry(
     "Task Tracker",
@@ -96,13 +96,13 @@ export const portfolio_entries = [
     true,
     <TaskTableDemo />,
     "I typically keep track of to-do list items in my notes app or Notion, but this is a limited interface for keeping track of tasks with different owners and timelines. While I am familiar with more complex systems for tracking tasks like Jira, I wanted something that felt like it landed between these two options.",
-    "/images/TaskTable/problem.png",
+    "./images/TaskTable/problem.png",
     "I wanted a way to quickly see and scan through all my tasks as a starting point, storing them as rows in a table with a reduced amount of information immediately visible. I knew that it would be helpful to have longer descriptions available as well, which shouldn’t require navigating to a new view to see. The table should also allow me to add, remove, or edit existing tasks as well as re-order my tasks based on their priority and which were still open.",
     "/images/TaskTable/exploration.png",
     "The primary challenge related to this project stemmed from automatically reorder tasks based on a variety of categories. I created a typescript interface to define tasks and wrote a custom sorting function which operated on the array of tasks stored by the table. Each time a user interacts with a task, changing its priority or status, the table should automatically update the ordering.",
-    "/images/TaskTable/challenges.png",
+    "./images/TaskTable/challenges.png",
     "The task tracker provides a helpful productivity tool that doesn’t have the weight and complexity of typical engineering management tools, but goes beyond the simplicity of tracking things in my notes app or Notion. The tracker works seamlessly in both mobile and desktop modes. The project was built entirely with vanilla React and CSS, the only external package used is for the Date Picker in the add pane.",
-    "/images/TaskTable/outcome.png"
+    "./images/TaskTable/outcome.png"
   ),
   createEntry(
     "Substrata",
