@@ -61,8 +61,4 @@
     padding-top: 0px;
     height: 80dvh;
   }
-  .tt-toolbar {
-    justify-content: end;
-    background-color: var(--grey-8);
-  }
 }
